@@ -1,18 +1,32 @@
+import React, { useState } from 'react';
+import Header from  './Header';
 import LangSelect from  './LangSelect';
-// import React, { useState } from 'react';
+import Slide from  './Slide';
+
 
 function App() {
-  //const [lang, setLang] = useState(null);
+  const [lang, setLang] = useState(null);
+  const [slideNum, setSlideNum] = useState(1);
+
+  function handleLangSelect(selectedLang) {
+    console.log('here')
+    setLang(selectedLang);
+    console.log('lang is now', lang);
+  }
 
   return (
     <>
-      <header>
-        <h1>What The F#<span class="blink">█</span></h1>
-        <h2>A Collection of Surprising Behavior by Programming Language</h2>
-      </header>
-      <LangSelect />
+      {lang === null ? (
+        <>
+          <Header />
+          <LangSelect onLangSelect={handleLangSelect} />
+        </>
+      ) : (
+        <Slide />
+      )}
     </>
   );
+
 }
 
 export default App;

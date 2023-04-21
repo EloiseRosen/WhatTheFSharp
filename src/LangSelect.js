@@ -1,15 +1,26 @@
 import React from 'react';
 
-function LangSelect() {
+function LangSelect(props) {
+  const languages = ['Java', 'JavaScript', 'Python', 'R'];
+
+
+  // put this directly in the li?
+  const handleClick = (language) => {
+    props.onLangSelect(language);
+  };
+
+
+
   return (
-  <div class="select-lang">
+  <div className="select-lang">
     Select a language ▼
     <ul>
-        <li>Java</li>
-        <li>JavaScript</li>
-        <li>Python</li>
-        <li>R</li>
-    </ul>
+        {languages.map((language) => (
+          <li key={language} onClick={() => handleClick(language)}>
+            {language}
+          </li>
+        ))}
+      </ul>
   </div>
   );
 }
