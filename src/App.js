@@ -14,6 +14,13 @@ function App() {
     console.log('lang is now', lang);
   }
 
+  function handlePrevClick(prev) {
+    setSlideNum(prev-1); // TODO handle case when on first slide
+  }
+  function handleNextClick(prev) {
+    setSlideNum(prev+1); // TODO handle case when on last slide
+  }
+
   return (
     <>
       {lang === null ? (
@@ -22,7 +29,7 @@ function App() {
           <LangSelect onLangSelect={handleLangSelect} />
         </>
       ) : (
-        <Slide />
+        <Slide slideNum={slideNum} onPrevClick={handlePrevClick} onNextClick={handleNextClick}/>
       )}
     </>
   );
