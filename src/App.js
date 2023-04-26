@@ -29,7 +29,7 @@ function App() {
           <LangSelect onLangSelect={handleLangSelect} />
         </>
       ) : (
-        <Slide slideNum={slideNum} onPrevClick={handlePrevClick} onNextClick={handleNextClick}/>
+        <Slide slideNum={slideNum} selectedLang={lang} onPrevClick={handlePrevClick} onNextClick={handleNextClick}/>
       )}
     </>
   );
