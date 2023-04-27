@@ -2,15 +2,13 @@ import React, { useState, useEffect } from 'react';
 import Header from  './Header';
 import LangSelect from  './LangSelect';
 import Slide from  './Slide';
+import Footer from  './Footer';
 
 
 function App() {
   const [lang, setLang] = useState(null);
   const [slideNum, setSlideNum] = useState(1);
 
-  function handleLangSelect(selectedLang) {
-    setLang(selectedLang);
-  }
 
   useEffect(() => {
     console.log('lang:', lang, 'slideNum:', slideNum);
@@ -27,14 +25,17 @@ function App() {
 
   return (
     <>
+      <Header />
+
       {lang === null ? (
         <>
-          <Header />
-          <LangSelect onLangSelect={handleLangSelect} />
+          <LangSelect onLangSelect={(selectedLang) => setLang(selectedLang)} />
         </>
       ) : (
         <Slide slideNum={slideNum} selectedLang={lang} onPrevClick={handlePrevClick} onNextClick={handleNextClick}/>
       )}
+        
+      <Footer />
     </>
   );
 
