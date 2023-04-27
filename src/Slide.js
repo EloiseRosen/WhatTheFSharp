@@ -5,7 +5,7 @@ function Slide(props) {
     const examplesForLang = examples[props.selectedLang];
 
   return (
-    <div className="slide-container">
+    <>
         <div className="example-container">
             <p><pre>{examplesForLang[props.slideNum-1]}</pre></p>
         </div>
@@ -15,7 +15,7 @@ function Slide(props) {
             <i class="fa-solid fa-link"></i>
             <li key='next' onClick={() => props.onNextClick(props.slideNum)}><i className="prev-next fa-sharp fa-solid fa-chevron-right"></i></li>
         </ul>
-  </div>
+  </>
   );
 }
 
