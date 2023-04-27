@@ -25,17 +25,21 @@ function App() {
 
   return (
     <>
-      <Header />
+      <div class="main">
 
-      {lang === null ? (
-        <>
-          <LangSelect onLangSelect={(selectedLang) => setLang(selectedLang)} />
-        </>
-      ) : (
-        <Slide slideNum={slideNum} selectedLang={lang} onPrevClick={handlePrevClick} onNextClick={handleNextClick}/>
-      )}
-        
-      <Footer />
+          <Header />
+
+        {lang === null ? (
+          <>
+            <LangSelect onLangSelect={(selectedLang) => setLang(selectedLang)} />
+          </>
+        ) : (
+          <Slide slideNum={slideNum} selectedLang={lang} onPrevClick={handlePrevClick} onNextClick={handleNextClick}/>
+        )}
+      </div>
+    
+  
+     <Footer />
     </>
   );
 
