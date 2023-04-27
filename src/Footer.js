@@ -1,13 +1,13 @@
 import React from 'react';
 
-function Footer(props) {
+function Footer() {
  
   return (
         <div className="footer-icon-container">
-            <i class="fa-solid fa-house footer-icon" style={{color: 'grey'}}></i>
-            <i class="fa-solid fa-envelope footer-icon" style={{color: 'grey'}}></i>
-            <i class="fa-solid fa-user footer-icon" style={{color: 'grey'}}></i>
-            <i class="fa-solid fa-mug-hot footer-icon" style={{color: 'grey'}}></i>
+            <a href="https://whatthefsharp.com"><i className="footer-icon fa-solid fa-house"></i></a>
+            <a href="mailto:eloise.rosen+WTFS@gmail.com"><i className="footer-icon fa-solid fa-envelope"></i></a>
+            <a href="https://ELOISE-LIKES-MAKING-THINGS.com"><i className="footer-icon fa-solid fa-user"></i></a>
+            <i className="footer-icon fa-solid fa-mug-hot"></i>
         </div>
   );
 }
