@@ -17,9 +17,6 @@ html {
 
 
 
-
-
-
 #root {
   display: flex;
   flex-direction: column;
@@ -28,13 +25,25 @@ html {
 
 .main {
   flex: 1;
-  background-color: pink;
   width: min(900px, calc(100vw - 25px));
   margin: 0 auto;
 }
 
 
+a {
+  text-decoration: none;
+  color: var(--lime-green);
+}
+a:hover {
+  color: var(--light-lime-green);
+}
 
+#contribute-example {
+  display: block;
+  text-align: right;
+  margin-top: 20px;
+  font-size: 20px;
+}
 
 
 
@@ -45,7 +54,8 @@ body {
 }
 
 h1 {
-  margin-top: 30px;
+  margin-top: 70px;
+  margin-bottom: 15px;
   font-size: 70px;
   font-weight: 300;
 }
@@ -69,23 +79,7 @@ h1 {
 h2 {
   font-size: 25px;
   font-weight: 300;
-}
-
-nav {
-  text-align: right;
-  padding-top: 10px;
-}
-
-.menu li {
-  display: inline;
-}
-
-.menu li a {
-  color: var(--lime-green);
-  text-decoration: none;
-  font-size:large;
-  padding: 10px;
-  margin-right: 10px;
+  color: var(--coral);
 }
 
 
@@ -96,7 +90,7 @@ nav {
   margin-left: auto;
   margin-right: auto;
   text-align: center;
-  padding: 10px;
+  padding: 20px;
   background: rgba(70, 69, 69);
   border: 3px ridge var(--lime-green);
   border-radius: 10px;

@@ -25,7 +25,7 @@ function App() {
 
   return (
     <>
-      <div class="main">
+      <div className="main">
 
           <Header />
 
