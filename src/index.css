@@ -83,6 +83,10 @@ h2 {
 }
 
 
+:root {
+  --yellow: #fdba00;
+  --light-yellow: #fffc5a;
+}
 
 .select-lang {
   font-size: 25px;
@@ -91,12 +95,12 @@ h2 {
   margin-right: auto;
   text-align: center;
   padding: 20px;
-  color: var(--purple);
-  background: rgba(58, 57, 57); /*rgb(83, 79, 79);*/
-  border: 3px ridge var(--lime-green);
+  background: rgb(83, 79, 79);
+  color: var(--light-yellow);
+  border: 3px ridge var(--yellow);
   border-radius: 10px;
   width: 300px;
-  box-shadow: 1px 1px 1px 1px  rgba(104, 235, 39, 0.55);
+  box-shadow: 1px 1px 1px 1px  #a67201;
 }
 
 .select-lang ul {
@@ -118,12 +122,12 @@ h2 {
 .select-lang:hover ul {
   display: block;
   background: rgba(58, 57, 57);
-  border: 1px solid var(--lime-green);
+  border: 1px solid  var(--yellow);
 }
 
 /* when hovering over list elements, flip the background to green and text to black */
 .select-lang:hover ul li:hover {
-  background: var(--lime-green);
+  background: var(--light-yellow);
   margin-left: 0%;
 }
 .select-lang:hover ul li:hover {
