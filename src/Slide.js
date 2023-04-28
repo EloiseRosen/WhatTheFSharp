@@ -6,7 +6,7 @@ function Slide(props) {
 
   return (
     <>
-        <div className="example-container">
+        <div className="slide-box">
             <p><pre>{examplesForLang[props.slideNum-1]}</pre></p>
         </div>
         <ul className='nav-slides'>
