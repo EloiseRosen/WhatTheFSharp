@@ -15,14 +15,6 @@ function App() {
   }, [lang, slideNum]);
 
 
-
-  function handlePrevClick(prev) {
-    setSlideNum(prev-1); // TODO handle case when on first slide
-  }
-  function handleNextClick(prev) {
-    setSlideNum(prev+1); // TODO handle case when on last slide
-  }
-
   return (
     <>
       <div className="main">
@@ -34,7 +26,7 @@ function App() {
             <LangSelect onLangSelect={(selectedLang) => setLang(selectedLang)} />
           </>
         ) : (
-          <Slide slideNum={slideNum} selectedLang={lang} onPrevClick={handlePrevClick} onNextClick={handleNextClick}/>
+          <Slide slideNum={slideNum} setSlideNum={setSlideNum} selectedLang={lang} />
         )}
       </div>
     
