@@ -20,13 +20,13 @@ function Slide(props) {
     setSlideNum(Math.min(examplesForLang.length, slideNum + 1));
   }, [slideNum, examplesForLang.length]);
 
-  const handleKeydown = (event) => {
+  const handleKeydown = useCallback((event) => {
     if (event.key === 'ArrowLeft') {
       handlePrevClick();
     } else if (event.key === 'ArrowRight') {
       handleNextClick();
     }
-  };
+  }, [handlePrevClick, handleNextClick]);
 
   useEffect(() => {
     window.addEventListener('keydown', handleKeydown);
