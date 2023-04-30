@@ -18,7 +18,7 @@ function Slide(props) {
 
   const handleNextClick = useCallback(() => {
     setSlideNum(Math.min(examplesForLang.length, slideNum + 1));
-  }, [slideNum]);
+  }, [slideNum, examplesForLang.length]);
 
   const handleKeydown = (event) => {
     if (event.key === 'ArrowLeft') {
@@ -31,7 +31,7 @@ function Slide(props) {
   useEffect(() => {
     window.addEventListener('keydown', handleKeydown);
     return () => {window.removeEventListener('keydown', handleKeydown);};
-  }, [handleKeydown, examplesForLang.length]);
+  }, [handleKeydown]);
 
   return (<>
 
