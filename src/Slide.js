@@ -1,6 +1,5 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect, useCallback } from 'react';
 import { examples } from './examples';
-
 
 function Slide(props) {
   const [slideNum, setSlideNum] = useState(1);
@@ -13,12 +12,13 @@ function Slide(props) {
     );
   };
 
-  const handlePrevClick = () => {
-      setSlideNum(Math.max(1, slideNum - 1));
-  };
-  const handleNextClick = () => {
-      setSlideNum(Math.min(examplesForLang.length, slideNum + 1));
-  };
+  const handlePrevClick = useCallback(() => {
+    setSlideNum(Math.max(1, slideNum - 1));
+  }, [slideNum]);
+
+  const handleNextClick = useCallback(() => {
+    setSlideNum(Math.min(examplesForLang.length, slideNum + 1));
+  }, [slideNum]);
 
   const handleKeydown = (event) => {
     if (event.key === 'ArrowLeft') {
@@ -27,10 +27,11 @@ function Slide(props) {
       handleNextClick();
     }
   };
+
   useEffect(() => {
     window.addEventListener('keydown', handleKeydown);
     return () => {window.removeEventListener('keydown', handleKeydown);};
-  }, [slideNum]);
+  }, [handleKeydown]);
 
   return (<>
 
@@ -38,30 +39,24 @@ function Slide(props) {
       <pre>{examplesForLang[slideNum-1]}</pre>
     </div>
 
-
     <div className="nav-slides">
 
-  <button onClick={handlePrevClick} disabled={slideNum === 1}>
-    <i className="prev-next fa-sharp fa-solid fa-chevron-left"></i>
-  </button>
+      <button onClick={handlePrevClick} disabled={slideNum === 1}>
+        <i className="prev-next fa-sharp fa-solid fa-chevron-left"></i>
+      </button>
 
-  <span className="slide-num">{slideNum} / {examplesForLang.length}</span>
+      <span className="slide-num">{slideNum} / {examplesForLang.length}</span>
 
+      <button onClick={handleCopyUrl}>
+        <i className="copy-url fa-solid fa-link"></i>
+      </button>
 
-  <button onClick={handleCopyUrl}>
-          <i className="copy-url fa-solid fa-link"></i>
-        </button>
+      <button onClick={handleNextClick} disabled={slideNum === examplesForLang.length}>
+        <i className="prev-next fa-sharp fa-solid fa-chevron-right"></i>
+      </button>
+    </div>
 
-  <button onClick={handleNextClick} disabled={slideNum === examplesForLang.length}>
-    <i className="prev-next fa-sharp fa-solid fa-chevron-right"></i>
-  </button>
-</div>
-
-    </>
-  );
+  </>);
 }
 
 export default Slide;
-
-
-
