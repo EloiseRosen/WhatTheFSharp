@@ -1,22 +1,67 @@
-import React from 'react';
+import React, { useState, useEffect } from 'react';
 import { examples } from './examples';
 
-function Slide(props) {
-    const examplesForLang = examples[props.selectedLang];
 
-  return (
-    <>
-        <div className="slide-box">
-            <pre>{examplesForLang[props.slideNum-1]}</pre>
-        </div>
-        <ul className='nav-slides'>
-            <li key='prev' onClick={() => props.setSlideNum(Math.max(1, props.slideNum - 1))}><i className="prev-next fa-sharp fa-solid fa-chevron-left"></i></li>
-            <li className="slide-num">{props.slideNum} / {examplesForLang.length}</li>
-            <i className="fa-solid fa-link"></i>
-            <li key='next' onClick={() => props.setSlideNum(Math.min(examplesForLang.length, props.slideNum + 1))}><i className="prev-next fa-sharp fa-solid fa-chevron-right"></i></li>
-        </ul>
-  </>
+function Slide(props) {
+  const [slideNum, setSlideNum] = useState(1);
+  const examplesForLang = examples[props.selectedLang];
+
+  const handleCopyUrl = () => {
+    navigator.clipboard.writeText(window.location.href).then(
+      () => {console.log('URL successfully copied to clipboard');},
+      (err) => {console.error('error copying URL: ', err);}
+    );
+  };
+
+  const handlePrevClick = () => {
+      setSlideNum(Math.max(1, slideNum - 1));
+  };
+  const handleNextClick = () => {
+      setSlideNum(Math.min(examplesForLang.length, slideNum + 1));
+  };
+
+  const handleKeydown = (event) => {
+    if (event.key === 'ArrowLeft') {
+      handlePrevClick();
+    } else if (event.key === 'ArrowRight') {
+      handleNextClick();
+    }
+  };
+  useEffect(() => {
+    window.addEventListener('keydown', handleKeydown);
+    return () => {window.removeEventListener('keydown', handleKeydown);};
+  }, [slideNum]);
+
+  return (<>
+
+    <div className="slide-box">
+      <pre>{examplesForLang[slideNum-1]}</pre>
+    </div>
+
+
+    <div className="nav-slides">
+
+  <button onClick={handlePrevClick} disabled={slideNum === 1}>
+    <i className="prev-next fa-sharp fa-solid fa-chevron-left"></i>
+  </button>
+
+  <span className="slide-num">{slideNum} / {examplesForLang.length}</span>
+
+
+  <button onClick={handleCopyUrl}>
+          <i className="copy-url fa-solid fa-link"></i>
+        </button>
+
+  <button onClick={handleNextClick} disabled={slideNum === examplesForLang.length}>
+    <i className="prev-next fa-sharp fa-solid fa-chevron-right"></i>
+  </button>
+</div>
+
+    </>
   );
 }
 
 export default Slide;
+
+
+

@@ -135,16 +135,7 @@ a:hover {
   background-color: var(--slide-background);
 }
 
-.nav-slides li {
-  display: inline;
-  margin-right: 20px;
-  margin-top: 20px;
-  padding-top: 20px;
-}
 
-.slide-num {
-  color: var(--light-gray);
-}
 
 
 
@@ -164,10 +155,59 @@ a:hover {
   color: var(--light-lime-green);
 }
 
+
+
+
+.nav-slides {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+button {
+  background-color: transparent;
+  border: none;  /* border: 1px solid yellow; */
+  cursor: pointer;
+  outline: none;
+}
+button:disabled {
+  cursor: not-allowed;
+}
+button:hover {
+  color: var(--light-lime-green);
+}
+
+
+button:disabled .prev-next {
+  color: var(--light-gray);
+}
+
+.copy-url {
+  color: var(--lime-green);
+  font-size: 20px;
+  margin:10px;
+}
+button:hover .copy-url {
+  color: var(--light-lime-green);
+}
+
 .prev-next {
-  margin: 20px;
-  font-size: 40px;
+  margin: 10px;
+  font-size: 50px;
+  color: var(--lime-green);
 }
 .prev-next:hover {
   color:  var(--light-lime-green);
+}
+.fa-chevron-right {
+  margin-left: 250px;
+}
+.fa-chevron-left {
+  margin-right: 250px;
+}
+
+.slide-num {
+  color: var(--light-gray);
+  font-size: 23px;
+  margin-right:20px;
 }
