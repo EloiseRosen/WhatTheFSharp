@@ -2,14 +2,16 @@ import React from 'react';
 
 function Header(props) {
   const h1Style = {
-    fontSize: props.lang === null ? '70px' : '45px',
-    marginTop: props.lang === null ? '70px' : '10px',
-    marginBottom: props.lang === null ? '15px': '5px'
+    fontSize: props.lang === null ? '70px' : '53px',
+    marginTop: props.lang === null ? '70px' : '-10px',
+    marginBottom: props.lang === null ? '15px': '0px'
   };
 
   const h2Style = {
+    marginTop: props.lang === null ? '0px' : '-8px',
     marginLeft: props.lang === null ? '0px' : '35px',
-    marginBottom: props.lang === null ? '0px' : '40px'
+    marginBottom: props.lang === null ? '0px' : '37px',
+    fontSize: props.lang === null ? '25px' : '30px'
   };
 
 

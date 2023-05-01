@@ -2,7 +2,7 @@
   --lime-green: #35fd06;
   --light-lime-green: #b8f992;
   --coral: #ff7575;
-  --purple: #a5abff;
+  --purple: #bcc1fe;
   --pink: #f1b6c6;
   --light-gray: #808080;
   --med-gray: #534f4f;
@@ -45,7 +45,6 @@ h1 {
 }
 
 h2 {
-  font-size: 25px;
   font-weight: 300;
   color: var(--coral);
 }
