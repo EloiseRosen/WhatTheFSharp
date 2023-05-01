@@ -19,12 +19,19 @@ function Header(props) {
     <header>
 
       <a href="mailto:eloise.rosen+WTFS@gmail.com?subject=What%20the%20F%23%3A%20Contribute%20an%20Example" id="contribute-example">Contribute an Example</a>
-      
-      <h1 style={h1Style}>
-        What The F#
-        {/* blink the cursor only when we're on the homepage (i.e.lang is null), because it gets annoying */}
-        {props.lang === null ? <span className="blink">█</span> : <span>█</span>}
-      </h1>
+
+      {props.lang === null ? (
+        <h1 style={h1Style}>
+          What The F#<span className="blink">█</span>
+        </h1>
+        ) : (
+        <a href="https://whatthefsharp.com">
+          <h1 style={h1Style}>
+            What The F#<span>█</span> {/* don't blink the cursor when showing examples because it gets annoying */}
+          </h1>
+        </a>
+        )
+      }
 
       <h2 style={h2Style}>
         {props.lang === null ? 'A Collection of Surprising Behavior by Programming Language' : props.lang}
