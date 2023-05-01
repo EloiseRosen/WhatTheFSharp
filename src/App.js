@@ -8,17 +8,11 @@ import Footer from  './Footer';
 function App() {
   const [lang, setLang] = useState(null);
 
-
-  useEffect(() => {
-    console.log('lang:', lang);
-  }, [lang]);
-
-
   return (
     <>
       <div className="main">
 
-          <Header />
+          <Header lang={lang}/>
 
         {lang === null ? (
           <>
