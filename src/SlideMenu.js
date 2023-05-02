@@ -11,10 +11,10 @@ function SlideMenu({ slideNum, setSlideNum, totalSlides}) {
 
   const handlePrevClick = useCallback(() => {
     setSlideNum(Math.max(1, slideNum - 1));
-  }, [slideNum]);
+  }, [slideNum, setSlideNum]);
   const handleNextClick = useCallback(() => {
     setSlideNum(Math.min(totalSlides, slideNum + 1));
-  }, [slideNum, totalSlides]);
+  }, [slideNum, setSlideNum, totalSlides]);
 
   const handleKeydown = useCallback((event) => {
     if (event.key === 'ArrowLeft') {
