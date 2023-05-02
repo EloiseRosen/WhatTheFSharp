@@ -11,23 +11,17 @@ function App() {
   return (
     <>
       <div className="main">
-
-          <Header lang={lang}/>
-
+        <Header lang={lang}/>
         {lang === null ? (
-          <>
             <LangSelect onLangSelect={(selectedLang) => setLang(selectedLang)} />
-          </>
         ) : (
           <Slide selectedLang={lang} />
         )}
       </div>
     
-  
      <Footer />
     </>
   );
-
 }
 
 export default App;

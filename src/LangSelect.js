@@ -1,11 +1,10 @@
 import React from 'react';
 import { examples } from './examples';
 
+
 const allLanguages = Object.keys(examples).sort();
 
 function LangSelect(props) {
-
-
   return (
   <div className="select-lang">
     Select a language ▼

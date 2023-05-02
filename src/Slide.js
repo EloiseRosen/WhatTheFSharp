@@ -1,6 +1,7 @@
 import React, { useState, useEffect, useCallback } from 'react';
 import { examples } from './examples';
 
+
 function Slide(props) {
   const [slideNum, setSlideNum] = useState(1);
   const examplesForLang = examples[props.selectedLang];
@@ -15,7 +16,6 @@ function Slide(props) {
   const handlePrevClick = useCallback(() => {
     setSlideNum(Math.max(1, slideNum - 1));
   }, [slideNum]);
-
   const handleNextClick = useCallback(() => {
     setSlideNum(Math.min(examplesForLang.length, slideNum + 1));
   }, [slideNum, examplesForLang.length]);
@@ -27,20 +27,18 @@ function Slide(props) {
       handleNextClick();
     }
   }, [handlePrevClick, handleNextClick]);
-
   useEffect(() => {
     window.addEventListener('keydown', handleKeydown);
     return () => {window.removeEventListener('keydown', handleKeydown);};
   }, [handleKeydown]);
 
-  return (<>
-
+  return (
+  <>
     <div className="slide-box">
       <pre>{examplesForLang[slideNum-1]}</pre>
     </div>
 
     <div className="nav-slides">
-
       <button onClick={handlePrevClick} disabled={slideNum === 1}>
         <i className="prev-next fa-sharp fa-solid fa-chevron-left"></i>
       </button>

@@ -1,19 +1,18 @@
 import React from 'react';
 
+
 function Header(props) {
   const h1Style = {
     fontSize: props.lang === null ? '70px' : '53px',
     marginTop: props.lang === null ? '70px' : '-10px',
     marginBottom: props.lang === null ? '15px': '0px'
   };
-
   const h2Style = {
     marginTop: props.lang === null ? '0px' : '-8px',
     marginLeft: props.lang === null ? '0px' : '35px',
     marginBottom: props.lang === null ? '0px' : '37px',
     fontSize: props.lang === null ? '25px' : '30px'
   };
-
 
   return (
     <header>
@@ -24,14 +23,13 @@ function Header(props) {
         <h1 style={h1Style}>
           What The F#<span className="blink">█</span>
         </h1>
-        ) : (
+      ) : (
         <a href="https://whatthefsharp.com">
           <h1 style={h1Style}>
             What The F#<span>█</span> {/* don't blink the cursor when showing examples because it gets annoying */}
           </h1>
         </a>
-        )
-      }
+      )}
 
       <h2 style={h2Style}>
         {props.lang === null ? 'A Collection of Surprising Behavior by Programming Language' : props.lang}
