@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import SlideMenu from  './SlideMenu';
+import SlideNav from  './SlideNav';
 import { examples } from './examples';
 
 
@@ -13,7 +13,7 @@ function Slide(props) {
       <pre>{examplesForLang[slideNum-1]}</pre>
     </div>
 
-    <SlideMenu slideNum={slideNum} setSlideNum={setSlideNum} totalSlides={examplesForLang.length}/>
+    <SlideNav slideNum={slideNum} setSlideNum={setSlideNum} totalSlides={examplesForLang.length}/>
   </>);
 }
 

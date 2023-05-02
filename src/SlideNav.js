@@ -1,14 +1,8 @@
 import React, { useEffect, useCallback } from 'react';
+import CopyLink from  './CopyLink';
 
 
-function SlideMenu({ slideNum, setSlideNum, totalSlides}) {
-  const handleCopyUrl = () => {
-    navigator.clipboard.writeText(window.location.href).then(
-      () => {console.log('URL successfully copied to clipboard');},
-      (err) => {console.error('error copying URL: ', err);}
-    );
-  };
-
+function SlideNav({ slideNum, setSlideNum, totalSlides}) {
   const handlePrevClick = useCallback(() => {
     setSlideNum(Math.max(1, slideNum - 1));
   }, [slideNum, setSlideNum]);
@@ -23,6 +17,7 @@ function SlideMenu({ slideNum, setSlideNum, totalSlides}) {
       handleNextClick();
     }
   }, [handlePrevClick, handleNextClick]);
+  
   useEffect(() => {
     window.addEventListener('keydown', handleKeydown);
     return () => {window.removeEventListener('keydown', handleKeydown);};
@@ -36,9 +31,7 @@ function SlideMenu({ slideNum, setSlideNum, totalSlides}) {
 
       <span className="slide-num">{slideNum} / {totalSlides}</span>
 
-      <button onClick={handleCopyUrl}>
-        <i className="copy-url fa-solid fa-link"></i>
-      </button>
+      <CopyLink />
 
       <button onClick={handleNextClick} disabled={slideNum === totalSlides}>
         <i className="prev-next fa-sharp fa-solid fa-chevron-right"></i>
@@ -47,4 +40,4 @@ function SlideMenu({ slideNum, setSlideNum, totalSlides}) {
   );
 }
 
-export default SlideMenu;
+export default SlideNav;
