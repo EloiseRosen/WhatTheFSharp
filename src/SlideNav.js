@@ -4,11 +4,11 @@ import CopyLink from  './CopyLink';
 
 function SlideNav({ slideNum, setSlideNum, totalSlides}) {
   const handlePrevClick = useCallback(() => {
-    setSlideNum(Math.max(1, slideNum - 1));
-  }, [slideNum, setSlideNum]);
+    setSlideNum((prev) => Math.max(1, prev - 1));
+  }, [setSlideNum]);
   const handleNextClick = useCallback(() => {
-    setSlideNum(Math.min(totalSlides, slideNum + 1));
-  }, [slideNum, setSlideNum, totalSlides]);
+    setSlideNum((prev) => Math.min(totalSlides, prev + 1));
+  }, [setSlideNum, totalSlides]);
 
   const handleKeydown = useCallback((event) => {
     if (event.key === 'ArrowLeft') {
@@ -17,7 +17,7 @@ function SlideNav({ slideNum, setSlideNum, totalSlides}) {
       handleNextClick();
     }
   }, [handlePrevClick, handleNextClick]);
-  
+
   useEffect(() => {
     window.addEventListener('keydown', handleKeydown);
     return () => {window.removeEventListener('keydown', handleKeydown);};
