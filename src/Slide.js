@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import SlideNav from  './SlideNav';
+import SlideNav from './SlideNav';
 import { examples } from './examples';
 
 
@@ -8,13 +8,14 @@ function Slide(props) {
   const examplesForLang = examples[props.selectedLang];
 
   return (
-  <>
-    <div className="slide-box">
-      <pre>{examplesForLang[slideNum-1]}</pre>
-    </div>
+    <>
+      <div className="slide-box">
+        <pre>{examplesForLang[slideNum-1]}</pre>
+      </div>
 
-    <SlideNav slideNum={slideNum} setSlideNum={setSlideNum} totalSlides={examplesForLang.length}/>
-  </>);
+      <SlideNav slideNum={slideNum} setSlideNum={setSlideNum} totalSlides={examplesForLang.length}/>
+    </>
+  );
 }
 
 export default Slide;

@@ -10,9 +10,9 @@ function CopyLink() {
   };
 
   return (
-      <button onClick={handleCopyUrl}>
-        <i className="copy-url fa-solid fa-link"></i>
-      </button>
+    <button onClick={handleCopyUrl}>
+      <i className="copy-url fa-solid fa-link"></i>
+    </button>
   );
 }
 

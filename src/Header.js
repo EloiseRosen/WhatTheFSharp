@@ -17,16 +17,21 @@ function Header(props) {
   return (
     <header>
 
-      <a href="mailto:eloise.rosen+WTFS@gmail.com?subject=What%20the%20F%23%3A%20Contribute%20an%20Example" id="contribute-example">Contribute an Example</a>
+      <a 
+        href="mailto:eloise.rosen+WTFS@gmail.com?subject=What%20the%20F%23%3A%20Contribute%20an%20Example"
+        id="contribute-example"
+      >
+        Contribute an Example
+      </a>
 
       {props.lang === null ? (
         <h1 style={h1Style}>
           What The F#<span className="blink">█</span>
         </h1>
       ) : (
-        <a href="https://whatthefsharp.com">
+        <a href="https://whatthefsharp.com"> {/* when we're on examples, title links back to start */}
           <h1 style={h1Style}>
-            What The F#<span>█</span> {/* don't blink the cursor when showing examples because it gets annoying */}
+            What The F#<span>█</span> {/* don't blink cursor when on examples because it gets annoying */}
           </h1>
         </a>
       )}

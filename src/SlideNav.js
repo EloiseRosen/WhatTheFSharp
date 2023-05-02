@@ -2,7 +2,7 @@ import React, { useEffect, useCallback } from 'react';
 import CopyLink from  './CopyLink';
 
 
-function SlideNav({ slideNum, setSlideNum, totalSlides}) {
+function SlideNav({ slideNum, setSlideNum, totalSlides }) {
   const handlePrevClick = useCallback(() => {
     setSlideNum((prev) => Math.max(1, prev - 1));
   }, [setSlideNum]);
