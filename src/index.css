@@ -176,13 +176,22 @@ button:disabled .prev-next {
   margin-right:20px;
 }
 
-.copy-url {
+.copy-url-icon {
   color: var(--lime-green);
   font-size: 20px;
-  margin:10px;
+  margin: 10px;
+  margin-right: 0px;
 }
 
-button:hover .copy-url {
+.copy-success-tooltip {
+  color: var(--lime-green);
+  margin-left: 8px;
+  font-size: 13px;
+  position: relative;
+  top: -5px;
+}
+
+button:hover .copy-url-icon {
   color: var(--light-lime-green);
 }
 
