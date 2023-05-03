@@ -3,9 +3,8 @@ import SlideNav from './SlideNav';
 import { examples } from './examples';
 
 
-function Slide(props) {
-  const [slideNum, setSlideNum] = useState(1);
-  const examplesForLang = examples[props.selectedLang];
+function Slide({ slideNum, setSlideNum, selectedLang }) {
+  const examplesForLang = examples[selectedLang];
 
   return (
     <>

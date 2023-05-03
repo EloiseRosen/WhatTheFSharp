@@ -7,6 +7,7 @@ import Footer from  './Footer';
 
 function App() {
   const [lang, setLang] = useState(null);
+  const [slideNum, setSlideNum] = useState(1);
 
   return (
     <>
@@ -15,7 +16,7 @@ function App() {
         {lang === null ? (
           <LangSelect onLangSelect={(selectedLang) => setLang(selectedLang)} />
         ) : (
-          <Slide selectedLang={lang} />
+          <Slide slideNum={slideNum} setSlideNum={setSlideNum} selectedLang={lang} />
         )}
       </div>
     

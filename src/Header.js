@@ -18,7 +18,7 @@ function Header(props) {
     <header>
 
       <a 
-        href="mailto:eloise.rosen+WTFS@gmail.com?subject=What%20the%20F%23%3A%20Contribute%20an%20Example"
+        href="mailto:eloise.rosen+WTFS@gmail.com?subject=What%20The%20F%23%3A%20Contribute%20an%20Example"
         id="contribute-example"
       >
         Contribute an Example
