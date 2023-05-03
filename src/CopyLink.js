@@ -2,25 +2,25 @@ import React, { useState } from 'react';
 
 
 function CopyLink() {
-  const [showSuccessTooltip, setShowSuccessTooltip] = useState(false);
+  const [showSuccessMsg, setShowSuccessMsg] = useState(false);
 
-  function handleCopyUrl() {
+  function handleCopyLink() {
     navigator.clipboard.writeText(window.location.href).then(
       () => {
-        setShowSuccessTooltip(true);
-        setTimeout(() => setShowSuccessTooltip(false), 1000);
+        setShowSuccessMsg(true);
+        setTimeout(() => setShowSuccessMsg(false), 1000);
       },
       (err) => console.error('error copying URL: ', err)
     );
   }
 
   return (
-    <>
-      <button onClick={handleCopyUrl}>
-        <i className="copy-url-icon fa-solid fa-link"></i>
-      </button>
-      {showSuccessTooltip && <span className="copy-success-tooltip">copied</span>}
-    </>
+    <div className="copy-link-container">
+       <button onClick={handleCopyLink}>
+         <i className="copy-link-icon fa-solid fa-link"></i>
+       </button>
+       {showSuccessMsg && <span className="copy-success-msg">copied</span>}
+    </div>
   );
 }
 
