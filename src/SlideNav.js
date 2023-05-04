@@ -1,14 +1,25 @@
 import React, { useEffect, useCallback } from 'react';
-import CopyLink from  './CopyLink';
+import { useNavigate } from 'react-router-dom';
+import CopyLink from './CopyLink';
 
 
-function SlideNav({ slideNum, setSlideNum, totalSlides }) {
+function SlideNav({ slideNum, setSlideNum, totalSlides, lang }) {
+  const navigate = useNavigate();
+
   const handlePrevClick = useCallback(() => {
-    setSlideNum((prev) => Math.max(1, prev - 1));
-  }, [setSlideNum]);
+    const newSlideNum = Math.max(1, slideNum-1);
+    setSlideNum(newSlideNum);
+    navigate(`/${lang}/${newSlideNum}`);
+  }, [setSlideNum, navigate, slideNum, lang]);
+
   const handleNextClick = useCallback(() => {
-    setSlideNum((prev) => Math.min(totalSlides, prev + 1));
-  }, [setSlideNum, totalSlides]);
+    const newSlideNum = Math.min(totalSlides, slideNum+1);
+    setSlideNum(newSlideNum);
+    navigate(`/${lang}/${newSlideNum}`);
+  }, [setSlideNum, navigate, slideNum, totalSlides, lang]);
+
+
+
 
   const handleKeydown = useCallback((event) => {
     if (event.key === 'ArrowLeft') {

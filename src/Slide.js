@@ -12,7 +12,7 @@ function Slide({ slideNum, setSlideNum, selectedLang }) {
         <pre>{examplesForLang[slideNum-1]}</pre>
       </div>
 
-      <SlideNav slideNum={slideNum} setSlideNum={setSlideNum} totalSlides={examplesForLang.length}/>
+      <SlideNav slideNum={slideNum} setSlideNum={setSlideNum} totalSlides={examplesForLang.length} lang={selectedLang} />
     </>
   );
 }
