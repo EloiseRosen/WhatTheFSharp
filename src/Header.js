@@ -15,7 +15,7 @@ function Header(props) {
   }, []);
 
   useEffect(() => {
-    if (props.lang === null) {
+    if (props.lang === null && typedTitle !== 'What The F#') {
       typeTitle('What The F#');
     }
   }, [props.lang, typeTitle]);
