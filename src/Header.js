@@ -8,8 +8,8 @@ function Header(props) {
     marginBottom: props.lang === null ? '15px': '0px'
   };
   const h2Style = {
-    marginTop: props.lang === null ? '0px' : '-8px',
-    marginLeft: props.lang === null ? '0px' : '35px',
+    marginTop: props.lang === null ? '0px' : '-4px',
+    marginLeft: props.lang === null ? '0px' : '46px',
     marginBottom: props.lang === null ? '0px' : '37px',
     fontSize: props.lang === null ? '25px' : '30px'
   };
