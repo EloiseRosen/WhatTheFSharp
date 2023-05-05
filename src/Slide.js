@@ -11,7 +11,7 @@ function Slide({ slideNum, setSlideNum, selectedLang }) {
   return (
     <>
       <div className="slide-box">
-        <SyntaxHighlighter language={selectedLang.toLowerCase()} style={irBlack}>
+        <SyntaxHighlighter language={selectedLang.toLowerCase()} style={irBlack} wrapLongLines={true}>
           {examplesForLang[slideNum-1]}
         </SyntaxHighlighter>
       </div>
