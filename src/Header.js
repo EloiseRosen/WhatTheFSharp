@@ -4,7 +4,7 @@ import React, { useState, useEffect, useCallback } from 'react';
 function Header(props) {
   const [typedTitle, setTypedTitle] = useState('');
   const [doneTyping, setDoneTyping] = useState(false);
-
+  
   const typeTitle = useCallback((text, idx=0) => {
     if (idx < text.length) {
       setTypedTitle((prev) => prev + text[idx]);
@@ -15,10 +15,10 @@ function Header(props) {
   }, []);
 
   useEffect(() => {
-    if (props.lang === null && typedTitle !== 'What The F#') {
+    if (props.lang === null && !doneTyping) {
       typeTitle('What The F#');
     }
-  }, [props.lang, typeTitle]);
+  }, [props.lang, typeTitle, doneTyping]);
 
   const h1Style = {
     fontSize: props.lang === null ? '70px' : '53px',
@@ -45,7 +45,7 @@ function Header(props) {
       {props.lang === null ? (
         <h1 style={h1Style}>
           {typedTitle}
-          <span className={doneTyping && "blink"}>█</span>
+          <span className={doneTyping ? "blink" : undefined}>█</span>
         </h1>
       ) : (
         <a href="https://whatthefsharp.com"> {/* when we're on examples, title links back to start */}
