@@ -17,7 +17,7 @@ function Header(props) {
     if (props.lang === null) {
       typeTitle('What The F#');
     }
-  }, [props.lang]);
+  }, [props.lang, typeTitle]);
 
   const h1Style = {
     fontSize: props.lang === null ? '70px' : '53px',
