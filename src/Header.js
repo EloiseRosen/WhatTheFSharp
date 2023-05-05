@@ -1,18 +1,19 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect, useCallback } from 'react';
 
 
 function Header(props) {
   const [typedTitle, setTypedTitle] = useState('');
   const [doneTyping, setDoneTyping] = useState(false);
 
-  function typeTitle(text, idx=0) {
+  const typeTitle = useCallback((text, idx=0) => {
     if (idx < text.length) {
       setTypedTitle((prev) => prev + text[idx]);
-      setTimeout(() => typeTitle(text, idx+1), 100);
+      setTimeout(() => typeTitle(text, idx+1), 100)
     } else {
       setDoneTyping(true);
     }
-  }
+  }, []);
+
   useEffect(() => {
     if (props.lang === null) {
       typeTitle('What The F#');
