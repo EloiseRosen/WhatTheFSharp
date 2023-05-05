@@ -1,7 +1,24 @@
-import React from 'react';
+import React, { useState, useEffect } from 'react';
 
 
 function Header(props) {
+  const [typedTitle, setTypedTitle] = useState('');
+  const [doneTyping, setDoneTyping] = useState(false);
+
+  function typeTitle(text, idx=0) {
+    if (idx < text.length) {
+      setTypedTitle((prev) => prev + text[idx]);
+      setTimeout(() => typeTitle(text, idx+1), 100);
+    } else {
+      setDoneTyping(true);
+    }
+  }
+  useEffect(() => {
+    if (props.lang === null) {
+      typeTitle('What The F#');
+    }
+  }, [props.lang]);
+
   const h1Style = {
     fontSize: props.lang === null ? '70px' : '53px',
     marginTop: props.lang === null ? '70px' : '-10px',
@@ -26,7 +43,8 @@ function Header(props) {
 
       {props.lang === null ? (
         <h1 style={h1Style}>
-          What The F#<span className="blink">█</span>
+          {typedTitle}
+          <span className={doneTyping && "blink"}>█</span>
         </h1>
       ) : (
         <a href="https://whatthefsharp.com"> {/* when we're on examples, title links back to start */}
