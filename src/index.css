@@ -143,38 +143,49 @@ button:hover {
   padding: 10px;
 }
 
-.nav-slides {
+.slide-nav-container {
+  width: 100%;
+  display: block;
+  position: relative;
+  text-align: center;
+  margin-top: 10px;
+  padding: 7px 0;
+}
+
+.prev-button, .next-button {
   display: flex;
   align-items: center;
   justify-content: center;
+  position: absolute;
+  width: 20px;
+  height: 25px;
+  top: 12px;
 }
 
-button:disabled .prev-next {
-  color: var(--light-gray);
+.prev-button {
+  left: 100px;
 }
 
-.prev-next {
-  margin: 10px;
-  font-size: 50px;
+.next-button {
+  right: 100px;
+}
+
+.prev-next-icon {
+  font-size: 45px;
   color: var(--lime-green);
 }
 
-.prev-next:hover {
+.prev-next-icon:hover {
   color:  var(--light-lime-green);
 }
 
-.fa-chevron-right {
-  margin-left: 250px;
-}
-
-.fa-chevron-left {
-  margin-right: 250px;
-}
-
-.slide-num {
+button:disabled .prev-next-icon {
   color: var(--light-gray);
-  font-size: 23px;
-  margin-right:20px;
+}
+
+.middle-of-navbar {
+  font-size: 30px;
+  color: var(--light-gray);
 }
 
 .copy-link-container {
@@ -184,9 +195,10 @@ button:disabled .prev-next {
 
 .copy-link-icon {
   color: var(--lime-green);
-  font-size: 20px;
-  margin: 10px;
-  margin-right: 0px;
+  font-size: 15px;
+  position: relative;
+  top: -5px;
+  left: 12px;
 }
 
 .copy-success-msg {
