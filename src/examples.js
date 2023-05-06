@@ -239,11 +239,6 @@ function test() {
 
 
 const _python = [
-`print(round(0.5))  # rounds down to 0
-print(round(1.5))  # rounds up to 2
-`,
-
-
 `def mutable_default_args_are_evil(item, lst=[]):
     lst.append(item)
     return lst
@@ -270,6 +265,11 @@ for pair in zip(list1, list2):
 # (2, 'b')
 # (3, 'c')
 # when there's a mismatch in length, zip silently truncates with no error or warning
+`,
+
+
+`print(round(0.5))  # rounds down to 0
+print(round(1.5))  # rounds up to 2
 `,
 ];
 
