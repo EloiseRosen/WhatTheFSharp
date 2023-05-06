@@ -22,7 +22,7 @@ function Header(props) {
 
   const h1Style = {
     fontSize: props.lang === null ? '70px' : '53px',
-    marginTop: props.lang === null ? '70px' : '-10px',
+    marginTop: props.lang === null ? '70px' : '0px',
     marginBottom: props.lang === null ? '15px': '0px'
   };
   const h2Style = {

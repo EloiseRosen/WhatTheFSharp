@@ -163,11 +163,11 @@ button:hover {
 }
 
 .prev-button {
-  left: 100px;
+  left: 50px;
 }
 
 .next-button {
-  right: 100px;
+  right: 50px;
 }
 
 .prev-next-icon {
