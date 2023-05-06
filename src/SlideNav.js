@@ -32,18 +32,18 @@ function SlideNav({ slideNum, setSlideNum, totalSlides, lang }) {
   }, [handleKeydown]);
 
   return (
-    <div class="slide-nav-container">
+    <div className="slide-nav-container">
 
-      <button onClick={handlePrevClick} disabled={slideNum === 1} class="prev-button">
+      <button onClick={handlePrevClick} disabled={slideNum === 1} className="prev-button">
         <i className="prev-next-icon fa-sharp fa-solid fa-chevron-left"></i>
       </button>
 
-      <div class="middle-of-navbar">
+      <div className="middle-of-navbar">
         <span>{slideNum}/{totalSlides}</span>
         <CopyLink />
       </div>
 
-      <button onClick={handleNextClick} disabled={slideNum === totalSlides} class="next-button">
+      <button onClick={handleNextClick} disabled={slideNum === totalSlides} className="next-button">
         <i className="prev-next-icon fa-sharp fa-solid fa-chevron-right"></i>
       </button>
 
