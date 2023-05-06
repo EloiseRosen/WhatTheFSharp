@@ -21,8 +21,8 @@ function Header(props) {
   }, [props.lang, typeTitle, doneTyping]);
 
   const h1Style = {
-    fontSize: props.lang === null ? '70px' : '53px',
-    marginTop: props.lang === null ? '70px' : '0px',
+    fontSize: window.innerWidth <= 480 ? '40px' : (props.lang === null ? '70px' : '53px'),
+    marginTop: props.lang === null ? '70px' : '5px',
     marginBottom: props.lang === null ? '15px': '0px'
   };
   const h2Style = {
