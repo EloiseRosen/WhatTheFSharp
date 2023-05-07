@@ -18,6 +18,21 @@ result=$((x + y))
 `,
 ]
 
+const _c = [
+`#include <stdio.h>
+
+#define SIX 1+5
+#define NINE 8+1
+
+int main() {
+    printf("SIX * NINE = %d", SIX * NINE);
+}
+// output: SIX * NINE = 42
+
+// credit: hobovsky
+`,
+]
+
 
 const _java = [
 `import java.util.Calendar;
@@ -52,7 +67,7 @@ public class Main {
 // 100 == 100
 // 200 != 200
 
-// credit : hobovsky
+// credit: hobovsky
 `,
 
 
@@ -78,14 +93,14 @@ public class Main {
 // Number of args is 1
 // Number of args is 3
 
-// credit : hobovsky
+// credit: hobovsky
 `,
 
 
 `public class Main {
     public static void main(String[] args) {
         char c = 'c';
-        System.out.printf("++c is %s%n", ++c) ;
+        System.out.printf("++c is %s%n", ++c);
         System.out.printf("c+1 is %s%n", c+1);
     }
 }
@@ -93,7 +108,7 @@ public class Main {
 // ++c is d
 // c+1 is 101
 
-// credit : hobovsky
+// credit: hobovsky
 `,
 ]
 
@@ -426,5 +441,5 @@ SELECT * FROM person WHERE gender NOT IN ('M', 'F');  -- returns 0 rows
 ]
 
 
-const examples = { 'Bash': _bash, 'Java': _java, 'JavaScript': _javaScript, 'Python': _python,'R': _r, 'SQL': _sql}
+const examples = { 'Bash': _bash, 'C': _c, 'Java': _java, 'JavaScript': _javaScript, 'Python': _python,'R': _r, 'SQL': _sql}
 export { examples };
