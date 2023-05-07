@@ -42,9 +42,9 @@ public class Main {
     }
     public static void printEq(Integer a, Integer b) {
         if (a == b) {
-            System.out.printf("%d == %d\n", a, b);
+            System.out.printf("%d == %d%n", a, b);
         } else {
-            System.out.printf("%d != %d\n", a, b);
+            System.out.printf("%d != %d%n", a, b);
         }
     }
 }
@@ -69,7 +69,7 @@ public class Main {
     }
     
     public static <T> void printLen(T... args) {
-        System.out.printf("Number of args is %d\n", args.length);
+        System.out.printf("Number of args is %d%n", args.length);
     }
 }
 // output:
