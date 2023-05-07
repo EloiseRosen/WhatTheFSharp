@@ -33,6 +33,53 @@ public class Main {
     }
 }
 `,
+
+
+`public class Main {
+    public static void main(String[] args) { 
+        printEq(100, 100);
+        printEq(200, 200);
+    }
+    public static void printEq(Integer a, Integer b) {
+        if (a == b) {
+            System.out.printf("%d == %d\n", a, b);
+        } else {
+            System.out.printf("%d != %d\n", a, b);
+        }
+    }
+}
+// output:
+// 100 == 100
+// 200 != 200
+
+// credit : hobovsky
+`,
+
+
+`public class Main {
+    public static void main(String[] args) {
+        
+        String[] strings = new String[] {"A", "B", "C"};
+        printLen(strings);
+        printLen("A", "B", "C");
+        
+        int[] ints = new int[] {1, 2, 3};
+        printLen(ints);
+        printLen(1, 2, 3);
+    }
+    
+    public static <T> void printLen(T... args) {
+        System.out.printf("Number of args is %d\n", args.length);
+    }
+}
+// output:
+// Number of args is 3
+// Number of args is 3
+// Number of args is 1
+// Number of args is 3
+
+// credit : hobovsky
+`,
 ]
 
 
