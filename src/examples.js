@@ -52,6 +52,19 @@ int main() {
 
 // credit: hobovsky
 `,
+
+
+`#include <stdexcept>
+throw std::runtime_error("throwing a proper exception object");
+
+throw "but we can throw anything at all";
+
+#include <vector>
+throw std::vector<int>({1, 2, 3});
+
+throw 17;
+
+// credit: hobovsky`,
 ]
 
 
