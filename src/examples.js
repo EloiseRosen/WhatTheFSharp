@@ -314,6 +314,11 @@ print(T)  # FALSE
 `,
 
 
+`print(all.equal(1, 1)) # returns the boolean TRUE 
+print(all.equal(1, 2)) # does not return FALSE! Instead returns a string, "Mean relative difference: 1"
+`,
+
+
 `nums <- c(1:5)
 print(nums) # 1 2 3 4 5
 
@@ -332,18 +337,12 @@ print(vector[10])  # NA, no error`
 ,
 
 
-`print(all.equal(1, 1)) # returns the boolean TRUE 
-print(all.equal(1, 2)) # does not return FALSE! Instead returns a string, "Mean relative difference: 1"
-`,
-
-
 `print(round(0.5))  # rounds down to 0
 print(round(1.5))  # rounds up to 2
 `,
 
 
-`
-func <- function(allegedly, takes, four, params) {
+`func <- function(allegedly, takes, four, params) {
     print('la la la everything is fine')
     return(allegedly + takes + four)
 }
