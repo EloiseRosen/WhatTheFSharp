@@ -80,6 +80,21 @@ public class Main {
 
 // credit : hobovsky
 `,
+
+
+`public class Main {
+    public static void main(String[] args) {
+        char c = 'c';
+        System.out.printf("++c is %s%n", ++c) ;
+        System.out.printf("c+1 is %s%n", c+1);
+    }
+}
+// output is: 
+// ++c is d
+// c+1 is 101
+
+// credit : hobovsky
+`,
 ]
 
 
