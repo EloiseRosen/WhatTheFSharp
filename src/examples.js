@@ -301,11 +301,12 @@ print(round(1.5))  # rounds up to 2
 
 
 const _r = [
-`print(TRUE == T)  # TRUE
+`# T is a predefined alias for TRUE
+print(TRUE == T)  # TRUE
 print(identical(T, TRUE))  # TRUE
 print(T)  # TRUE
 
-# you can overwrite the boolean T with something else
+# you can overwrite T with something else
 T = "bob"
 print(T)  # "bob"
 T = FALSE
