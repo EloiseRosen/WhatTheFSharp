@@ -34,6 +34,27 @@ int main() {
 ]
 
 
+const _cpp = [
+`#include <string>
+#include <iostream>
+
+using namespace std;
+
+int main() {
+    string s = "The best language ever is.. Brainfuck";
+    cout << s + '!' << endl;
+    
+    cout << "The best language ever is.. Brainfuck" + '!' << endl;
+}
+// output: 
+// The best language ever is.. Brainfuck!
+// fuck
+
+// credit: hobovsky
+`,
+]
+
+
 const _java = [
 `import java.util.Calendar;
 import java.util.Date;
@@ -441,5 +462,5 @@ SELECT * FROM person WHERE gender NOT IN ('M', 'F');  -- returns 0 rows
 ]
 
 
-const examples = { 'Bash': _bash, 'C': _c, 'Java': _java, 'JavaScript': _javaScript, 'Python': _python,'R': _r, 'SQL': _sql}
+const examples = { 'Bash': _bash, 'C': _c, 'C++': _cpp, 'Java': _java, 'JavaScript': _javaScript, 'Python': _python,'R': _r, 'SQL': _sql}
 export { examples };
