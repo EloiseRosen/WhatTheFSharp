@@ -19,7 +19,7 @@ function CopyLink() {
        <button onClick={handleCopyLink}>
          <i className="copy-link-icon fa-solid fa-link"></i>
        </button>
-       {showSuccessMsg && <span className="copy-success-msg">copied</span>}
+       {showSuccessMsg && <span className="copy-success-msg">URL copied</span>}
     </div>
   );
 }
