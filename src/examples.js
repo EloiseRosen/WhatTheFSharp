@@ -174,8 +174,13 @@ printLetter('a'); // b
 
 
 `let obj = {name: 'bob', age: 42};
-console.log(obj.thisDoesNotExit); // no error, undefined
+console.log(obj.thisDoesNotExist); // no error, undefined
 delete obj.thisAlsoDoesNotExist; // no error, just silently ignored
+
+
+
+
+
 `,
 
 
@@ -215,11 +220,13 @@ console.log(date.toString()); // Sat Feb 01 2020...
 
 
 `function test(firstName='Bob', age=42) {
-    console.log('first name is' + firstName); // first name is 12
-    console.log('age is ' + age ); // age is Jimothy
+    console.log('first name is' + firstName);
+    console.log('age is ' + age );
 }
 
 test(age=12, firstName='Jimothy');
+// first name is 12
+// age is Jimothy
 `,
 
 
@@ -245,6 +252,11 @@ const _python = [
 
 print(mutable_default_args_are_evil(1))  # [1]
 print(mutable_default_args_are_evil(2))  # [1, 2]
+
+
+
+
+
 `,
 
 
