@@ -181,6 +181,9 @@ delete obj.thisAlsoDoesNotExist; // no error, just silently ignored
 
 
 
+
+
+
 `,
 
 
@@ -220,8 +223,8 @@ console.log(date.toString()); // Sat Feb 01 2020...
 
 
 `function test(firstName='Bob', age=42) {
-    console.log('first name is' + firstName);
-    console.log('age is ' + age );
+    console.log('first name is ' + firstName);
+    console.log('age is ' + age);
 }
 
 test(age=12, firstName='Jimothy');
@@ -257,6 +260,8 @@ print(mutable_default_args_are_evil(2))  # [1, 2]
 
 
 
+
+
 `,
 
 
@@ -265,6 +270,15 @@ for i in range(0, len(lst)):
     lst[i] = lst[i].upper()
 print(lst)  # ['A', 'B', 'C']
 print(i)  # 2, leaks out of loop
+`,
+
+
+`arr = [lambda: print(i) for i in range(2)]
+print(arr)  # [<function <listcomp>.<lambda> at [address]>, <function <listcomp>.<lambda> at [different address]>]
+arr[0]()  # prints 1
+arr[1]()  # prints 1
+
+# credit: Madjosz
 `,
 
 
@@ -327,11 +341,13 @@ print(round(1.5))  # rounds up to 2
 `,
 
 
-`func <- function(x, y) {
-  print('la la la everything is fine')
-  return(x*2 + 16)
+`
+func <- function(allegedly, takes, four, params) {
+    print('la la la everything is fine')
+    return(allegedly + takes + four)
 }
-print(func(3))  # 22. no errors or warnings about wrong number of args
+print(func(1, 2, 3))  # 6
+# no errors or warnings about arg number
 `,
 ]
 
