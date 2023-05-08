@@ -125,21 +125,6 @@ let () =
 
 
 const _java = [
-`import java.util.Calendar;
-import java.util.Date;
-
-public class Main {
-    public static void main(String[] args) {
-        Calendar calendar = Calendar.getInstance();
-        calendar.set(2020, 1, 1);
-        Date date = calendar.getTime();
-        System.out.println(date.toString()); // Feb 01 2020...
-        // year is 1-indexed, day is 1-indexed, month is ZERO-indexed
-    }
-}
-`,
-
-
 `public class Main {
     public static void main(String[] args) { 
         printEq(100, 100);
@@ -184,6 +169,21 @@ public class Main {
 // Number of args is 3
 
 // credit: hobovsky
+`,
+
+
+`import java.util.Calendar;
+import java.util.Date;
+
+public class Main {
+    public static void main(String[] args) {
+        Calendar calendar = Calendar.getInstance();
+        calendar.set(2020, 1, 1);
+        Date date = calendar.getTime();
+        System.out.println(date.toString()); // Feb 01 2020...
+        // year is 1-indexed, day is 1-indexed, month is ZERO-indexed
+    }
+}
 `,
 
 
@@ -459,11 +459,6 @@ for pair in zip(list1, list2):
 # (3, 'c')
 # when there's a mismatch in length, zip silently truncates with no error or warning
 `,
-
-
-`print(round(0.5))  # rounds down to 0
-print(round(1.5))  # rounds up to 2
-`,
 ];
 
 
@@ -502,11 +497,6 @@ print(final)  # 1 5
 `vector <- c(NA, NA, NA)
 print(vector[10])  # NA, no error`
 ,
-
-
-`print(round(0.5))  # rounds down to 0
-print(round(1.5))  # rounds up to 2
-`,
 
 
 `func <- function(allegedly, takes, four, params) {
