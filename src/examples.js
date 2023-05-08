@@ -100,6 +100,30 @@ class Program
 ]
 
 
+const _fsharp = [
+`module Example
+
+let () =
+  let array = [| 1, 2, 3 |]
+  let first = array.[0]
+  printfn "%A" first
+
+(* 
+  Output: 
+  (1, 2, 3)
+*)
+
+(* 
+  Explanation: 
+  Elements of an array are separated by ; in F#.
+  , separates elements of a tuple and parentheses are optional for tuples. 
+
+  credit: monadius
+*)
+`,
+]
+
+
 const _java = [
 `import java.util.Calendar;
 import java.util.Date;
@@ -507,6 +531,6 @@ SELECT * FROM person WHERE gender NOT IN ('M', 'F');  -- returns 0 rows
 ]
 
 
-const examples = { 'Bash': _bash, 'C': _c, 'cpp': _cpp, 'csharp': _csharp, 
+const examples = { 'Bash': _bash, 'C': _c, 'cpp': _cpp, 'csharp': _csharp, 'fsharp': _fsharp,
   'Java': _java, 'JavaScript': _javaScript, 'Python': _python,'R': _r, 'SQL': _sql}
 export { examples };
