@@ -5,6 +5,7 @@
   --purple: #bcc1fe;
   --pink: #f1b6c6;
   --light-gray: #808080;
+  --med-light-gray: #5C5A5A;
   --med-gray: #534f4f;
   --dark-gray: #3a3939;
   --background-lighter: #272626;
@@ -94,7 +95,11 @@ button:hover {
 
 .select-lang {
   font-size: 25px;
-  margin: 120px auto 300px auto;
+  margin: 100px auto 275px auto;
+  /* Note: Size of dropdown is 300px, so .select-lang margin-bottom
+  and .footer-icon-container margin-top should allow enough space 
+  to fit that nicely (currently 275px + 75px = 350px).
+  */
   text-align: center;
   background: var(--med-gray);
   border: 3px ridge var(--pink);
@@ -114,10 +119,22 @@ button:hover {
   margin-top: 2px;
   border-radius: 5px;
   z-index: 1;
+  max-height: 300px; /* limit size of dropdown box */
+  overflow-y: scroll;
+}
+
+.select-lang-options::-webkit-scrollbar {  /* scrollbar track */
+  width: 12px;
+  background-color: var(--light-gray);  /* blend in with rest of dropdown */
+}
+
+.select-lang-options::-webkit-scrollbar-thumb {
+  border-radius: 8px;
+  background-color: var(--med-light-gray);
 }
 
 .select-lang-options li {
-  padding: 8px 20px;
+  padding: 8px 40px;
   cursor: pointer;
   border-radius: 5px;
 }
@@ -215,7 +232,7 @@ button:hover .copy-link-icon {
 .footer-icon-container {
   display: flex;
   justify-content: center;
-  margin-top: 7rem;
+  margin-top: 75px;
   background-color: var(--background-darker);
 }
 
