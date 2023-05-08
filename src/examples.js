@@ -68,6 +68,38 @@ throw 17;
 ]
 
 
+const _csharp = [
+`using System;
+using System.Collections.Generic;
+
+class Program
+{
+    static void Main()
+    {
+        var actions = new List<Action>();
+        for (int i = 0; i < 5; ++i)
+        {
+            actions.Add(() => Console.WriteLine($"i = {i}"));
+        }
+
+        foreach (var action in actions)
+        {
+            action();
+        }
+    }
+}
+// output:
+// i = 5
+// i = 5
+// i = 5
+// i = 5
+// i = 5
+
+// credit: hobovsky
+`,
+]
+
+
 const _java = [
 `import java.util.Calendar;
 import java.util.Date;
@@ -475,5 +507,6 @@ SELECT * FROM person WHERE gender NOT IN ('M', 'F');  -- returns 0 rows
 ]
 
 
-const examples = { 'Bash': _bash, 'C': _c, 'C++': _cpp, 'Java': _java, 'JavaScript': _javaScript, 'Python': _python,'R': _r, 'SQL': _sql}
+const examples = { 'Bash': _bash, 'C': _c, 'cpp': _cpp, 'csharp': _csharp, 
+  'Java': _java, 'JavaScript': _javaScript, 'Python': _python,'R': _r, 'SQL': _sql}
 export { examples };

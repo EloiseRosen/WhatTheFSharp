@@ -2,7 +2,8 @@ import React, { useState } from 'react';
 import { examples } from './examples';
 
 
-const allLanguages = Object.keys(examples).sort();
+const allLanguages = Object.keys(examples).sort((a, b) => a.toLowerCase() < b.toLowerCase() ? -1 : 1);
+
 
 function LangSelect(props) {
   const [isOpen, setIsOpen] = useState(false);
@@ -16,7 +17,7 @@ function LangSelect(props) {
       <ul className="select-lang-options">
         {allLanguages.map((language) => (
           <li key={language} onClick={() => props.onLangSelect(language)}>
-            {language}
+            {props.getDisplayName(language)}
           </li>
         ))}
       </ul>

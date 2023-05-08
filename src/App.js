@@ -5,13 +5,19 @@ import LangSelect from './LangSelect';
 import Slide from './Slide';
 import Footer from './Footer';
 
+
+function getDisplayName(lang) {
+  const problematic = {'csharp': 'C#', 'cpp': 'C++', 'fsharp': 'F#'}
+  return  Object.keys(problematic).includes(lang) ? problematic[lang] : lang;
+}
+
 function App() {
   const [lang, setLang] = useState(null);
 
   return (
     <Router>
       <div className="main">
-        <Header lang={lang} />
+        <Header lang={lang} getDisplayName={getDisplayName} />
         <Routes>
           <Route index element={<LangSelectWrapper setSelectedLang={setLang} />} />
           <Route path="/:lang/:slideNum" element={<SlideWrapper setSelectedLang={setLang} />} />
@@ -30,7 +36,7 @@ function LangSelectWrapper({ setSelectedLang }) {
   }, [lang, setSelectedLang]);
 
   return lang === null ? (
-    <LangSelect onLangSelect={(selectedLang) => setLang(selectedLang)} />
+    <LangSelect onLangSelect={(selectedLang) => setLang(selectedLang)} getDisplayName={getDisplayName} />
   ) : (
     <Navigate to={`/${lang}/1`} />
   );

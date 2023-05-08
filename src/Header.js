@@ -56,7 +56,7 @@ function Header(props) {
       )}
 
       <h2 style={h2Style}>
-        {props.lang === null ? 'A Collection of Surprising Behavior by Programming Language' : props.lang}
+        {props.lang === null ? 'A Collection of Surprising Behavior by Programming Language' : props.getDisplayName(props.lang)}
       </h2>
 
     </header>
