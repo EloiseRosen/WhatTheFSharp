@@ -16,7 +16,7 @@ result=$((x + y))
 
 # credit: jakkals
 `,
-]
+];
 
 const _c = [
 `#include <stdio.h>
@@ -31,7 +31,7 @@ int main() {
 
 // credit: hobovsky
 `,
-]
+];
 
 
 const _cpp = [
@@ -65,7 +65,7 @@ throw std::vector<int>({1, 2, 3});
 throw 17;
 
 // credit: hobovsky`,
-]
+];
 
 
 const _csharp = [
@@ -97,7 +97,7 @@ class Program
 
 // credit: hobovsky
 `,
-]
+];
 
 
 const _fsharp = [
@@ -121,7 +121,16 @@ let () =
   credit: monadius
 *)
 `,
-]
+];
+
+
+const _haskell = [
+`> minimum (3, 5)
+5
+
+-- credit: dram
+`,
+];
 
 
 const _java = [
@@ -200,7 +209,7 @@ public class Main {
 
 // credit: hobovsky
 `,
-]
+];
 
 
 const _javaScript = [
@@ -415,6 +424,22 @@ function test() {
 ];
 
 
+const _prolog = [
+`is_three(3).
+
+?- is_three(3) % true
+?- X is 1 + 2; is_three(X) % true
+?- is_three(1 + 2) % false !?!
+
+/* Explanation
++ (and other mathematical operations) do not have any special meaning by themselves. They merely build a term (eg. 1 + 2 -> +(1, 2)). This term can be evaluated by "is" or =:=. But alone, +(1, 2) is not the same as 3 and so does not match the predicate is_three.
+
+credit: Kacarott
+*/
+`,
+];
+
+
 const _python = [
 `def mutable_default_args_are_evil(item, lst=[]):
     lst.append(item)
@@ -506,7 +531,17 @@ print(vector[10])  # NA, no error`
 print(func(1, 2, 3))  # 6
 # no errors or warnings about arg number
 `,
-]
+];
+
+
+const _ruby = [
+`puts("abc".gsub!("a", "x") == "xbc") # true
+puts("abc".gsub!("z", "x") == "abc") # false
+
+# credit: hobovsky
+`,
+];
+
 
 const _sql = [
 `-- person table:
@@ -518,9 +553,10 @@ const _sql = [
 
 SELECT * FROM person WHERE gender NOT IN ('M', 'F');  -- returns 0 rows
 `,
-]
+];
 
 
 const examples = { 'Bash': _bash, 'C': _c, 'cpp': _cpp, 'csharp': _csharp, 'fsharp': _fsharp,
-  'Java': _java, 'JavaScript': _javaScript, 'Python': _python,'R': _r, 'SQL': _sql}
+  'Haskell': _haskell, 'Java': _java, 'JavaScript': _javaScript, 'Prolog': _prolog, 
+   'Python': _python,'R': _r, 'Ruby': _ruby, 'SQL': _sql}
 export { examples };
