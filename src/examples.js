@@ -1,4 +1,5 @@
 const _bash = [
+{code: 
 `#!/bin/bash
 
 # "set -x" and "set +x" toggle tracing
@@ -16,9 +17,14 @@ result=$((x + y))
 
 # credit: jakkals
 `,
+explanation: '',
+credit: 'jakkals'
+},
 ];
 
+
 const _c = [
+{code: 
 `#include <stdio.h>
 
 #define SIX 1+5
@@ -31,10 +37,14 @@ int main() {
 
 // credit: hobovsky
 `,
+explanation: '',
+credit: ''
+},
 ];
 
 
 const _cpp = [
+{code: 
 `#include <string>
 #include <iostream>
 
@@ -52,8 +62,11 @@ int main() {
 
 // credit: hobovsky
 `,
+explanation: '',
+credit: ''
+},
 
-
+{code:
 `#include <stdexcept>
 throw std::runtime_error("throwing a proper exception object");
 
@@ -65,10 +78,14 @@ throw std::vector<int>({1, 2, 3});
 throw 17;
 
 // credit: hobovsky`,
+explanation: '',
+credit: ''
+},
 ];
 
 
 const _csharp = [
+{code:
 `using System;
 using System.Collections.Generic;
 
@@ -97,10 +114,14 @@ class Program
 
 // credit: hobovsky
 `,
+explanation: '',
+credit: ''
+},
 ];
 
 
 const _fsharp = [
+{code:
 `module Example
 
 let () =
@@ -121,19 +142,27 @@ let () =
   credit: monadius
 *)
 `,
+explanation: '',
+credit: ''
+},
 ];
 
 
 const _haskell = [
+{code:
 `> minimum (3, 5)
 5
 
 -- credit: dram
 `,
+explanation: '',
+credit: ''
+},
 ];
 
 
 const _java = [
+{code:
 `public class Main {
     public static void main(String[] args) { 
         printEq(100, 100);
@@ -153,8 +182,11 @@ const _java = [
 
 // credit: hobovsky
 `,
+explanation: '',
+credit: ''
+},
 
-
+{code:
 `public class Main {
     public static void main(String[] args) {
         
@@ -179,8 +211,11 @@ const _java = [
 
 // credit: hobovsky
 `,
+explanation: '',
+credit: ''
+},
 
-
+{code:
 `import java.util.Calendar;
 import java.util.Date;
 
@@ -194,8 +229,11 @@ public class Main {
     }
 }
 `,
+explanation: '',
+credit: ''
+},
 
-
+{code:
 `public class Main {
     public static void main(String[] args) {
         char c = 'c';
@@ -209,16 +247,23 @@ public class Main {
 
 // credit: hobovsky
 `,
+explanation: '',
+credit: ''
+},
 ];
 
 
 const _javaScript = [
+{code:
 `let arr = [1, 2, 3, 100];
 arr.sort();
 console.log(arr); // [1, 100, 2, 3]
 `,
+explanation: '',
+credit: ''
+},
 
-
+{code:
 `console.log(parseInt(.000003)); // 0
 console.log(parseInt(.0000003)); // 3
 // explanation: parseInt expects a string. If you pass something that's not a
@@ -229,15 +274,21 @@ console.log(parseInt(.0000003)); // 3
 
 // credit: Madjosz
 `,
+explanation: '',
+credit: ''
+},
 
-
+{code:
 `const arr1 = [1, 2, 3];
 const arr2 = [4, 5, 6];
 const arr3 = arr1 + arr2;
 console.log(arr3, typeof arr3); // 1,2,34,5,6 string
 `,
+explanation: '',
+credit: ''
+},
 
-
+{code:
 `throw new Error('I am throwing an error like a proper language.');
 
 throw 'I am throwing not an error but a STRING. There will be no stack trace.';
@@ -246,23 +297,32 @@ throw {'in fact': 'I can', 'throw': 'anything at all'};
 throw true;
 throw new RegExp('ahhhhh', 'i');
 `,
+explanation: '',
+credit: ''
+},
 
-
+{code:
 `let arr = [];
 const thing = arr.pop(); // no error D:
 console.log(thing); // undefined
 console.log(arr); // []
 `,
+explanation: '',
+credit: ''
+},
 
-
+{code:
 `// doesn't follow transitive law (if a is equal to b and b is equal to c, then
 // a is equal to c)
 console.log("0" == 0); // true
 console.log(0 == []); // true
 console.log("0" == []); // false
 `,
+explanation: '',
+credit: ''
+},
 
-
+{code:
 `let arr = ['you can change', 'the array', 'via', 'the length property'];
 arr.length = 1;
 console.log(arr); // [ 'you can change']
@@ -273,8 +333,11 @@ console.log(arr); // [ 'you can change', <9 empty items> ]
 arr.length = null; // no error
 console.log(arr); // []
 `,
+explanation: '',
+credit: ''
+},
 
-
+{code:
 `let arr = [
   'It is fun to',
   'silently ignore stuff',
@@ -287,13 +350,19 @@ console.log(arr);
 //   'silently ignore stuff',
 //   'without giving a warning or error' ]
 `,
+explanation: '',
+credit: ''
+},
 
-
+{code:
 `let arr = [undefined, undefined, undefined];
 console.log(arr[10]); // undefined, no error
 `,
+explanation: '',
+credit: ''
+},
 
-
+{code:
 `function demoAdditionalParameters() {
     console.log('la la la everything is fine');
     console.log(arguments);
@@ -316,14 +385,20 @@ demoMissingParameters();
 // la la la everything is still fine
 // undefined undefined undefined undefined
 `,
+explanation: '',
+credit: ''
+},
 
-
+{code:
 `let string = 'bob';
 string[1] = 'X'; // no error, just silently ignored
 console.log(string); // bob
 `,
+explanation: '',
+credit: ''
+},
 
-
+{code:
 `let arr = [0, 1, 2];
 arr[3] = undefined;
 arr[42] = 4;
@@ -339,16 +414,22 @@ console.log(arr[20] === arr[3]); // true
 // hee hee they are
 console.log(arr.filter(el => el === undefined).length); // 1
 `,
+explanation: '',
+credit: ''
+},
 
-
+{code:
 `function printLetter(letter) {
     arguments[0] = 'b'; // you can do this
     console.log(letter);
 }
 printLetter('a'); // b
 `,
+explanation: '',
+credit: ''
+},
 
-
+{code:
 `let obj = {name: 'bob', age: 42};
 console.log(obj.thisDoesNotExist); // no error, undefined
 delete obj.thisAlsoDoesNotExist; // no error, just silently ignored
@@ -361,8 +442,11 @@ delete obj.thisAlsoDoesNotExist; // no error, just silently ignored
 
 
 `,
+explanation: '',
+credit: ''
+},
 
-
+{code:
 `let thing = true + {};
 console.log(thing, typeof thing); // 'true[object Object]' string
 
@@ -390,14 +474,20 @@ console.log(thing, typeof thing); // 'true-1' string
 thing = 'bob' + null;
 console.log(thing, typeof thing); // 'bobnull' string
 `,
+explanation: '',
+credit: ''
+},
 
-
+{code:
 `const date = new Date(2020, 1, 1);
 console.log(date.toString()); // Sat Feb 01 2020...
 // year is 1-indexed, day is 1-indexed, month is ZERO-indexed
 `,
+explanation: '',
+credit: ''
+},
 
-
+{code:
 `function test(firstName='Bob', age=42) {
     console.log('first name is ' + firstName);
     console.log('age is ' + age);
@@ -407,8 +497,11 @@ test(age=12, firstName='Jimothy');
 // first name is 12
 // age is Jimothy
 `,
+explanation: '',
+credit: ''
+},
 
-
+{code:
 `console.log(test()); // 0
 console.log(num1); // undefined
 console.log(num2); // ReferenceError: num2 is not defined
@@ -421,10 +514,14 @@ function test() {
     return num0;
 }
 `,
+explanation: '',
+credit: ''
+},
 ];
 
 
 const _prolog = [
+{code:
 `is_three(3).
 
 ?- is_three(3) % true
@@ -437,10 +534,14 @@ const _prolog = [
 credit: Kacarott
 */
 `,
+explanation: '+ (and other mathematical operations) do not have any special meaning by themselves. They merely build a term (eg. 1 + 2 -> +(1, 2)). This term can be evaluated by "is" or =:=. But alone, +(1, 2) is not the same as 3 and so does not match the predicate is_three.',
+credit: 'Kacarott'
+},
 ];
 
 
 const _python = [
+{code:
 `def mutable_default_args_are_evil(item, lst=[]):
     lst.append(item)
     return lst
@@ -455,16 +556,22 @@ print(mutable_default_args_are_evil(2))  # [1, 2]
 
 
 `,
+explanation: '',
+credit: ''
+},
 
-
+{code:
 `lst = ['a', 'b', 'c']
 for i in range(0, len(lst)):
     lst[i] = lst[i].upper()
 print(lst)  # ['A', 'B', 'C']
 print(i)  # 2, leaks out of loop
 `,
+explanation: '',
+credit: ''
+},
 
-
+{code:
 `arr = [lambda: print(i) for i in range(2)]
 print(arr)  # [<function <listcomp>.<lambda> at [address]>, <function <listcomp>.<lambda> at [different address]>]
 arr[0]()  # prints 1
@@ -472,8 +579,11 @@ arr[1]()  # prints 1
 
 # credit: Madjosz
 `,
+explanation: '',
+credit: ''
+},
 
-
+{code:
 `list1 = [1, 2, 3, 4]
 list2 = ['a', 'b', 'c']
 
@@ -484,10 +594,14 @@ for pair in zip(list1, list2):
 # (3, 'c')
 # when there's a mismatch in length, zip silently truncates with no error or warning
 `,
+explanation: '',
+credit: ''
+},
 ];
 
 
 const _r = [
+{code:
 `# T is a predefined alias for TRUE
 print(TRUE == T)  # TRUE
 print(identical(T, TRUE))  # TRUE
@@ -499,13 +613,19 @@ print(T)  # "bob"
 T = FALSE
 print(T)  # FALSE
 `,
+explanation: '',
+credit: ''
+},
 
-
+{code:
 `print(all.equal(1, 1)) # returns the boolean TRUE 
 print(all.equal(1, 2)) # does not return FALSE! Instead returns a string, "Mean relative difference: 1"
 `,
+explanation: '',
+credit: ''
+},
 
-
+{code:
 `nums <- c(1:5)
 print(nums) # 1 2 3 4 5
 
@@ -517,13 +637,19 @@ print(final)  # 1 5
 # if there's a mismatch in vector length, we just silently cycle back through with 
 # no error or warning
 `,
+explanation: '',
+credit: ''
+},
 
-
+{code:
 `vector <- c(NA, NA, NA)
 print(vector[10])  # NA, no error`
 ,
+explanation: '',
+credit: ''
+},
 
-
+{code:
 `func <- function(allegedly, takes, four, params) {
     print('la la la everything is fine')
     return(allegedly + takes + four)
@@ -531,19 +657,27 @@ print(vector[10])  # NA, no error`
 print(func(1, 2, 3))  # 6
 # no errors or warnings about arg number
 `,
+explanation: '',
+credit: ''
+},
 ];
 
 
 const _ruby = [
+{code:
 `puts("abc".gsub!("a", "x") == "xbc") # true
 puts("abc".gsub!("z", "x") == "abc") # false
 
 # credit: hobovsky
 `,
+explanation: '',
+credit: ''
+},
 ];
 
 
 const _sql = [
+{code:
 `-- person table:
 -- id   name       gender
 -- ---- ---------- -------
@@ -553,6 +687,9 @@ const _sql = [
 
 SELECT * FROM person WHERE gender NOT IN ('M', 'F');  -- returns 0 rows
 `,
+explanation: '',
+credit: ''
+},
 ];
 
 
