@@ -124,7 +124,7 @@ button:hover {
 
 .select-lang-options::-webkit-scrollbar {  /* scrollbar track */
   width: 12px;
-  background-color: white;
+  background-color: var(--light-gray); /* blend in with rest of dropdown */
 }
 
 .select-lang-options::-webkit-scrollbar-thumb {
@@ -244,6 +244,5 @@ button:hover .copy-link-icon {
 }
 
 .footer-icon:hover {
-  margin: 1.4rem 1rem 2rem 1rem;
   color: var(--light-lime-green);
 }
