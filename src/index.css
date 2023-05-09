@@ -95,20 +95,19 @@ button:hover {
 
 .select-lang {
   font-size: 25px;
-  margin: 100px auto 275px auto;
+  margin: 100px auto 250px auto;
   /* Note: Size of dropdown is 300px, so .select-lang margin-bottom
   and .footer-icon-container margin-top should allow enough space 
-  to fit that nicely (currently 275px + 75px = 350px).
+  to fit that nicely.
   */
-  text-align: center;
   background: var(--med-gray);
   border: 3px ridge var(--pink);
   border-radius: 10px;
-  width: 350px;
+  width: 330px;
 }
 
 .select-lang-button-content {
-  padding: 20px 20px;
+  padding: 20px;
   cursor: pointer;
 }
 
@@ -125,7 +124,7 @@ button:hover {
 
 .select-lang-options::-webkit-scrollbar {  /* scrollbar track */
   width: 12px;
-  background-color: var(--light-gray);  /* blend in with rest of dropdown */
+  background-color: white;
 }
 
 .select-lang-options::-webkit-scrollbar-thumb {
@@ -134,7 +133,10 @@ button:hover {
 }
 
 .select-lang-options li {
-  padding: 8px 40px;
+  padding-top: 8px;
+  padding-right: 25px;
+  padding-bottom: 8px;
+  padding-left: 20px;
   cursor: pointer;
   border-radius: 5px;
 }
@@ -232,7 +234,7 @@ button:hover .copy-link-icon {
 .footer-icon-container {
   display: flex;
   justify-content: center;
-  margin-top: 75px;
+  margin-top: 60px;
   background-color: var(--background-darker);
 }
 

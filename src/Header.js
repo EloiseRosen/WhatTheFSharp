@@ -22,7 +22,7 @@ function Header(props) {
 
   const h1Style = {
     fontSize: window.innerWidth <= 480 ? '40px' : (props.lang === null ? '70px' : '53px'),
-    marginTop: props.lang === null ? '70px' : '15px',
+    marginTop: props.lang === null ? '60px' : '15px',
     marginBottom: props.lang === null ? '15px': '0px'
   };
   const h2Style = {
