@@ -4,6 +4,7 @@
   --coral: #ff7575;
   --purple: #bcc1fe;
   --pink: #f1b6c6;
+  --extra-light-gray: #e0e0e0;
   --light-gray: #808080;
   --med-light-gray: #5C5A5A;
   --med-gray: #534f4f;
@@ -98,8 +99,7 @@ button:hover {
   margin: 100px auto 250px auto;
   /* Note: Size of dropdown is 300px, so .select-lang margin-bottom
   and .footer-icon-container margin-top should allow enough space 
-  to fit that nicely.
-  */
+  to fit that nicely. */
   background: var(--med-gray);
   border: 3px ridge var(--pink);
   border-radius: 10px;
@@ -157,6 +157,34 @@ button:hover {
   background-color: var(--black);
   font-size: 16px;
   padding: 10px;
+}
+
+.spoiler-box {
+  border-radius: 15px;
+  position: relative;
+}
+
+.spoiler-click-msg {
+  color: var(--extra-light-gray);
+  font-family: Verdana, Helvetica, Arial, sans-serif;
+  font-size: 24px;
+  font-weight: 800;
+  opacity: 0.25;
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+}
+
+.explanation {
+  white-space: pre-wrap;
+  padding: 16px;
+}
+
+.credit {
+  color: var(--light-gray);
+  padding: 8px 5px 2px 6px;
+  font-size: 17px;
 }
 
 .slide-nav-container {
@@ -248,32 +276,4 @@ button:hover .copy-link-icon {
 
 .footer-icon:hover {
   color: var(--light-lime-green);
-}
-
-
-
-
-.credit {
-  color: #808080;
-  opacity: .8;
-  padding: 8px 5px 2px 6px;
-}
-
-.spoiler-box {
-  background-color: #1e1e1e;
-  border-radius: 10px;
-  padding: 15px;
-  position: relative;
-}
-
-.spoiler-click-msg {
-  color: gray;
-  font-family: Verdana, Helvetica, Arial, sans-serif;
-  font-size: 30px;
-  font-weight: 800;
-  opacity: 0.4;
-  position: absolute;
-  left: 50%;
-  top: 50%;
-  transform: translate(-50%, -50%);
 }

@@ -6,12 +6,14 @@ import { examples } from './examples';
 
 
 function Slide({ slideNum, setSlideNum, selectedLang }) {
-  const examplesForLang = examples[selectedLang];
   const [showExplanation, setShowExplanation] = useState(false);
+  const examplesForLang = examples[selectedLang];
 
+  const spoilerBoxStyle = {
+    backgroundColor: showExplanation ? '#323131' : '#1d1c1c'
+  }
   const explanationStyle = {
-    color: showExplanation ? '#35fd06' : 'transparent',
-    whiteSpace: 'pre-wrap'
+    color: showExplanation ? '#35fd06' : 'transparent'
   };
 
   return (
@@ -30,13 +32,14 @@ function Slide({ slideNum, setSlideNum, selectedLang }) {
 
                               <div 
                               className="spoiler-box"
+                              style={spoilerBoxStyle}
                               onClick={() => setShowExplanation(!showExplanation)}
                             >
                                   <div className="spoiler-click-msg">
                                     {showExplanation ? '' : 'click for explanation'}
                                   </div>
         
-                                  <div style={explanationStyle}>
+                                  <div className="explanation" style={explanationStyle}>
                                   {examplesForLang[slideNum-1]['explanation']}
                                   </div>
                           </div>
