@@ -14,8 +14,6 @@ result=$((x + y))
 # output:
 # + x=1
 # + set +x
-
-# credit: jakkals
 `,
 explanation: '',
 credit: 'jakkals'
@@ -34,11 +32,9 @@ int main() {
     printf("SIX * NINE = %d", SIX * NINE);
 }
 // output: SIX * NINE = 42
-
-// credit: hobovsky
 `,
 explanation: '',
-credit: ''
+credit: 'hobovsky'
 },
 ];
 
@@ -59,11 +55,9 @@ int main() {
 // output: 
 // The best language ever is.. Brainfuck!
 // fuck
-
-// credit: hobovsky
 `,
 explanation: '',
-credit: ''
+credit: 'hobovsky'
 },
 
 {code:
@@ -76,10 +70,9 @@ throw "but we can throw anything at all";
 throw std::vector<int>({1, 2, 3});
 
 throw 17;
-
-// credit: hobovsky`,
+`,
 explanation: '',
-credit: ''
+credit: 'hobovsky'
 },
 ];
 
@@ -111,11 +104,9 @@ class Program
 // i = 5
 // i = 5
 // i = 5
-
-// credit: hobovsky
 `,
 explanation: '',
-credit: ''
+credit: 'hobovsky'
 },
 ];
 
@@ -133,17 +124,12 @@ let () =
   Output: 
   (1, 2, 3)
 *)
-
-(* 
-  Explanation: 
-  Elements of an array are separated by ; in F#.
-  , separates elements of a tuple and parentheses are optional for tuples. 
-
-  credit: monadius
-*)
 `,
-explanation: '',
-credit: ''
+explanation:
+`Elements of an array are separated by ; in F#.
+, separates elements of a tuple and parentheses are optional for tuples. 
+`,
+credit: 'monadius'
 },
 ];
 
@@ -152,11 +138,9 @@ const _haskell = [
 {code:
 `> minimum (3, 5)
 5
-
--- credit: dram
 `,
 explanation: '',
-credit: ''
+credit: 'dram'
 },
 ];
 
@@ -179,11 +163,9 @@ const _java = [
 // output:
 // 100 == 100
 // 200 != 200
-
-// credit: hobovsky
 `,
 explanation: '',
-credit: ''
+credit: 'hobovsky'
 },
 
 {code:
@@ -208,11 +190,9 @@ credit: ''
 // Number of args is 3
 // Number of args is 1
 // Number of args is 3
-
-// credit: hobovsky
 `,
 explanation: '',
-credit: ''
+credit: 'hobovsky'
 },
 
 {code:
@@ -244,11 +224,9 @@ credit: ''
 // output is: 
 // ++c is d
 // c+1 is 101
-
-// credit: hobovsky
 `,
 explanation: '',
-credit: ''
+credit: 'hobovsky'
 },
 ];
 
@@ -271,11 +249,9 @@ console.log(parseInt(.0000003)); // 3
 // case of the second example, the result is '3e-7'. Then parseInt goes from the
 // start of the string and collects characters which can be interpreted as int,
 // which gives the number 3.
-
-// credit: Madjosz
 `,
 explanation: '',
-credit: ''
+credit: 'Madjosz'
 },
 
 {code:
@@ -527,12 +503,6 @@ const _prolog = [
 ?- is_three(3) % true
 ?- X is 1 + 2; is_three(X) % true
 ?- is_three(1 + 2) % false !?!
-
-/* Explanation
-+ (and other mathematical operations) do not have any special meaning by themselves. They merely build a term (eg. 1 + 2 -> +(1, 2)). This term can be evaluated by "is" or =:=. But alone, +(1, 2) is not the same as 3 and so does not match the predicate is_three.
-
-credit: Kacarott
-*/
 `,
 explanation: '+ (and other mathematical operations) do not have any special meaning by themselves. They merely build a term (eg. 1 + 2 -> +(1, 2)). This term can be evaluated by "is" or =:=. But alone, +(1, 2) is not the same as 3 and so does not match the predicate is_three.',
 credit: 'Kacarott'
@@ -576,11 +546,9 @@ credit: ''
 print(arr)  # [<function <listcomp>.<lambda> at [address]>, <function <listcomp>.<lambda> at [different address]>]
 arr[0]()  # prints 1
 arr[1]()  # prints 1
-
-# credit: Madjosz
 `,
 explanation: '',
-credit: ''
+credit: 'Madjosz'
 },
 
 {code:
@@ -667,11 +635,9 @@ const _ruby = [
 {code:
 `puts("abc".gsub!("a", "x") == "xbc") # true
 puts("abc".gsub!("z", "x") == "abc") # false
-
-# credit: hobovsky
 `,
 explanation: '',
-credit: ''
+credit: 'hobovsky'
 },
 ];
 
