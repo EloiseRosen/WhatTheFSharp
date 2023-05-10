@@ -117,18 +117,15 @@ const _fsharp = [
 
 let () =
   let array = [| 1, 2, 3 |]
-  let first = array.[0]
-  printfn "%A" first
-
-(* 
-  Output: 
-  (1, 2, 3)
-*)
+  let len = array.Length
+  printfn "Length of array is: %A" len // Length of array is: 1
 `,
 explanation:
-`Elements of an array are separated by ; in F#.
-, separates elements of a tuple and parentheses are optional for tuples. 
-`,
+<>Elements of an array are separated by <code>;</code> in F#.<br/>
+<code>,</code> separates elements of a tuple and parentheses are optional for tuples. 
+</>
+,
+
 credit: 'monadius'
 },
 ];
