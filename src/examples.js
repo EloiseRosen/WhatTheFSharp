@@ -301,14 +301,35 @@ credit: ''
 },
 
 {code:
-`// doesn't follow transitive law (if a is equal to b and b is equal to c, then
-// a is equal to c)
-console.log("0" == 0); // true
+`// Doesn't follow transitive law (if a is equal to b and b is equal to c, then
+// a is equal to c):
+console.log('0' == 0); // true
 console.log(0 == []); // true
-console.log("0" == []); // false
+console.log('0' == []); // false
+
+
+// See also:
+console.log('2' < 12) // true
+console.log(12 < '13') // true
+console.log('2' < '13') // false
+
 `,
-explanation: '',
-credit: ''
+explanation:
+(
+<>
+First example:
+<br/>
+In <code>'0' == 0</code>, the <code>'0'</code> gets converted to a number, and <code>0</code> does equal <code>0</code>, so this gives <code>true</code>. 
+In <code>0 == []</code>, the <code>[]</code> first gets converted to a string, <code>''</code>, which gets converted to a number, <code>0</code>. <code>0</code> does equal <code>0</code>, so this gives <code>true</code>. 
+In <code>'0' == []</code>, the <code>[]</code> first gets converted to a string, <code>''</code>, as before. We then compare the string <code>'0'</code> with the string <code>''</code>, which are not the same value, so this gives <code>false</code>. 
+<br/><br/>
+Second example:
+<br/>
+When comparing a string and a number, the string first gets converted to a number. <code>2 &lt; 12</code> is <code>true</code> and <code>12 &lt; 13</code> is <code>true</code>.
+However, when 2 strings are compared, the comparison is done lexicographically, in which case <code>'2'</code> comes after <code>'13'</code>.
+</>
+),
+credit: 'eloise and dram'
 },
 
 {code:
