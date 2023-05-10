@@ -136,10 +136,20 @@ credit: 'monadius'
 
 const _haskell = [
 {code:
-`> minimum (3, 5)
-5
+`module Main where
+
+main :: IO ()
+main = do
+  print (minimum (3, 5)) -- 5
+
+  print (length (3, 5)) -- 1. wait what
+
+  print (minimum ("huh?", 5)) -- 5
 `,
-explanation: '',
+explanation:
+`In Haskell, there's an instance of Foldable for the partially applied tuple type (,) a.  In other words, for the purposes of maximum, length, etc., a tuple (a, b) is considered a container with only one element b. The a is unused in this case.
+The correct code is min 3 5 using the two-parameter min function, or minimum [3, 5] using a list.
+`,
 credit: 'dram'
 },
 ];
