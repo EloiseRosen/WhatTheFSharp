@@ -1,5 +1,9 @@
 import React, { useState } from 'react';
 import { examples } from './examples';
+import { useNavigate } from 'react-router-dom';
+
+
+
 
 
 const allLanguages = Object.keys(examples).sort((a, b) => a.toLowerCase() < b.toLowerCase() ? -1 : 1);
@@ -7,6 +11,7 @@ const allLanguages = Object.keys(examples).sort((a, b) => a.toLowerCase() < b.to
 
 function LangSelect(props) {
   const [isOpen, setIsOpen] = useState(false);
+  const navigate = useNavigate();
 
   let selectLangDivStyle;
   if (props.lang === null) {
@@ -50,6 +55,7 @@ function LangSelect(props) {
   const handleLangSelect = (language) => {
     props.onLangSelect(language);
     setIsOpen(false);
+    navigate(`/${language}/1`);
   };
 
   return (
