@@ -306,7 +306,6 @@ console.log('0' == []); // false
 console.log('2' < 12) // true
 console.log(12 < '13') // true
 console.log('2' < '13') // false
-
 `,
 explanation:
 <>
@@ -321,7 +320,7 @@ Second example:
 When comparing a string and a number, the string first gets converted to a number. <code>2 &lt; 12</code> is <code>true</code> and <code>12 &lt; 13</code> is <code>true</code>.
 However, when 2 strings are compared, the comparison is done lexicographically, in which case <code>'2'</code> comes after <code>'13'</code>.
 </>,
-credit: 'eloise and dram'
+credit: 'dram'
 },
 
 {code:
