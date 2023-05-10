@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import SlideNav from './SlideNav';
 import SyntaxHighlighter from 'react-syntax-highlighter';
 import { irBlack } from 'react-syntax-highlighter/dist/esm/styles/hljs';
@@ -8,6 +8,13 @@ import { examples } from './examples';
 function Slide({ slideNum, setSlideNum, selectedLang }) {
   const [showExplanation, setShowExplanation] = useState(false);
   const examplesForLang = examples[selectedLang];
+
+  // when we reveal the explanation on one slide, we want the state to go back to
+  // unrevealed when we change slides. So when slideNum changes, showExplanation
+  // needs to go back to false.
+  useEffect(() => {
+    setShowExplanation(false);
+  }, [slideNum, selectedLang]);
 
   // TODO see if I can remove this now
   // this is for an error where we're switching languages and the current slideNum
