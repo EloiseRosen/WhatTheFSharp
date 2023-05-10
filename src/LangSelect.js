@@ -1,17 +1,27 @@
-import React, { useState } from 'react';
+import React, { useState, useRef, useEffect } from 'react';
 import { examples } from './examples';
 import { useNavigate } from 'react-router-dom';
 
 
-
-
-
 const allLanguages = Object.keys(examples).sort((a, b) => a.toLowerCase() < b.toLowerCase() ? -1 : 1);
-
 
 function LangSelect(props) {
   const [isOpen, setIsOpen] = useState(false);
   const navigate = useNavigate();
+  const dropdownRef = useRef(null);
+
+  // if we click outside the dropdown, close it
+  useEffect(() => {
+    const handleDocumentClick = (event) => {
+      if (dropdownRef.current && !dropdownRef.current.contains(event.target)) {
+        setIsOpen(false);
+      }
+    };
+    document.addEventListener('mousedown', handleDocumentClick);
+    return () => {
+      document.removeEventListener('mousedown', handleDocumentClick);
+    }
+  }, []);
 
   let selectLangDivStyle;
   if (props.lang === null) {
@@ -59,7 +69,7 @@ function LangSelect(props) {
   };
 
   return (
-    <div style={selectLangDivStyle}>
+    <div style={selectLangDivStyle} ref={dropdownRef}>
       <div className="dropdown-container">
         <div style={selectLangButtonStyle} onClick={() => setIsOpen(!isOpen)}>
           {props.lang === null ? 'Select a language' :  props.getDisplayName(props.lang)}
