@@ -123,8 +123,7 @@ let () =
 explanation:
 <>Elements of an array are separated by <code>;</code> in F#.<br/>
 <code>,</code> separates elements of a tuple and parentheses are optional for tuples. 
-</>
-,
+</>,
 
 credit: 'monadius'
 },
@@ -143,14 +142,12 @@ main = do
 
   print (minimum ("huh?", 5)) -- 5
 `,
-explanation: (
+explanation:
 <>
 In Haskell, there's an instance of <code>Foldable</code> for the partially applied tuple type <code>(,) a</code>.  In other words, for the purposes of <code>maximum</code>, <code>length</code>, etc., a tuple <code>(a, b)</code> is considered a container with only one element <code>b</code>. The <code>a</code> is unused in this case.
 <br />
 The correct code is <code>min 3 5</code> using the two-parameter <code>min</code> function, or <code>minimum [3, 5]</code> using a list.
-</>
-)
-,
+</>,
 credit: 'dram'
 },
 ];
@@ -257,9 +254,9 @@ credit: ''
 console.log(parseInt(.0000003)); // 3
 `,
 explanation:
-(<>
+<>
 <code>parseInt</code> expects a string. If you pass something that's not a string, it will attempt to convert your argument to a string for you. In the case of the second example, the result is <code>"3e-7"</code>. Then <code>parseInt</code> goes from the start of the string and collects characters which can be interpreted as integer, which gives the number <code>3</code>.
-</>),
+</>,
 
 credit: 'Madjosz'
 },
@@ -312,7 +309,6 @@ console.log('2' < '13') // false
 
 `,
 explanation:
-(
 <>
 First example:
 <br/>
@@ -324,8 +320,7 @@ Second example:
 <br/>
 When comparing a string and a number, the string first gets converted to a number. <code>2 &lt; 12</code> is <code>true</code> and <code>12 &lt; 13</code> is <code>true</code>.
 However, when 2 strings are compared, the comparison is done lexicographically, in which case <code>'2'</code> comes after <code>'13'</code>.
-</>
-),
+</>,
 credit: 'eloise and dram'
 },
 
@@ -535,7 +530,13 @@ const _prolog = [
 ?- X is 1 + 2; is_three(X) % true
 ?- is_three(1 + 2) % false !?!
 `,
-explanation: '+ (and other mathematical operations) do not have any special meaning by themselves. They merely build a term (eg. 1 + 2 -> +(1, 2)). This term can be evaluated by "is" or =:=. But alone, +(1, 2) is not the same as 3 and so does not match the predicate is_three.',
+explanation:
+<>
+<code>+</code> (and other mathematical operations) do not have any special meaning by themselves. 
+They merely build a term (eg. <code>1 + 2</code> -&gt; <code>+(1, 2)</code>). This term can be 
+evaluated by <code>is</code> or <code>=:=</code>. But alone, <code>+(1, 2)</code> is not the same as <code>3</code> and 
+so does not match the predicate <code>is_three</code>.
+</>,
 credit: 'Kacarott'
 },
 ];
