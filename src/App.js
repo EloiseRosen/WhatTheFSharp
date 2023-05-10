@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import { BrowserRouter as Router, Route, Navigate, useParams, Routes } from 'react-router-dom';
+import { BrowserRouter as Router, Route, useNavigate, useParams, Routes } from 'react-router-dom';
 import Header from './Header';
 import LangSelect from './LangSelect';
 import Slide from './Slide';
@@ -11,46 +11,50 @@ function getDisplayName(lang) {
   return  Object.keys(problematic).includes(lang) ? problematic[lang] : lang;
 }
 
-function App() {
+function MainComponent() {
   const [lang, setLang] = useState(null);
+  const [slideNum, setSlideNum] = useState(1);
+  const navigate = useNavigate();
+  const { lang: urlLang, slideNum: urlSlideNum } = useParams();
+
+  useEffect(() => {
+    if (urlLang && urlSlideNum) {
+      setLang(urlLang);
+      setSlideNum(parseInt(urlSlideNum));
+    }
+  }, [urlLang, urlSlideNum]);
+
+  useEffect(() => {
+    if (lang && slideNum) {
+      navigate(`/${lang}/${slideNum}`);
+    }
+  }, [lang, slideNum, navigate]);
+
+  const handleLangSelect = (selectedLang) => {
+    setLang(selectedLang);
+    setSlideNum(1);
+  };
 
   return (
+    <div className="main">
+      <Header lang={lang} getDisplayName={getDisplayName}/>
+      <LangSelect onLangSelect={handleLangSelect} getDisplayName={getDisplayName} lang={lang}/>
+      {lang !== null && <Slide slideNum={slideNum} setSlideNum={setSlideNum} selectedLang={lang} />}
+    </div>
+  );
+}
+
+
+function App() {
+  return (
     <Router>
-      <div className="main">
-        <Header lang={lang} getDisplayName={getDisplayName} />
-        <Routes>
-          <Route index element={<LangSelectWrapper setSelectedLang={setLang} />} />
-          <Route path="/:lang/:slideNum" element={<SlideWrapper setSelectedLang={setLang} />} />
-        </Routes>
-      </div>
+      <Routes>
+        <Route path="/:lang/:slideNum" element={<MainComponent />} />
+        <Route path="/" element={<MainComponent />} />
+      </Routes>
       <Footer />
     </Router>
   );
-}
-
-function LangSelectWrapper({ setSelectedLang }) {
-  const [lang, setLang] = useState(null);
-
-  useEffect(() => {
-    setSelectedLang(lang);
-  }, [lang, setSelectedLang]);
-
-  return lang === null ? (
-    <LangSelect onLangSelect={(selectedLang) => setLang(selectedLang)} getDisplayName={getDisplayName} />
-  ) : (
-    <Navigate to={`/${lang}/1`} />
-  );
-}
-
-function SlideWrapper({ setSelectedLang }) {
-  const { lang, slideNum } = useParams();
-  const [currentSlideNum, setCurrentSlideNum] = useState(parseInt(slideNum, 10));
-
-  useEffect(() => {
-    setSelectedLang(lang);
-  }, [lang, setSelectedLang]);
-
-  return <Slide slideNum={currentSlideNum} setSlideNum={setCurrentSlideNum} selectedLang={lang} />;
 }
 
 export default App;

@@ -9,6 +9,15 @@ function Slide({ slideNum, setSlideNum, selectedLang }) {
   const [showExplanation, setShowExplanation] = useState(false);
   const examplesForLang = examples[selectedLang];
 
+  // TODO see if I can remove this now
+  // this is for an error where we're switching languages and the current slideNum
+  // doesn't exist for the new language, and the slideNum update to 1 hasn't happened 
+  // yet, so there's an error when we try to access the 'code' value of undefined, and
+  // if we just wait for a sec slideNum will update and Slide will re-render.
+  if (!examplesForLang[slideNum - 1]) {
+    return null;
+  }
+
   const spoilerBoxStyle = {
     backgroundColor: showExplanation ? '#323131' : '#1d1c1c'
   }

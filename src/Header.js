@@ -25,12 +25,6 @@ function Header(props) {
     marginTop: props.lang === null ? '60px' : '15px',
     marginBottom: props.lang === null ? '15px': '0px'
   };
-  const h2Style = {
-    marginTop: props.lang === null ? '0px' : '-4px',
-    marginLeft: props.lang === null ? '0px' : '46px',
-    marginBottom: props.lang === null ? '0px' : '37px',
-    fontSize: props.lang === null ? '25px' : '30px'
-  };
 
   return (
     <header>
@@ -55,9 +49,8 @@ function Header(props) {
         </a>
       )}
 
-      <h2 style={h2Style}>
-        {props.lang === null ? 'A Collection of Surprising Behavior by Programming Language' : props.getDisplayName(props.lang)}
-      </h2>
+      {props.lang === null && <h2>A Collection of Surprising Behavior by Programming Language</h2>}
+      
 
     </header>
   );

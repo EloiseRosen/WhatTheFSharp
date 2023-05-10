@@ -43,8 +43,9 @@ h1 {
 }
 
 h2 {
-  font-weight: 300;
   color: var(--coral);
+  font-size: 25px;
+  font-weight: 300;
 }
 
 a {
@@ -94,25 +95,16 @@ button:hover {
   }
 }
 
-.select-lang {
-  font-size: 25px;
-  margin: 100px auto 250px auto;
-  /* Note: Size of dropdown is 300px, so .select-lang margin-bottom
-  and .footer-icon-container margin-top should allow enough space 
-  to fit that nicely. */
-  background: var(--med-gray);
-  border: 3px ridge var(--pink);
-  border-radius: 10px;
-  width: 330px;
-}
-
-.select-lang-button-content {
-  padding: 20px;
-  cursor: pointer;
+.dropdown-container {
+  position: relative;
+  display: inline-flex;
 }
 
 .select-lang-options {
   position: absolute;
+  left: 0;
+  top: 100%;
+  font-size: 25px;
   background-color: var(--light-gray);
   list-style: none;
   margin-top: 2px;
@@ -183,7 +175,7 @@ button:hover {
 
 .credit {
   color: var(--light-gray);
-  padding: 8px 5px 2px 6px;
+  padding: 10px 5px 2px 6px;
   font-size: 17px;
 }
 
