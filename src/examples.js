@@ -244,13 +244,8 @@ credit: ''
 {code:
 `console.log(parseInt(.000003)); // 0
 console.log(parseInt(.0000003)); // 3
-// explanation: parseInt expects a string. If you pass something that's not a
-// string, it will attempt to convert your argument to a string for you. In the
-// case of the second example, the result is '3e-7'. Then parseInt goes from the
-// start of the string and collects characters which can be interpreted as int,
-// which gives the number 3.
 `,
-explanation: '',
+explanation: "parseInt expects a string. If you pass something that's not a string, it will attempt to convert your argument to a string for you. In the case of the second example, the result is '3e-7'. Then parseInt goes from the start of the string and collects characters which can be interpreted as int, which gives the number 3.",
 credit: 'Madjosz'
 },
 
