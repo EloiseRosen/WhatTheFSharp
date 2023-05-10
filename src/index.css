@@ -1,6 +1,7 @@
 :root {
   --lime-green: #35fd06;
   --light-lime-green: #b8f992;
+  --yellow: #fff4aa;
   --coral: #ff7575;
   --purple: #bcc1fe;
   --pink: #f1b6c6;
@@ -171,6 +172,10 @@ button:hover {
 .explanation {
   white-space: pre-wrap;
   padding: 16px;
+}
+
+.explanation.showExplanation code {
+  color: var(--yellow);
 }
 
 .credit {

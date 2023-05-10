@@ -146,10 +146,14 @@ main = do
 
   print (minimum ("huh?", 5)) -- 5
 `,
-explanation:
-`In Haskell, there's an instance of Foldable for the partially applied tuple type (,) a.  In other words, for the purposes of maximum, length, etc., a tuple (a, b) is considered a container with only one element b. The a is unused in this case.
-The correct code is min 3 5 using the two-parameter min function, or minimum [3, 5] using a list.
-`,
+explanation: (
+<>
+In Haskell, there's an instance of <code>Foldable</code> for the partially applied tuple type <code>(,) a</code>.  In other words, for the purposes of <code>maximum</code>, <code>length</code>, etc., a tuple <code>(a, b)</code> is considered a container with only one element <code>b</code>. The <code>a</code> is unused in this case.
+<br />
+The correct code is <code>min 3 5</code> using the two-parameter <code>min</code> function, or <code>minimum [3, 5]</code> using a list.
+</>
+)
+,
 credit: 'dram'
 },
 ];

@@ -55,8 +55,8 @@ function Slide({ slideNum, setSlideNum, selectedLang }) {
                                     {showExplanation ? '' : 'click for explanation'}
                                   </div>
         
-                                  <div className="explanation" style={explanationStyle}>
-                                  {examplesForLang[slideNum-1]['explanation']}
+                                  <div className={`explanation ${showExplanation ? 'showExplanation' : ''}`} style={explanationStyle}>
+                                    {examplesForLang[slideNum-1]['explanation']}
                                   </div>
                           </div>
                    }
