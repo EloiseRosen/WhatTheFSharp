@@ -177,6 +177,7 @@ button:hover {
 
 .explanation.showExplanation code {
   color: var(--yellow);
+  font-family: Courier, 'Courier New', monospace;
 }
 
 .credit {
