@@ -133,6 +133,64 @@ explanation: '',
 credit: 'hobovsky',
 runLink: 'https://replit.com/@EloiseRosen/WTFScpp3#',
 },
+
+{code:
+`#include <map>
+#include <string>
+#include <iostream>
+
+using namespace std;
+
+
+int main() {
+
+  map<string, int> cache { { "A", 42 }, { "B", 13 }, { "Z", 7 }, { "D", 0 } };
+  cout << "Cache size is " << cache.size() << '\n';
+
+  cout << "A = " << cache["A"] << ", ";
+  cout << "B = " << cache["B"] << ", ";
+  cout << "C = " << cache["C"] << ", ";
+  cout << "D = " << cache["D"] << '\n';
+
+  cout << "Cache size is " << cache.size() << '\n';
+  
+}
+`,
+explanation: '',
+credit: 'hobovsky',
+runLink: 'https://replit.com/@EloiseRosen/WTFScpp4#main.cpp',
+},
+
+{code:
+`#include <map>
+#include <string>
+#include <iostream>
+
+using namespace std;
+
+const map<string, int> precomputed { { "A", 42 }, { "B", 13 }, { "Z", 7 } };
+
+int main() {
+  cout << precomputed["A"];
+}
+
+/* Result is confusing compilation error:
+./src/main.cpp: In function ‘int main()’:
+./src/main.cpp:10:26: error: passing ‘const std::map<std::__cxx11::basic_string<char>, int>’ as ‘this’ argument discards qualifiers [-fpermissive]
+   10 |   cout << precomputed["A"];
+      |                          ^
+In file included from /nix/store/1gf2flfqnpqbr1b4p4qz2f72y42bs56r-gcc-11.3.0/include/c++/11.3.0/map:61,
+                 from ./src/main.cpp:1:
+/nix/store/1gf2flfqnpqbr1b4p4qz2f72y42bs56r-gcc-11.3.0/include/c++/11.3.0/bits/stl_map.h:512:7: note:   in call to ‘std::map<_Key, _Tp, _Compare, _Alloc>::mapped_type& std::map<_Key, _Tp, _Compare, _Alloc>::operator[](std::map<_Key, _Tp, _Compare, _Alloc>::key_type&&) [with _Key = std::__cxx11::basic_string<char>; _Tp = int; _Compare = std::less<std::__cxx11::basic_string<char> >; _Alloc = std::allocator<std::pair<const std::__cxx11::basic_string<char>, int> >; std::map<_Key, _Tp, _Compare, _Alloc>::mapped_type = int; std::map<_Key, _Tp, _Compare, _Alloc>::key_type = std::__cxx11::basic_string<char>]’
+  512 |       operator[](key_type&& __k)
+      |       ^~~~~~~~
+*/
+`,
+explanation: '',
+credit: 'hobovsky',
+runLink: 'https://replit.com/@EloiseRosen/WTFScpp5',
+},
+
 ];
 
 
