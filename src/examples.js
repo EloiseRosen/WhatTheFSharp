@@ -334,6 +334,32 @@ To solve this, you explicitly have to cast the <code>null</code> to the type of 
 credit: 'hobovsky',
 runLink: 'https://replit.com/@EloiseRosen/WTFSJava5#',
 },
+
+{code:
+`import java.util.stream.*;
+
+public class Main {
+    public static void main(String[] args) {
+        String result = Stream.of("A", "B", "C", "D")
+                .reduce("Elements in the stream are: ", String::concat);
+        System.out.println(result);
+
+        String parallelResult = Stream.of("A", "B", "C", "D")
+                .parallel()
+                .reduce("Elements in the stream are: ", String::concat);
+        System.out.println(parallelResult);
+    }
+}
+/*
+output:
+Elements in the stream are: ABCD
+Elements in the stream are: AElements in the stream are: BElements in the stream are: CElements in the stream are: D
+*/ 
+`,
+explanation: '',
+credit: 'Madjosz',
+runLink: 'https://replit.com/@EloiseRosen/WTFSJava6#Main.java',
+},
 ];
 
 
@@ -663,7 +689,7 @@ evaluated by <code>is</code> or <code>=:=</code>. But alone, <code>+(1, 2)</code
 so does not match the predicate <code>is_three</code>.
 </>,
 credit: 'Kacarott',
-runLink: 'https://replit.com/@EloiseRosen/WTFSProlog1#main.sh',
+runLink: 'https://swish.swi-prolog.org/p/Prolog_WTF%231.pl?q=is_three(1%20%2b%202)',
 },
 ];
 
