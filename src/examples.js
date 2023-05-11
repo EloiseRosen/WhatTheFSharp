@@ -566,7 +566,7 @@ evaluated by <code>is</code> or <code>=:=</code>. But alone, <code>+(1, 2)</code
 so does not match the predicate <code>is_three</code>.
 </>,
 credit: 'Kacarott',
-runLink: '',
+runLink: 'https://replit.com/@EloiseRosen/WTFSProlog1#main.sh',
 },
 ];
 
