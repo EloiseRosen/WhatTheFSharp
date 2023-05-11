@@ -230,17 +230,27 @@ button:disabled .prev-next-icon {
   color: var(--light-gray);
 }
 
-.copy-link-container {
+.copy-and-run-container {
   position: relative;
   display: inline-block;
 }
 
+.copy-link-icon-button {
+  margin-left: 35px;
+}
 .copy-link-icon {
   color: var(--lime-green);
   font-size: 15px;
   position: relative;
-  top: -5px;
-  left: 12px;
+  top: -4px;
+}
+
+.play-icon {
+  color: var(--lime-green);
+  font-size: 20px;
+  position: relative;
+  top: -2px;
+  left: 20px; 
 }
 
 .copy-success-msg {
@@ -249,7 +259,7 @@ button:disabled .prev-next-icon {
   font-size: 13px;
   position: absolute;
   top: 100%;
-  left: -25%;
+  left: 40%;
   padding: 4px 8px;
   border-radius: 5px;
   opacity: 0.9;

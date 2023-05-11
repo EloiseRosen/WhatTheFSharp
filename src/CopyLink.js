@@ -15,12 +15,12 @@ function CopyLink() {
   }
 
   return (
-    <div className="copy-link-container">
-       <button onClick={handleCopyLink}>
+    <>
+        <button className="copy-link-icon-button" onClick={handleCopyLink}>
          <i className="copy-link-icon fa-solid fa-link"></i>
        </button>
        {showSuccessMsg && <span className="copy-success-msg">URL copied</span>}
-    </div>
+    </>
   );
 }
 

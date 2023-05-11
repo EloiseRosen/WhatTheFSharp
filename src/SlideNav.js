@@ -3,7 +3,7 @@ import { useNavigate } from 'react-router-dom';
 import CopyLink from './CopyLink';
 
 
-function SlideNav({ slideNum, setSlideNum, totalSlides, lang }) {
+function SlideNav({ slideNum, setSlideNum, totalSlides, lang, runLink }) {
   const navigate = useNavigate();
 
   const handlePrevClick = useCallback(() => {
@@ -40,7 +40,10 @@ function SlideNav({ slideNum, setSlideNum, totalSlides, lang }) {
 
       <div className="middle-of-navbar">
         <span>{slideNum}/{totalSlides}</span>
-        <CopyLink />
+        <div className="copy-and-run-container">
+          {runLink !== '' && <a href={runLink} target="_blank"><i className="play-icon fa-solid fa-play"></i></a>}
+          <CopyLink />
+        </div>
       </div>
 
       <button onClick={handleNextClick} disabled={slideNum === totalSlides} className="next-button">

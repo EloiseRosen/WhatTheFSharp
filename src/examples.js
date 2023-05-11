@@ -16,7 +16,8 @@ result=$((x + y))
 # + set +x
 `,
 explanation: '',
-credit: 'jakkals'
+credit: 'jakkals',
+runLink: '',
 },
 ];
 
@@ -34,7 +35,8 @@ int main() {
 // output: SIX * NINE = 42
 `,
 explanation: '',
-credit: 'hobovsky'
+credit: 'hobovsky',
+runLink: '',
 },
 ];
 
@@ -57,7 +59,8 @@ int main() {
 // fuck
 `,
 explanation: '',
-credit: 'hobovsky'
+credit: 'hobovsky',
+runLink: '',
 },
 
 {code:
@@ -72,7 +75,8 @@ throw std::vector<int>({1, 2, 3});
 throw 17;
 `,
 explanation: '',
-credit: 'hobovsky'
+credit: 'hobovsky',
+runLink: '',
 },
 ];
 
@@ -106,7 +110,8 @@ class Program
 // i = 5
 `,
 explanation: '',
-credit: 'hobovsky'
+credit: 'hobovsky',
+runLink: '',
 },
 ];
 
@@ -125,7 +130,8 @@ explanation:
 <code>,</code> separates elements of a tuple and parentheses are optional for tuples. 
 </>,
 
-credit: 'monadius'
+credit: 'monadius',
+runLink: 'https://replit.com/@EloiseRosen/WTFSfsharp1#main.fs',
 },
 ];
 
@@ -148,7 +154,8 @@ In Haskell, there's an instance of <code>Foldable</code> for the partially appli
 <br />
 The correct code is <code>min 3 5</code> using the two-parameter <code>min</code> function, or <code>minimum [3, 5]</code> using a list.
 </>,
-credit: 'dram'
+credit: 'dram',
+runLink: 'https://replit.com/@EloiseRosen/WTFSHaskell1#Main.hs',
 },
 ];
 
@@ -173,7 +180,8 @@ const _java = [
 // 200 != 200
 `,
 explanation: '',
-credit: 'hobovsky'
+credit: 'hobovsky',
+runLink: '',
 },
 
 {code:
@@ -200,7 +208,8 @@ credit: 'hobovsky'
 // Number of args is 3
 `,
 explanation: '',
-credit: 'hobovsky'
+credit: 'hobovsky',
+runLink: '',
 },
 
 {code:
@@ -218,7 +227,8 @@ public class Main {
 }
 `,
 explanation: '',
-credit: ''
+credit: '',
+runLink: '',
 },
 
 {code:
@@ -234,7 +244,8 @@ credit: ''
 // c+1 is 101
 `,
 explanation: '',
-credit: 'hobovsky'
+credit: 'hobovsky',
+runLink: '',
 },
 ];
 
@@ -246,7 +257,8 @@ arr.sort();
 console.log(arr); // [1, 100, 2, 3]
 `,
 explanation: '',
-credit: ''
+credit: '',
+runLink: '',
 },
 
 {code:
@@ -258,7 +270,8 @@ explanation:
 <code>parseInt</code> expects a string. If you pass something that's not a string, it will attempt to convert your argument to a string for you. In the case of the second example, the result is <code>"3e-7"</code>. Then <code>parseInt</code> goes from the start of the string and collects characters which can be interpreted as integer, which gives the number <code>3</code>.
 </>,
 
-credit: 'Madjosz'
+credit: 'Madjosz',
+runLink: '',
 },
 
 {code:
@@ -268,7 +281,8 @@ const arr3 = arr1 + arr2;
 console.log(arr3, typeof arr3); // 1,2,34,5,6 string
 `,
 explanation: '',
-credit: ''
+credit: '',
+runLink: '',
 },
 
 {code:
@@ -281,7 +295,8 @@ throw true;
 throw new RegExp('ahhhhh', 'i');
 `,
 explanation: '',
-credit: ''
+credit: '',
+runLink: '',
 },
 
 {code:
@@ -291,7 +306,8 @@ console.log(thing); // undefined
 console.log(arr); // []
 `,
 explanation: '',
-credit: ''
+credit: '',
+runLink: '',
 },
 
 {code:
@@ -320,7 +336,8 @@ Second example:
 When comparing a string and a number, the string first gets converted to a number. <code>2 &lt; 12</code> is <code>true</code> and <code>12 &lt; 13</code> is <code>true</code>.
 However, when 2 strings are compared, the comparison is done lexicographically, in which case <code>'2'</code> comes after <code>'13'</code>.
 </>,
-credit: 'dram'
+credit: 'dram',
+runLink: '',
 },
 
 {code:
@@ -335,7 +352,8 @@ arr.length = null; // no error
 console.log(arr); // []
 `,
 explanation: '',
-credit: ''
+credit: '',
+runLink: '',
 },
 
 {code:
@@ -352,7 +370,8 @@ console.log(arr);
 //   'without giving a warning or error' ]
 `,
 explanation: '',
-credit: ''
+credit: '',
+runLink: '',
 },
 
 {code:
@@ -360,7 +379,8 @@ credit: ''
 console.log(arr[10]); // undefined, no error
 `,
 explanation: '',
-credit: ''
+credit: '',
+runLink: '',
 },
 
 {code:
@@ -387,7 +407,8 @@ demoMissingParameters();
 // undefined undefined undefined undefined
 `,
 explanation: '',
-credit: ''
+credit: '',
+runLink: '',
 },
 
 {code:
@@ -396,7 +417,8 @@ string[1] = 'X'; // no error, just silently ignored
 console.log(string); // bob
 `,
 explanation: '',
-credit: ''
+credit: '',
+runLink: '',
 },
 
 {code:
@@ -416,7 +438,8 @@ console.log(arr[20] === arr[3]); // true
 console.log(arr.filter(el => el === undefined).length); // 1
 `,
 explanation: '',
-credit: ''
+credit: '',
+runLink: '',
 },
 
 {code:
@@ -427,7 +450,8 @@ credit: ''
 printLetter('a'); // b
 `,
 explanation: '',
-credit: ''
+credit: '',
+runLink: '',
 },
 
 {code:
@@ -444,7 +468,8 @@ delete obj.thisAlsoDoesNotExist; // no error, just silently ignored
 
 `,
 explanation: '',
-credit: ''
+credit: '',
+runLink: '',
 },
 
 {code:
@@ -476,7 +501,8 @@ thing = 'bob' + null;
 console.log(thing, typeof thing); // 'bobnull' string
 `,
 explanation: '',
-credit: ''
+credit: '',
+runLink: '',
 },
 
 {code:
@@ -485,7 +511,8 @@ console.log(date.toString()); // Sat Feb 01 2020...
 // year is 1-indexed, day is 1-indexed, month is ZERO-indexed
 `,
 explanation: '',
-credit: ''
+credit: '',
+runLink: '',
 },
 
 {code:
@@ -499,7 +526,8 @@ test(age=12, firstName='Jimothy');
 // age is Jimothy
 `,
 explanation: '',
-credit: ''
+credit: '',
+runLink: '',
 },
 
 {code:
@@ -516,7 +544,8 @@ function test() {
 }
 `,
 explanation: '',
-credit: ''
+credit: '',
+runLink: '',
 },
 ];
 
@@ -536,7 +565,8 @@ They merely build a term (eg. <code>1 + 2</code> -&gt; <code>+(1, 2)</code>). Th
 evaluated by <code>is</code> or <code>=:=</code>. But alone, <code>+(1, 2)</code> is not the same as <code>3</code> and 
 so does not match the predicate <code>is_three</code>.
 </>,
-credit: 'Kacarott'
+credit: 'Kacarott',
+runLink: '',
 },
 ];
 
@@ -554,7 +584,8 @@ explanation:
 <>
 Mutable default arguments don't get re-initialized with each function call. Rather, the same <code>lst</code> is used each time the function is called without a second argument.
 </>,
-credit: ''
+credit: '',
+runLink: 'https://replit.com/@EloiseRosen/WTFSPython1',
 },
 
 {code:
@@ -565,7 +596,8 @@ print(lst)  # ['A', 'B', 'C']
 print(i)  # 2, leaks out of loop
 `,
 explanation: '',
-credit: ''
+credit: '',
+runLink: '',
 },
 
 {code:
@@ -575,7 +607,8 @@ arr[0]()  # prints 1
 arr[1]()  # prints 1
 `,
 explanation: '',
-credit: 'Madjosz'
+credit: 'Madjosz',
+runLink: '',
 },
 
 {code:
@@ -590,7 +623,8 @@ for pair in zip(list1, list2):
 # when there's a mismatch in length, zip silently truncates with no error or warning
 `,
 explanation: '',
-credit: ''
+credit: '',
+runLink: '',
 },
 ];
 
@@ -609,7 +643,8 @@ T = FALSE
 print(T)  # FALSE
 `,
 explanation: '',
-credit: ''
+credit: '',
+runLink: '',
 },
 
 {code:
@@ -617,7 +652,8 @@ credit: ''
 print(all.equal(1, 2)) # does not return FALSE! Instead returns a string, "Mean relative difference: 1"
 `,
 explanation: '',
-credit: ''
+credit: '',
+runLink: '',
 },
 
 {code:
@@ -633,7 +669,8 @@ print(final)  # 1 5
 # no error or warning
 `,
 explanation: '',
-credit: ''
+credit: '',
+runLink: '',
 },
 
 {code:
@@ -641,7 +678,8 @@ credit: ''
 print(vector[10])  # NA, no error`
 ,
 explanation: '',
-credit: ''
+credit: '',
+runLink: '',
 },
 
 {code:
@@ -653,7 +691,8 @@ print(func(1, 2, 3))  # 6
 # no errors or warnings about arg number
 `,
 explanation: '',
-credit: ''
+credit: '',
+runLink: '',
 },
 ];
 
@@ -664,7 +703,8 @@ const _ruby = [
 puts("abc".gsub!("z", "x") == "abc") # false
 `,
 explanation: '',
-credit: 'hobovsky'
+credit: 'hobovsky',
+runLink: '',
 },
 ];
 
@@ -681,7 +721,8 @@ const _sql = [
 SELECT * FROM person WHERE gender NOT IN ('M', 'F');  -- returns 0 rows
 `,
 explanation: '',
-credit: ''
+credit: '',
+runLink: '',
 },
 ];
 

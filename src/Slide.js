@@ -68,8 +68,14 @@ function Slide({ slideNum, setSlideNum, selectedLang }) {
 
       </div>
 
+      <SlideNav 
+        slideNum={slideNum} 
+        setSlideNum={setSlideNum} 
+        totalSlides={examplesForLang.length} 
+        lang={selectedLang} 
+        runLink={examplesForLang[slideNum - 1]['runLink']} 
+      />
 
-      <SlideNav slideNum={slideNum} setSlideNum={setSlideNum} totalSlides={examplesForLang.length} lang={selectedLang} />
     </>
   );
 }
