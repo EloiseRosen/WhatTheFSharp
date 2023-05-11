@@ -86,7 +86,7 @@ int main() {
 
 /*
 output:
-dcba�Q�hh@\`�Q�hM\`�L��Q�W�Q�M\`��i    �j��Q�WF��Q�M\`�M\`�M\`�A��@Ml�i  �h�Q�X(}X6d\s�(}X6d\s�(}X6d\s���!��8i    �i�i�u��Q�i �i  �Ni �4@�Q�W�?|wn]@��0��)�g@ �ͩAi �Z�i    �i  �i  �2�Q�Xi �i  ��i �*��Q�i �*�i   ��Q�i    �Pi �i  ��i �li �#i ���Q�i  �+Xi    ��Q�i   �Pi �>Pi    ���Q��=��i  ��Q�@�Q�0i  �0i �   i   ��i �Qi �i  �i  �i  ���Q�Xg�_i  �P�i�0�Q�x�Q�0�Q�@�Q�t�ii   ��g�_i  ��Q�t�Q�xi  �Pi �&@&i   �i  �&@i   �Pi  �
+dcba�Q�hh@\`�Q�hM\`�L��Q�W�Q�M\`��i    �j��Q�WF��Q�M\`�M\`�M\`�A��@Ml�i  �h�Q�X(}X6ds�(}X6ds�(}X6ds���!��8i    �i�i�u��Q�i �i  �Ni �4@�Q�W�?|wn]@��0��)�g@ �ͩAi �Z�i    �i  �i  �2�Q�Xi �i  ��i �*��Q�i �*�i   ��Q�i    �Pi �i  ��i �li �#i ���Q�i  �+Xi    ��Q�i   �Pi �>Pi    ���Q��=��i  ��Q�@�Q�0i  �0i �   i   ��i �Qi �i  �i  �i  ���Q�Xg�_i  �P�i�0�Q�x�Q�0�Q�@�Q�t�ii   ��g�_i  ��Q�t�Q�xi  �Pi �&@&i   �i  �&@i   �Pi  �
 �i  �i  ��Q�i   �i  �i  �&@i    �Pi �&@��Q�\`�Q��Q� i    ��Q��Q��Q�\`i�i  �G4�Q�@i    �ii �G4�Q� i    �ii �G4�Q�i �Pii    �G4i    �ii �M�Q
 [Truncated]
 */
@@ -326,8 +326,7 @@ class Main {
 explanation:
 <>
 Java compiler always takes the most specific method if possible. Since <code>null</code> can be 
-assigned to any class and <code>DerivedB</code> is a subclass of <code>TopBase</code>, the 
-<code>DerivedB</code> overload is chosen.<br/>
+assigned to any class and <code>DerivedB</code> is a subclass of <code>TopBase</code>, the <code>DerivedB</code> overload is chosen.<br/>
 If you uncomment the <code>DerivedA</code> overload you end up with two overloads on the same 
 class hierarchy level so the call is ambiguous.<br/>
 To solve this, you explicitly have to cast the <code>null</code> to the type of the desired overload.
