@@ -145,16 +145,20 @@ using namespace std;
 int main() {
 
   map<string, int> cache { { "A", 42 }, { "B", 13 }, { "Z", 7 }, { "D", 0 } };
-  cout << "Cache size is " << cache.size() << '\n';
+  cout << "Cache size is " << cache.size() << '\\n';
 
   cout << "A = " << cache["A"] << ", ";
   cout << "B = " << cache["B"] << ", ";
   cout << "C = " << cache["C"] << ", ";
-  cout << "D = " << cache["D"] << '\n';
+  cout << "D = " << cache["D"] << '\\n';
 
-  cout << "Cache size is " << cache.size() << '\n';
+  cout << "Cache size is " << cache.size() << '\\n';
   
 }
+// output:
+// Cache size is 4
+// A = 42, B = 13, C = 0, D = 0
+// Cache size is 5
 `,
 explanation: '',
 credit: 'hobovsky',
