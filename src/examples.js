@@ -58,9 +58,16 @@ int main() {
 // The best language ever is.. Brainfuck!
 // fuck
 `,
-explanation: '',
+explanation: 
+<>
+In the second case, <code>"The best language ever is.. Brainfuck"</code> is a string literal,
+ which is a character array. Using <code>+</code> with a character array results in pointer 
+ arithmetic. The ASCII value of <code>!</code> is <code>33</code>, so we add <code>33</code> to 
+ the pointer that points to the start of the string literal. <code>33</code> characters later 
+ gets us to the result <code>"fuck"</code>.
+</>,
 credit: 'hobovsky',
-runLink: '',
+runLink: 'https://replit.com/@EloiseRosen/WTFScpp1#main.cpp',
 },
 
 {code:

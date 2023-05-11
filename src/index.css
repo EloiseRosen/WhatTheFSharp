@@ -238,6 +238,7 @@ button:disabled .prev-next-icon {
 .copy-link-icon-button {
   margin-left: 35px;
 }
+
 .copy-link-icon {
   color: var(--lime-green);
   font-size: 15px;
@@ -251,6 +252,10 @@ button:disabled .prev-next-icon {
   position: relative;
   top: -2px;
   left: 20px; 
+}
+
+.play-icon:hover {
+  color: var(--light-lime-green);
 }
 
 .copy-success-msg {
