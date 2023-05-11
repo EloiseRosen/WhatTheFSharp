@@ -70,6 +70,32 @@ credit: 'hobovsky',
 runLink: 'https://replit.com/@EloiseRosen/WTFScpp1#main.cpp',
 },
 
+{code: 
+`#include <string>
+#include <iostream>
+
+using namespace std;
+
+int main() {
+    string str = "abcd";
+    
+    // print the string in reverse
+    for(auto idx = str.length() - 1; idx >= 0; --idx)
+        cout << str[idx];
+}
+
+/*
+output:
+dcba�Q�hh@\`�Q�hM\`�L��Q�W�Q�M\`��i    �j��Q�WF��Q�M\`�M\`�M\`�A��@Ml�i  �h�Q�X(}X6d\s�(}X6d\s�(}X6d\s���!��8i    �i�i�u��Q�i �i  �Ni �4@�Q�W�?|wn]@��0��)�g@ �ͩAi �Z�i    �i  �i  �2�Q�Xi �i  ��i �*��Q�i �*�i   ��Q�i    �Pi �i  ��i �li �#i ���Q�i  �+Xi    ��Q�i   �Pi �>Pi    ���Q��=��i  ��Q�@�Q�0i  �0i �   i   ��i �Qi �i  �i  �i  ���Q�Xg�_i  �P�i�0�Q�x�Q�0�Q�@�Q�t�ii   ��g�_i  ��Q�t�Q�xi  �Pi �&@&i   �i  �&@i   �Pi  �
+�i  �i  ��Q�i   �i  �i  �&@i    �Pi �&@��Q�\`�Q��Q� i    ��Q��Q��Q�\`i�i  �G4�Q�@i    �ii �G4�Q� i    �ii �G4�Q�i �Pii    �G4i    �ii �M�Q
+[Truncated]
+*/
+`,
+explanation: '',
+credit: 'hobovsky',
+runLink: 'https://replit.com/@EloiseRosen/WTFScpp2',
+},
+
 {code:
 `#include <iostream>
 #include <stdexcept>
@@ -105,7 +131,7 @@ int main() {
 `,
 explanation: '',
 credit: 'hobovsky',
-runLink: 'https://replit.com/@EloiseRosen/WTFScpp2#',
+runLink: 'https://replit.com/@EloiseRosen/WTFScpp3#',
 },
 ];
 
@@ -275,6 +301,39 @@ runLink: '',
 explanation: '',
 credit: 'hobovsky',
 runLink: '',
+},
+
+{code:
+`class TopBase {}
+
+class DerivedA extends TopBase { }
+
+class DerivedB extends TopBase { }
+
+class Main {
+  private static void overloadedMethod(TopBase t) {}
+  
+  // The current state is ok! 
+  // but if you uncomment the method below you get a compilation error.
+  // private static void overloadedMethod(DerivedA a) {}
+  private static void overloadedMethod(DerivedB b) {}
+  public static void main(String[] args) {
+    System.out.println("Hello, World!");
+    overloadedMethod(null);
+  }
+}
+`,
+explanation:
+<>
+Java compiler always takes the most specific method if possible. Since <code>null</code> can be 
+assigned to any class and <code>DerivedB</code> is a subclass of <code>TopBase</code>, the 
+<code>DerivedB</code> overload is chosen.<br/>
+If you uncomment the <code>DerivedA</code> overload you end up with two overloads on the same 
+class hierarchy level so the call is ambiguous.<br/>
+To solve this, you explicitly have to cast the <code>null</code> to the type of the desired overload.
+</>,
+credit: 'hobovsky',
+runLink: 'https://replit.com/@EloiseRosen/WTFSJava5#',
 },
 ];
 
@@ -576,6 +635,16 @@ explanation: '',
 credit: '',
 runLink: '',
 },
+
+{code:
+`console.log(Array(-3)); // RangeError: Invalid array length
+console.log(Array.from({length: -3})); // []
+`,
+explanation: '',
+credit: 'Kacarott',
+runLink: '',
+},
+
 ];
 
 
