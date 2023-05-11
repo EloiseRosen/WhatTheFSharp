@@ -16,11 +16,9 @@ function Slide({ slideNum, setSlideNum, selectedLang }) {
     setShowExplanation(false);
   }, [slideNum, selectedLang]);
 
-  // TODO see if I can remove this now
-  // this is for an error where we're switching languages and the current slideNum
-  // doesn't exist for the new language, and the slideNum update to 1 hasn't happened 
-  // yet, so there's an error when we try to access the 'code' value of undefined, and
-  // if we just wait for a sec slideNum will update and Slide will re-render.
+  // When we're switching languages, changing the slideNum to 1 might not happen before
+  // we try to access the code example for slideNum. Instead of throwing an error, chill 
+  // for a sec and Slide will re-render after slideNum has finished updating.
   if (!examplesForLang[slideNum - 1]) {
     return null;
   }

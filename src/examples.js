@@ -543,21 +543,17 @@ credit: 'Kacarott'
 
 const _python = [
 {code:
-`def mutable_default_args_are_evil(item, lst=[]):
+`def add_item_to_list(item, lst=[]):
     lst.append(item)
     return lst
 
-print(mutable_default_args_are_evil(1))  # [1]
-print(mutable_default_args_are_evil(2))  # [1, 2]
-
-
-
-
-
-
-
+print(add_item_to_list(1))  # [1]
+print(add_item_to_list(1))  # [1, 1]
 `,
-explanation: '',
+explanation:
+<>
+Mutable default arguments don't get re-initialized with each function call. Rather, the same <code>lst</code> is used each time the function is called without a second argument.
+</>,
 credit: ''
 },
 
