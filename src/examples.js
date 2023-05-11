@@ -71,19 +71,41 @@ runLink: 'https://replit.com/@EloiseRosen/WTFScpp1#main.cpp',
 },
 
 {code:
-`#include <stdexcept>
-throw std::runtime_error("throwing a proper exception object");
-
-throw "but we can throw anything at all";
-
+`#include <iostream>
+#include <stdexcept>
 #include <vector>
-throw std::vector<int>({1, 2, 3});
 
-throw 17;
+int main() {
+  try {
+    throw std::runtime_error("throwing a proper exception object");
+  } catch (std::runtime_error &e) {
+    std::cout << e.what() << std::endl;
+  }
+
+  try {
+    throw "But we can throw anything at all! For example, this is a stirng.";
+  } catch (const char *str) {
+    std::cout << str << std::endl;
+  }
+
+  try {
+    throw std::vector<int>({1, 2, 3});
+  } catch (std::vector<int> &v) {
+    std::cout << "We just threw a vector" << std::endl;
+  }
+
+  try {
+    throw 17;
+  } catch (int num) {
+    std::cout << "We just threw an integer" << std::endl;
+  }
+
+  return 0;
+}
 `,
 explanation: '',
 credit: 'hobovsky',
-runLink: '',
+runLink: 'https://replit.com/@EloiseRosen/WTFScpp2#',
 },
 ];
 
