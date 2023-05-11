@@ -41,7 +41,7 @@ function SlideNav({ slideNum, setSlideNum, totalSlides, lang, runLink }) {
       <div className="middle-of-navbar">
         <span>{slideNum}/{totalSlides}</span>
         <div className="copy-and-run-container">
-          {runLink !== '' && <a href={runLink} target="_blank"><i className="play-icon fa-solid fa-play"></i></a>}
+          {runLink !== '' && <a href={runLink} target="_blank" rel="noreferrer"><i className="play-icon fa-solid fa-play"></i></a>}
           <CopyLink />
         </div>
       </div>
