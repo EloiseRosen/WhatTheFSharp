@@ -856,7 +856,10 @@ print(arr)  # [<function <listcomp>.<lambda> at [address]>, <function <listcomp>
 arr[0]()  # prints 1
 arr[1]()  # prints 1
 `,
-explanation: '',
+explanation:
+<>
+The <code>lambda</code> function captures the variable <code>i</code> by reference, not by its value at the moment the <code>lambda</code> was defined. After the loop completes, <code>i</code> is <code>1</code>.
+</>,
 credit: 'Madjosz',
 runLink: '',
 },
@@ -952,9 +955,12 @@ const _ruby = [
 `puts("abc".gsub!("a", "x") == "xbc") # true
 puts("abc".gsub!("z", "x") == "abc") # false
 `,
-explanation: '',
+explanation:
+<>
+If the first argument isn't found, <code>gsub!</code> returns <code>nil</code>. (<code>gsub</code> (with no exclamation mark) would return a string.)
+</>,
 credit: 'hobovsky',
-runLink: '',
+runLink: 'https://replit.com/@EloiseRosen/WTFSRuby1#main.rb',
 },
 ];
 
