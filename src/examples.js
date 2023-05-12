@@ -437,6 +437,30 @@ explanation: '',
 credit: 'Madjosz',
 runLink: 'https://replit.com/@EloiseRosen/WTFSJava6#Main.java',
 },
+
+{code:
+`class Main {
+    public static void main(String[] args) {
+      System.out.println("ABCD" == "ABCD");
+      System.out.println("AB" + "CD" == "ABC" + "D");
+      System.out.println("ABCD" == "abcd".toUpperCase());
+      
+      String string1 = new StringBuilder("AB").append("CD").toString();
+      String string2 = new StringBuilder("ABC").append("D").toString();
+      System.out.println(string1 == string2);
+    }
+  }
+
+// output:
+// true
+// true
+// false
+// false
+`,
+explanation: '',
+credit: 'hobovsky',
+runLink: 'https://replit.com/@EloiseRosen/WTFSJava7',
+},
 ];
 
 
