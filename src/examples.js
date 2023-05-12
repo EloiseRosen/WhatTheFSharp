@@ -97,44 +97,6 @@ runLink: 'https://replit.com/@EloiseRosen/WTFScpp2',
 },
 
 {code:
-`#include <iostream>
-#include <stdexcept>
-#include <vector>
-
-int main() {
-  try {
-    throw std::runtime_error("throwing a proper exception object");
-  } catch (std::runtime_error &e) {
-    std::cout << e.what() << std::endl;
-  }
-
-  try {
-    throw "But we can throw anything at all! For example, this is a stirng.";
-  } catch (const char *str) {
-    std::cout << str << std::endl;
-  }
-
-  try {
-    throw std::vector<int>({1, 2, 3});
-  } catch (std::vector<int> &v) {
-    std::cout << "We just threw a vector" << std::endl;
-  }
-
-  try {
-    throw 17;
-  } catch (int num) {
-    std::cout << "We just threw an integer" << std::endl;
-  }
-
-  return 0;
-}
-`,
-explanation: '',
-credit: 'hobovsky',
-runLink: 'https://replit.com/@EloiseRosen/WTFScpp3#',
-},
-
-{code:
 `#include <map>
 #include <string>
 #include <iostream>
@@ -144,26 +106,76 @@ using namespace std;
 
 int main() {
 
-  map<string, int> cache { { "A", 42 }, { "B", 13 }, { "Z", 7 }, { "D", 0 } };
-  cout << "Cache size is " << cache.size() << '\\n';
+    map<string, int> cache { { "A", 42 }, { "B", 13 }, { "Z", 7 }, { "D", 0 } };
+    cout << "Cache size is " << cache.size() << '\\n';
 
-  cout << "A = " << cache["A"] << ", ";
-  cout << "B = " << cache["B"] << ", ";
-  cout << "C = " << cache["C"] << ", ";
-  cout << "D = " << cache["D"] << '\\n';
+    cout << "A = " << cache["A"] << ", ";
+    cout << "B = " << cache["B"] << ", ";
+    cout << "C = " << cache["C"] << ", ";
+    cout << "D = " << cache["D"] << '\\n';
 
-  cout << "Cache size is " << cache.size() << '\\n';
-  
+    cout << "Cache size is " << cache.size() << '\\n';
+    
 }
 // output:
 // Cache size is 4
 // A = 42, B = 13, C = 0, D = 0
 // Cache size is 5
 `,
+explanation:
+<>
+The <code>[]</code> operator inserts a new element if the key doesn't exist.
+</>
+,
+credit: 'hobovsky',
+runLink: 'https://replit.com/@EloiseRosen/WTFScpp3#',
+},
+
+{code:
+`#include <iostream>
+#include <stdexcept>
+#include <vector>
+
+int main() {
+  try {
+    throw std::runtime_error("We are throwing a proper exception object.");
+  } catch (std::runtime_error &e) {
+    std::cout << e.what() << std::endl;
+  }
+
+  try {
+    throw "But we can throw anything at all! For example, this is a string.";
+  } catch (const char *str) {
+    std::cout << str << std::endl;
+  }
+
+  try {
+    throw std::vector<int>({1, 2, 3});
+  } catch (std::vector<int> &v) {
+    std::cout << "We just threw a vector." << std::endl;
+  }
+
+  try {
+    throw 17;
+  } catch (int num) {
+    std::cout << "We just threw an integer." << std::endl;
+  }
+
+  return 0;
+}
+
+// output:
+// We are throwing a proper exception object.
+// But we can throw anything at all! For example, this is a string.
+// We just threw a vector.
+// We just threw an integer.
+`,
 explanation: '',
 credit: 'hobovsky',
-runLink: 'https://replit.com/@EloiseRosen/WTFScpp4#main.cpp',
+runLink: 'https://replit.com/@EloiseRosen/WTFScpp4',
 },
+
+
 
 {code:
 `#include <map>
@@ -190,7 +202,10 @@ In file included from /nix/store/1gf2flfqnpqbr1b4p4qz2f72y42bs56r-gcc-11.3.0/inc
       |       ^~~~~~~~
 */
 `,
-explanation: '',
+explanation:
+<>
+(The actual issue here is that <code>precomputed</code> is <code>const</code>, so we can't use the <code>[]</code> operator as it will insert a new element if the key is not found.)
+</>,
 credit: 'hobovsky',
 runLink: 'https://replit.com/@EloiseRosen/WTFScpp5',
 },
