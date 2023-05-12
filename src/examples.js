@@ -124,7 +124,7 @@ int main() {
 `,
 explanation:
 <>
-The <code>[]</code> operator inserts a new element if the key doesn't exist.
+Reading with the <code>[]</code> operator inserts a new element if the key doesn't exist.
 </>
 ,
 credit: 'hobovsky',
@@ -208,6 +208,32 @@ explanation:
 </>,
 credit: 'hobovsky',
 runLink: 'https://replit.com/@EloiseRosen/WTFScpp5',
+},
+
+
+{code:
+`#include <iostream>
+
+int main() {
+    while (true) {}
+    return 0;
+}
+
+void unreachable() {
+    std::cout << "Hello, world!\\n";
+}
+
+// output: Hello, world!
+`,
+explanation:
+<>
+Infinite loops without side effects are UB in C++. Clang starting with version 13 optimizes the loop away with compiler optimizations activated.<br/>
+Furthermore the <code>return 0;</code> is seen as unreachable because of the infinite loop, thus also not compiled into the binaries.<br/>
+This leaves the <code>main()</code> function with a completely empty body in the assembly and a call to it will directly fall through to the assembly of the <code>unreachable() </code>function, printing <code>"Hello, world!\n"</code>.<br/>
+(This does not happen with GCC compiler.)
+</>,
+credit: 'Madjosz',
+runLink: 'https://godbolt.org/z/54ETMehT9',
 },
 
 ];
