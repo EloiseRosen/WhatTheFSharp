@@ -232,7 +232,7 @@ Furthermore the <code>return 0;</code> is seen as unreachable because of the inf
 This leaves the <code>main()</code> function with a completely empty body in the assembly and a call to it will directly fall through to the assembly of the <code>unreachable() </code>function, printing <code>"Hello, world!\n"</code>.<br/>
 (This does not happen with GCC compiler.)
 </>,
-credit: 'Madjosz',
+credit: 'nomennescio',
 runLink: 'https://godbolt.org/z/54ETMehT9',
 },
 
