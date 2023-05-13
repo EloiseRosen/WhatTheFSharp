@@ -803,6 +803,20 @@ runLink: '',
 const _php = [
 {code:
 `<?php
+echo (true ? 'expected' : false ? 'actual' : 'x'); // actual
+?>
+`,
+explanation: 
+<>
+In PHP, the ternary operator is left-associative.
+</>,
+credit: '',
+runLink: 'https://replit.com/@EloiseRosen/WTFSPHP1#main.php',
+},
+
+
+{code:
+`<?php
 $arr = [1, true];
 echo 'example 1:' . PHP_EOL;
 foreach ($arr as $el) {
@@ -823,6 +837,7 @@ foreach ($arr as $el) {
 // item: 
 // item: 
 // item:
+?>
 `,
 explanation: '',
 credit: '',
