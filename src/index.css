@@ -231,13 +231,28 @@ button:disabled .prev-next-icon {
   color: var(--light-gray);
 }
 
-.copy-and-run-container {
+.run-and-copy-container {
   position: relative;
   display: inline-block;
 }
 
+.play-icon-a {
+  margin-left: 20px;
+}
+
+.play-icon {
+  color: var(--lime-green);
+  font-size: 20px;
+  position: relative;
+  top: -2px;
+}
+
+.play-icon:hover {
+  color: var(--light-lime-green);
+}
+
 .copy-link-icon-button {
-  margin-left: 35px;
+  margin-left: 20px;
 }
 
 .copy-link-icon {
@@ -247,15 +262,7 @@ button:disabled .prev-next-icon {
   top: -4px;
 }
 
-.play-icon {
-  color: var(--lime-green);
-  font-size: 20px;
-  position: relative;
-  top: -2px;
-  left: 20px; 
-}
-
-.play-icon:hover {
+button:hover .copy-link-icon {
   color: var(--light-lime-green);
 }
 
@@ -270,10 +277,6 @@ button:disabled .prev-next-icon {
   border-radius: 5px;
   opacity: 0.9;
   z-index: 1;
-}
-
-button:hover .copy-link-icon {
-  color: var(--light-lime-green);
 }
 
 .footer-icon-container {
