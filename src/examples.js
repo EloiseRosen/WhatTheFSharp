@@ -326,7 +326,7 @@ main = do
 `,
 explanation:
 <>
-When using floating point, the end point is bumped by half of the step size. The intention is that if you write something like <code>[0.1, 0.2 .. 1.0]</code> the last element doesn't get missed due to rounding. 
+When using floating point, the end point is bumped by half of the step size. The intention is that if you write something like <code>[0.1, 0.2 .. 1.0]</code>, the last element doesn't get missed due to rounding. 
 </>,
 credit: 'dram',
 runLink: 'https://replit.com/@EloiseRosen/WTFSHaskell2#Main.hs',
