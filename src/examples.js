@@ -93,7 +93,7 @@ dcbaï¿½Qï¿½hh@\`ï¿½Qï¿½hM\`ï¿½Lï¿½ï¿½Qï¿½Wï¿½Qï¿½M\`ï¿½ï¿½i    ï¿½jï¿½ï¿½Qï¿½WFï
 `,
 explanation: '',
 credit: 'hobovsky',
-runLink: 'https://replit.com/@EloiseRosen/WTFScpp2',
+runLink: 'https://replit.com/@EloiseRosen/WTFScpp2#main.cpp',
 },
 
 {code:
@@ -172,7 +172,7 @@ int main() {
 `,
 explanation: '',
 credit: 'hobovsky',
-runLink: 'https://replit.com/@EloiseRosen/WTFScpp4',
+runLink: 'https://replit.com/@EloiseRosen/WTFScpp4#main.cpp',
 },
 
 
@@ -207,7 +207,7 @@ explanation:
 (The actual issue here is that <code>precomputed</code> is <code>const</code>, so we can't use the <code>[]</code> operator as it will insert a new element if the key is not found.)
 </>,
 credit: 'hobovsky',
-runLink: 'https://replit.com/@EloiseRosen/WTFScpp5',
+runLink: 'https://replit.com/@EloiseRosen/WTFScpp5#src/main.cpp',
 },
 
 
@@ -329,7 +329,7 @@ explanation:
 When using floating point, the end point is bumped by half of the step size. The intention is that if you write something like <code>[0.1, 0.2 .. 1.0]</code> the last element doesn't get missed due to rounding. 
 </>,
 credit: 'dram',
-runLink: 'https://replit.com/@EloiseRosen/WTFSHaskell2',
+runLink: 'https://replit.com/@EloiseRosen/WTFSHaskell2#Main.hs',
 },
 
 ];
@@ -452,7 +452,7 @@ class hierarchy level so the call is ambiguous.<br/>
 To solve this, you explicitly have to cast the <code>null</code> to the type of the desired overload.
 </>,
 credit: 'hobovsky',
-runLink: 'https://replit.com/@EloiseRosen/WTFSJava5#',
+runLink: 'https://replit.com/@EloiseRosen/WTFSJava5#Main.java',
 },
 
 {code:
@@ -502,7 +502,7 @@ runLink: 'https://replit.com/@EloiseRosen/WTFSJava6#Main.java',
 `,
 explanation: '',
 credit: 'hobovsky',
-runLink: 'https://replit.com/@EloiseRosen/WTFSJava7',
+runLink: 'https://replit.com/@EloiseRosen/WTFSJava7#Main.java',
 },
 ];
 
@@ -898,7 +898,7 @@ explanation:
 Mutable default arguments don't get re-initialized with each function call. Rather, the same <code>lst</code> is used each time the function is called without a second argument.
 </>,
 credit: '',
-runLink: 'https://replit.com/@EloiseRosen/WTFSPython1',
+runLink: 'https://replit.com/@EloiseRosen/WTFSPython1#main.py',
 },
 
 {code:
