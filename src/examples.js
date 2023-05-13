@@ -800,6 +800,37 @@ runLink: '',
 ];
 
 
+const _php = [
+{code:
+`<?php
+$arr = [1, true];
+echo 'example 1:' . PHP_EOL;
+foreach ($arr as $el) {
+    echo 'item: ' . $el . PHP_EOL;
+}
+
+$arr = ['', false, null];
+echo 'example 2:' . PHP_EOL;
+foreach ($arr as $el) {
+    echo 'item: ' . $el . PHP_EOL;
+}
+
+// output:
+// example 1:
+// item: 1
+// item: 1
+// example 2:
+// item: 
+// item: 
+// item:
+`,
+explanation: '',
+credit: '',
+runLink: 'https://replit.com/@EloiseRosen/WTFSPHP2#main.php',
+},
+]
+
+
 const _prolog = [
 {code:
 `is_three(3).
@@ -984,6 +1015,6 @@ runLink: '',
 
 
 const examples = { 'Bash': _bash, 'C': _c, 'cpp': _cpp, 'csharp': _csharp, 'fsharp': _fsharp,
-  'Haskell': _haskell, 'Java': _java, 'JavaScript': _javaScript, 'Prolog': _prolog, 
+  'Haskell': _haskell, 'Java': _java, 'JavaScript': _javaScript, 'PHP': _php, 'Prolog': _prolog, 
    'Python': _python,'R': _r, 'Ruby': _ruby, 'SQL': _sql}
 export { examples };
