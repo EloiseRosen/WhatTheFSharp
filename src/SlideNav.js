@@ -1,6 +1,7 @@
 import React, { useEffect, useCallback } from 'react';
 import { useNavigate } from 'react-router-dom';
 import CopyLink from './CopyLink';
+import PlayButton from './PlayButton';
 
 
 function SlideNav({ slideNum, setSlideNum, totalSlides, lang, runLink }) {
@@ -41,7 +42,7 @@ function SlideNav({ slideNum, setSlideNum, totalSlides, lang, runLink }) {
       <div className="middle-of-navbar">
         <span>{slideNum}/{totalSlides}</span>
         <div className="copy-and-run-container">
-          {runLink !== '' && <a href={runLink} target="_blank" rel="noreferrer"><i className="play-icon fa-solid fa-play"></i></a>}
+          <PlayButton runLink={runLink} />
           <CopyLink />
         </div>
       </div>
