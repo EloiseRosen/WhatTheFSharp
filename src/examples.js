@@ -315,6 +315,23 @@ The correct code is <code>min 3 5</code> using the two-parameter <code>min</code
 credit: 'dram',
 runLink: 'https://replit.com/@EloiseRosen/WTFSHaskell1#Main.hs',
 },
+
+{code:
+`module Main where
+
+main :: IO ()
+main = do
+  print ([0, 10 .. 29] :: [Integer]) -- [0,10,20]
+  print ([0.0, 10.0 .. 29.0] :: [Double]) -- [0.0,10.0,20.0,30.0]
+`,
+explanation:
+<>
+When using floating point, the end point is bumped by half of the step size. The intention is that if you write something like <code>[0.1, 0.2 .. 1.0]</code> the last element doesn't get missed due to rounding. 
+</>,
+credit: 'dram',
+runLink: 'https://replit.com/@EloiseRosen/WTFSHaskell2',
+},
+
 ];
 
 
