@@ -505,7 +505,7 @@ In <code>"AB" + "CD" == "ABC" + "D"</code>, concatenation happens at compile tim
 <br/><br/>
 <code>"ABCD" == "abcd".toUpperCase()</code> gives <code>false</code> because at runtime <code>"abcd".toUpperCase()</code> will create a new <code>String</code> object, and these two strings will be different instances.
 <br/><br/>
-Similarly, <code>string1 == string2</code> gives <code>false</code> because <code>new StringBuilder("AB").append("CD").toString()</code> and <code>new StringBuilder("ABC").append("D").toString()</code> create new <code>String</code> objects that are different instances.
+Similarly, <code>string1 == string2</code> gives <code>false</code> because <code>new StringBuilder("AB").append("CD").toString()</code> and <code>new StringBuilder("ABC").append("D").toString()</code> create new <code>String</code> objects at runtime.
 <br/><br/>
 Using <code>a.equals(b)</code> rather than <code>a == b</code> gives the expected result.
 </>,
@@ -1095,7 +1095,7 @@ puts ['a', 'b', 'c'].size -1 # error: wrong number of arguments (given 1, expect
 `,
 explanation:
 <>
-Ruby reads <code>-1</code> (no space) as a negative number, not as a subtraction operation followed by a number. It treats the <code>-1</code> as an argument, hence the error message that 1 argument was given  but 0 were expected.
+Ruby reads <code>-1</code> (no space) as a negative number, not as a subtraction operation followed by a number. It treats the <code>-1</code> as an argument, hence the error message that 1 argument was given but 0 were expected.
 </>,
 credit: '',
 runLink: 'https://replit.com/@EloiseRosen/WTFSRuby2#',

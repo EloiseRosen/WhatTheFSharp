@@ -4,7 +4,6 @@ import PlayButton from './PlayButton';
 import CopyLink from './CopyLink';
 
 
-
 function SlideNav({ slideNum, setSlideNum, totalSlides, lang, runLink }) {
   const navigate = useNavigate();
 
