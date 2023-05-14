@@ -414,7 +414,7 @@ runLink: '',
         System.out.printf("c+1 is %s%n", c+1);
     }
 }
-// output is: 
+// output: 
 // ++c is d
 // c+1 is 101
 `,
@@ -456,32 +456,6 @@ runLink: 'https://replit.com/@EloiseRosen/WTFSJava5#Main.java',
 },
 
 {code:
-`import java.util.stream.*;
-
-public class Main {
-    public static void main(String[] args) {
-        String result = Stream.of("A", "B", "C", "D")
-                .reduce("Elements in the stream are: ", String::concat);
-        System.out.println(result);
-
-        String parallelResult = Stream.of("A", "B", "C", "D")
-                .parallel()
-                .reduce("Elements in the stream are: ", String::concat);
-        System.out.println(parallelResult);
-    }
-}
-/*
-output:
-Elements in the stream are: ABCD
-Elements in the stream are: AElements in the stream are: BElements in the stream are: CElements in the stream are: D
-*/ 
-`,
-explanation: '',
-credit: 'Madjosz',
-runLink: 'https://replit.com/@EloiseRosen/WTFSJava6#Main.java',
-},
-
-{code:
 `class Main {
     public static void main(String[] args) {
       System.out.println("ABCD" == "ABCD");
@@ -502,7 +476,7 @@ runLink: 'https://replit.com/@EloiseRosen/WTFSJava6#Main.java',
 `,
 explanation: '',
 credit: 'hobovsky',
-runLink: 'https://replit.com/@EloiseRosen/WTFSJava7#Main.java',
+runLink: 'https://replit.com/@EloiseRosen/WTFSJava6#Main.java',
 },
 ];
 
@@ -513,9 +487,13 @@ const _javaScript = [
 arr.sort();
 console.log(arr); // [1, 100, 2, 3]
 `,
-explanation: '',
+explanation:
+<>
+If no function is passed to define the sort order, JavaScript converts each array element to <code>string</code> and sorts them lexicographically.
+</>
+,
 credit: '',
-runLink: '',
+runLink: 'https://replit.com/@EloiseRosen/WTFSJavaScript1#index.js',
 },
 
 {code:
@@ -528,7 +506,7 @@ explanation:
 </>,
 
 credit: 'Madjosz',
-runLink: '',
+runLink: 'https://replit.com/@EloiseRosen/WTFSJavaScript2#index.js',
 },
 
 {code:
@@ -539,32 +517,40 @@ console.log(arr3, typeof arr3); // 1,2,34,5,6 string
 `,
 explanation: '',
 credit: '',
-runLink: '',
+runLink: 'https://replit.com/@EloiseRosen/WTFSJavaScript3#index.js',
 },
 
 {code:
-`throw new Error('I am throwing an error like a proper language.');
+`try {
+  throw new Error('I am throwing an error like a proper language.');
+} catch (error) {
+  console.error('Error message:', error.message); // Error message: I am throwing an error like a proper language.
+  console.error('Stack trace:', error.stack); // Stack trace: Error:... at Object.<anonymous> (/home/runner/folder/file.js:2:9) ...
+}
 
-throw 'I am throwing not an error but a STRING. There will be no stack trace.';
+try {
+  throw 'I am throwing not an error but a STRING. There will be no stack trace.';
+} catch (error) {
+  console.error(error); // I am throwing not an error but a STRING. There will be no stack trace.
+  console.error(error.message); // undefined
+  console.error(error.stack); // undefined
+}
 
-throw {'in fact': 'I can', 'throw': 'anything at all'};
-throw true;
-throw new RegExp('ahhhhh', 'i');
+try {
+  throw {'in fact': 'I can', 'throw': 'anything at all'};
+} catch (error) {
+  console.error(error); // { 'in fact': 'I can', throw: 'anything at all' }
+}
+
+try {
+  throw new RegExp('ahhhhh', 'i');
+} catch (error) {
+  console.error(error); // /ahhhhh/i
+}
 `,
 explanation: '',
 credit: '',
-runLink: '',
-},
-
-{code:
-`let arr = [];
-const thing = arr.pop(); // no error D:
-console.log(thing); // undefined
-console.log(arr); // []
-`,
-explanation: '',
-credit: '',
-runLink: '',
+runLink: 'https://replit.com/@EloiseRosen/WTFSJavaScript4#index.js',
 },
 
 {code:
@@ -594,7 +580,7 @@ When comparing a string and a number, the string first gets converted to a numbe
 However, when 2 strings are compared, the comparison is done lexicographically, in which case <code>'2'</code> comes after <code>'13'</code>.
 </>,
 credit: 'dram',
-runLink: '',
+runLink: 'https://replit.com/@EloiseRosen/WTFSJavaScript5#index.js',
 },
 
 {code:
@@ -610,7 +596,7 @@ console.log(arr); // []
 `,
 explanation: '',
 credit: '',
-runLink: '',
+runLink: 'https://replit.com/@EloiseRosen/WTFSJavaScript6#index.js',
 },
 
 {code:
@@ -628,7 +614,7 @@ console.log(arr);
 `,
 explanation: '',
 credit: '',
-runLink: '',
+runLink: 'https://replit.com/@EloiseRosen/WTFSJavaScript7#index.js',
 },
 
 {code:
@@ -637,7 +623,7 @@ console.log(arr[10]); // undefined, no error
 `,
 explanation: '',
 credit: '',
-runLink: '',
+runLink: 'https://replit.com/@EloiseRosen/WTFSJavaScript8#index.js',
 },
 
 {code:
@@ -665,7 +651,7 @@ demoMissingParameters();
 `,
 explanation: '',
 credit: '',
-runLink: '',
+runLink: 'https://replit.com/@EloiseRosen/WTFSJavaScript9#index.js',
 },
 
 {code:
@@ -675,7 +661,7 @@ console.log(string); // bob
 `,
 explanation: '',
 credit: '',
-runLink: '',
+runLink: 'https://replit.com/@EloiseRosen/WTFSJavaScript10#index.js',
 },
 
 {code:
@@ -696,7 +682,7 @@ console.log(arr.filter(el => el === undefined).length); // 1
 `,
 explanation: '',
 credit: '',
-runLink: '',
+runLink: 'https://replit.com/@EloiseRosen/WTFSJavaScript11#index.js',
 },
 
 {code:
@@ -708,7 +694,7 @@ printLetter('a'); // b
 `,
 explanation: '',
 credit: '',
-runLink: '',
+runLink: 'https://replit.com/@EloiseRosen/WTFSJavaScript12#index.js',
 },
 
 {code:
@@ -726,7 +712,7 @@ delete obj.thisAlsoDoesNotExist; // no error, just silently ignored
 `,
 explanation: '',
 credit: '',
-runLink: '',
+runLink: 'https://replit.com/@EloiseRosen/WTFSJavaScript13#index.js',
 },
 
 {code:
@@ -759,7 +745,7 @@ console.log(thing, typeof thing); // 'bobnull' string
 `,
 explanation: '',
 credit: '',
-runLink: '',
+runLink: 'https://replit.com/@EloiseRosen/WTFSJavaScript14#index.js',
 },
 
 {code:
@@ -769,7 +755,7 @@ console.log(date.toString()); // Sat Feb 01 2020...
 `,
 explanation: '',
 credit: '',
-runLink: '',
+runLink: 'https://replit.com/@EloiseRosen/WTFSJavaScript15#index.js',
 },
 
 {code:
@@ -784,7 +770,7 @@ test(age=12, firstName='Jimothy');
 `,
 explanation: '',
 credit: '',
-runLink: '',
+runLink: 'https://replit.com/@EloiseRosen/WTFSJavaScript16#index.js',
 },
 
 {code:
@@ -802,7 +788,7 @@ function test() {
 `,
 explanation: '',
 credit: '',
-runLink: '',
+runLink: 'https://replit.com/@EloiseRosen/WTFSJavaScript17#index.js',
 },
 
 {code:
@@ -811,7 +797,7 @@ console.log(Array.from({length: -3})); // []
 `,
 explanation: '',
 credit: 'Kacarott',
-runLink: '',
+runLink: 'https://replit.com/@EloiseRosen/WTFSJavaScript18#index.js',
 },
 
 ];
@@ -831,6 +817,41 @@ credit: '',
 runLink: 'https://replit.com/@EloiseRosen/WTFSPHP1#main.php',
 },
 
+{code:
+`<?php
+$date = new DateTime('now');
+echo $date->format(DateTime::ISO8601); // DateTime::ISO8601 doesn't follow ISO8601
+?>
+`,
+explanation: '',
+credit: '',
+runLink: 'https://replit.com/@EloiseRosen/WTFSPHP2#main.php',
+},
+
+{code:
+`<?php
+var_dump(NULL == 0); // bool(true)
+var_dump(NULL < -1); // bool(true)
+var_dump(NULL < 0); // bool(false)
+?>
+`,
+explanation: '',
+credit: '',
+runLink: 'https://replit.com/@EloiseRosen/WTFSPHP3#main.php',
+},
+
+{code:
+`<?php
+function extraArgs() {
+  echo 'PHP will simply ignore the extra arguments, no warning or error';
+}
+extraArgs('these', 'parameters', 'should', 'not', 'exist');
+?>
+`,
+explanation: '',
+credit: '',
+runLink: 'https://replit.com/@EloiseRosen/WTFSPHP4#main.php',
+},
 
 {code:
 `<?php
@@ -858,8 +879,32 @@ foreach ($arr as $el) {
 `,
 explanation: '',
 credit: '',
-runLink: 'https://replit.com/@EloiseRosen/WTFSPHP2#main.php',
+runLink: 'https://replit.com/@EloiseRosen/WTFSPHP5#main.php',
 },
+
+
+{code:
+`<?php
+// Doesn't follow transitive law (if a is equal to b and b is equal to c, then
+// a is equal to c):
+var_dump(true == 'bob') . PHP_EOL; // bool(true)
+var_dump('bob' == 0) . PHP_EOL; // bool(true)
+var_dump(true == 0) . PHP_EOL; // bool(false)
+?>
+`,
+explanation:
+<>
+1. When a boolean and string are compared, the string is converted to a boolean. Non-empty strings become <code>true</code>, so the first statement evaluates to <code>true</code>.
+<br/>
+2. When a string and number are compared, the string is converted to a number. The string becomes <code>0</code> if it doesn't have numbers in it, so the second statement evaluates to <code>true</code>.
+<br/>
+3. <code>0</code> becomes <code>false</code>, so <code>true == false</code> evaluates to <code>false</code>.
+</>
+,
+credit: '',
+runLink: 'https://replit.com/@EloiseRosen/WTFSPHP6#main.php',
+},
+
 ]
 
 
@@ -902,6 +947,26 @@ runLink: 'https://replit.com/@EloiseRosen/WTFSPython1#main.py',
 },
 
 {code:
+`a = []
+b = []
+print(a is b)  # False
+
+a = tuple()
+b = tuple()
+print(a is b)  # True
+`,
+explanation:
+<>
+An <code>is</code> comparison returns <code>True</code> if both names point to the same object in memory. <code>Tuples</code> are immutable and so two <code>tuples</code> with the same contents are the same object. In contrast, <code>lists</code> are mutable, so one empty <code>list</code> is not the same object 
+as another empty <code>list</code>.
+
+</>
+,
+credit: '',
+runLink: 'https://replit.com/@EloiseRosen/WTFSPython2#main.py',
+},
+
+{code:
 `lst = ['a', 'b', 'c']
 for i in range(0, len(lst)):
     lst[i] = lst[i].upper()
@@ -910,7 +975,7 @@ print(i)  # 2, leaks out of loop
 `,
 explanation: '',
 credit: '',
-runLink: '',
+runLink: 'https://replit.com/@EloiseRosen/WTFSPython3#main.py',
 },
 
 {code:
@@ -924,24 +989,8 @@ explanation:
 The <code>lambda</code> function captures the variable <code>i</code> by reference, not by its value at the moment the <code>lambda</code> was defined. After the loop completes, <code>i</code> is <code>1</code>.
 </>,
 credit: 'Madjosz',
-runLink: '',
-},
-
-{code:
-`list1 = [1, 2, 3, 4]
-list2 = ['a', 'b', 'c']
-
-for pair in zip(list1, list2):
-    print(pair)
-# (1, 'a')
-# (2, 'b')
-# (3, 'c')
-# when there's a mismatch in length, zip silently truncates with no error or warning
-`,
-explanation: '',
-credit: '',
-runLink: '',
-},
+runLink: 'https://replit.com/@EloiseRosen/WTFSPython4#main.py',
+}
 ];
 
 
@@ -966,23 +1015,6 @@ runLink: '',
 {code:
 `print(all.equal(1, 1)) # returns the boolean TRUE 
 print(all.equal(1, 2)) # does not return FALSE! Instead returns a string, "Mean relative difference: 1"
-`,
-explanation: '',
-credit: '',
-runLink: '',
-},
-
-{code:
-`nums <- c(1:5)
-print(nums) # 1 2 3 4 5
-
-keep <- c(TRUE, FALSE, FALSE, FALSE) # note mistake in length (4 instead of 5)
-print(keep) # TRUE FALSE FALSE FALSE
-
-final <- nums[keep]
-print(final)  # 1 5
-# if there's a mismatch in vector length, we just silently cycle back through with 
-# no error or warning
 `,
 explanation: '',
 credit: '',
@@ -1020,10 +1052,22 @@ puts("abc".gsub!("z", "x") == "abc") # false
 `,
 explanation:
 <>
-If the first argument isn't found, <code>gsub!</code> returns <code>nil</code>. (<code>gsub</code> (with no exclamation mark) would return a string.)
+If the first argument isn't found, <code>gsub!</code> returns <code>nil</code>. (<code>gsub</code> with no exclamation mark would return a string.)
 </>,
 credit: 'hobovsky',
 runLink: 'https://replit.com/@EloiseRosen/WTFSRuby1#main.rb',
+},
+
+{code:
+`puts ['a', 'b', 'c'].size - 1 # 2
+puts ['a', 'b', 'c'].size -1 # error: wrong number of arguments (given 1, expected 0)
+`,
+explanation:
+<>
+Ruby reads <code>-1</code> (no space) as a negative number, not as a subtraction operation followed by a number. It treats the <code>-1</code> as an argument, hence the error message that 1 argument was given  but 0 were expected.
+</>,
+credit: '',
+runLink: 'https://replit.com/@EloiseRosen/WTFSRuby2#',
 },
 ];
 
@@ -1039,7 +1083,10 @@ const _sql = [
 
 SELECT * FROM person WHERE gender NOT IN ('M', 'F');  -- returns 0 rows
 `,
-explanation: '',
+explanation:
+<>
+To include <code>NULL</code> results you'd have to do <code>SELECT * FROM person WHERE gender NOT IN ('M', 'F') OR gender IS NULL;</code> or similar.
+</>,
 credit: '',
 runLink: '',
 },
