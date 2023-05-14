@@ -17,7 +17,7 @@ result=$((x + y))
 `,
 explanation: '',
 credit: 'jakkals',
-runLink: '',
+runLink: 'https://replit.com/@EloiseRosen/WTFSBash1#main.sh',
 },
 ];
 
@@ -34,9 +34,13 @@ int main() {
 }
 // output: SIX * NINE = 42
 `,
-explanation: '',
+explanation:
+<>
+This is equivalent to <code>1+5*8+1</code>. Multiplication is performed before addition, giving <code>42</code>. <br/> <br/>
+If we had instead used <code>#define SIX (1+5)</code> and <code>#define NINE (8+1)</code> (note the parentheses), the output would be <code>54</code> as expected.
+</>,
 credit: 'hobovsky',
-runLink: '',
+runLink: 'https://replit.com/@EloiseRosen/WTFSC1#main.c',
 },
 ];
 
