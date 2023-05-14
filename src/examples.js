@@ -183,8 +183,6 @@ credit: 'hobovsky',
 runLink: 'https://replit.com/@EloiseRosen/WTFScpp4#main.cpp',
 },
 
-
-
 {code:
 `#include <map>
 #include <string>
@@ -218,7 +216,6 @@ credit: 'hobovsky',
 runLink: 'https://replit.com/@EloiseRosen/WTFScpp5#src/main.cpp',
 },
 
-
 {code:
 `#include <iostream>
 
@@ -243,7 +240,6 @@ This leaves the <code>main()</code> function with a completely empty body in the
 credit: 'Madjosz',
 runLink: 'https://godbolt.org/z/54ETMehT9',
 },
-
 ];
 
 
@@ -343,7 +339,6 @@ When using floating point, the end point is bumped by half of the step size. The
 credit: 'dram',
 runLink: 'https://replit.com/@EloiseRosen/WTFSHaskell2#Main.hs',
 },
-
 ];
 
 
@@ -832,7 +827,6 @@ explanation: null,
 credit: 'Kacarott',
 runLink: 'https://replit.com/@EloiseRosen/WTFSJavaScript18#index.js',
 },
-
 ];
 
 
@@ -915,7 +909,6 @@ credit: '',
 runLink: 'https://replit.com/@EloiseRosen/WTFSPHP5#main.php',
 },
 
-
 {code:
 `<?php
 // Doesn't follow transitive law (if a is equal to b and b is equal to c, then
@@ -937,7 +930,6 @@ explanation:
 credit: '',
 runLink: 'https://replit.com/@EloiseRosen/WTFSPHP6#main.php',
 },
-
 ]
 
 
@@ -1042,7 +1034,7 @@ print(T)  # FALSE
 `,
 explanation: null,
 credit: '',
-runLink: '',
+runLink: 'https://replit.com/@EloiseRosen/WTFSR1#main.r',
 },
 
 {code:
@@ -1051,7 +1043,7 @@ print(all.equal(1, 2)) # does not return FALSE! Instead returns a string, "Mean 
 `,
 explanation: null,
 credit: '',
-runLink: '',
+runLink: 'https://replit.com/@EloiseRosen/WTFSR2#main.r',
 },
 
 {code:
@@ -1060,7 +1052,7 @@ print(vector[10])  # NA, no error`
 ,
 explanation: null,
 credit: '',
-runLink: '',
+runLink: 'https://replit.com/@EloiseRosen/WTFSR3#main.r',
 },
 
 {code:
@@ -1073,7 +1065,7 @@ print(func(1, 2, 3))  # 6
 `,
 explanation: null,
 credit: '',
-runLink: '',
+runLink: 'https://replit.com/@EloiseRosen/WTFSR4#main.r',
 },
 ];
 
