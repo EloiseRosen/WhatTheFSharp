@@ -231,7 +231,7 @@ void unreachable() {
 `,
 explanation:
 <>
-Infinite loops without side effects are UB in C++. Clang starting with version 13 optimizes the loop away with compiler optimizations activated.<br/>
+Infinite loops without side effects are Undefined Behavior in C++. Clang starting with version 13 optimizes the loop away with compiler optimizations activated.<br/>
 Furthermore the <code>return 0;</code> is seen as unreachable because of the infinite loop, thus also not compiled into the binaries.<br/>
 This leaves the <code>main()</code> function with a completely empty body in the assembly and a call to it will directly fall through to the assembly of the <code>unreachable() </code>function, printing <code>"Hello, world!\n"</code>.<br/>
 (This does not happen with GCC compiler.)
@@ -271,9 +271,13 @@ class Program
 // i = 5
 // i = 5
 `,
-explanation: '',
+explanation: 
+<>
+When <code>() =&gt; Console.WriteLine($"i = {"{"}i{"}"}")</code> is added to the <code>actions</code> list, it doesn't use the value of <code>i</code> at that moment, but rather creates a reference to <code>i</code>. By the time the <code>foreach</code> loop runs, <code>i</code> has been incremented to <code>5</code>. 
+</>
+,
 credit: 'hobovsky',
-runLink: '',
+runLink: 'https://replit.com/@EloiseRosen/WTFScsharp1#main.cs',
 },
 ];
 
@@ -358,9 +362,15 @@ const _java = [
 // 100 == 100
 // 200 != 200
 `,
-explanation: '',
+explanation:
+<>
+Using <code>==</code> to compare <code>Integer</code> objects can lead to unexpected results because <code>==</code> will compare object references rather than the values themselves.
+The <code>Integer</code> class keeps a cache of the <code>Integer</code> instances between <code>-128</code> and <code>127</code>.  <code>==</code> on the same numbers evaluates to <code>true</code> within this range and <code>false</code> otherwise.
+Using <code>a.equals(b)</code> gives the expected result.
+</>
+,
 credit: 'hobovsky',
-runLink: '',
+runLink: 'https://replit.com/@EloiseRosen/WTFSJava1#Main.java',
 },
 
 {code:
@@ -388,7 +398,7 @@ runLink: '',
 `,
 explanation: '',
 credit: 'hobovsky',
-runLink: '',
+runLink: 'https://replit.com/@EloiseRosen/WTFSJava2#Main.java',
 },
 
 {code:
@@ -407,7 +417,7 @@ public class Main {
 `,
 explanation: '',
 credit: '',
-runLink: '',
+runLink: 'https://replit.com/@EloiseRosen/WTFSJava3#Main.java',
 },
 
 {code:
@@ -422,9 +432,15 @@ runLink: '',
 // ++c is d
 // c+1 is 101
 `,
-explanation: '',
+explanation:
+<>
+Doing an arithmetic operation such as <code>+1</code> on a <code>char</code> causes "type promotion" and the <code>char</code> will be promoted to <code>int</code>. Type promotion doesn't happen with the increment operator (<code>++</code>).
+<br/>
+The variable <code>c</code> has the value <code>'d'</code> after the <code>++</code>. Then <code>'d'</code> is converted to the <code>int 100</code> (its Unicode value) through type promotion. Then <code>1</code> is added, giving <code>101</code>.
+</>
+,
 credit: 'hobovsky',
-runLink: '',
+runLink: 'https://replit.com/@EloiseRosen/WTFSJava4#Main.java',
 },
 
 {code:
@@ -478,7 +494,16 @@ runLink: 'https://replit.com/@EloiseRosen/WTFSJava5#Main.java',
 // false
 // false
 `,
-explanation: '',
+explanation: 
+<>
+The <code>==</code> operator compares object references rather than the values themselves.
+<br/><br/>
+<code>"ABCD" == "abcd".toUpperCase()</code> gives <code>false</code> because at runtime <code>"abcd".toUpperCase()</code> will create a new <code>String</code> object, and these two strings will be different instances.
+<br/><br/>
+Similarly, <code>string1 == string2</code> gives <code>false</code> because <code>new StringBuilder("AB").append("CD").toString()</code> and <code>new StringBuilder("ABC").append("D").toString()</code> create new <code>String</code> objects that are different instances.
+<br/><br/>
+Using <code>a.equals(b)</code> rather than <code>a == b</code> gives the expected result.
+</>,
 credit: 'hobovsky',
 runLink: 'https://replit.com/@EloiseRosen/WTFSJava6#Main.java',
 },
