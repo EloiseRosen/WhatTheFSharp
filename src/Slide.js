@@ -42,7 +42,7 @@ function Slide({ slideNum, setSlideNum, selectedLang }) {
 
           <div className="bottom-of-slide-box-wrapper"> {/* need in 1 div so that space-between pushes all of this to bottom*/}
 
-                  {examplesForLang[slideNum-1]['explanation'] !== "" && 
+                  {examplesForLang[slideNum-1]['explanation'] !== null && 
 
                               <div 
                               className="spoiler-box"

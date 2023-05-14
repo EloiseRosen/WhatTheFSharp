@@ -1,3 +1,4 @@
+// The explanation property is JSX or null, the other properties are string
 const _bash = [
 {code: 
 `#!/bin/bash
@@ -15,7 +16,7 @@ result=$((x + y))
 # + x=1
 # + set +x
 `,
-explanation: '',
+explanation: null,
 credit: 'jakkals',
 runLink: 'https://replit.com/@EloiseRosen/WTFSBash1#main.sh',
 },
@@ -177,7 +178,7 @@ int main() {
 // We just threw a vector.
 // We just threw an integer.
 `,
-explanation: '',
+explanation: null,
 credit: 'hobovsky',
 runLink: 'https://replit.com/@EloiseRosen/WTFScpp4#main.cpp',
 },
@@ -399,7 +400,7 @@ runLink: 'https://replit.com/@EloiseRosen/WTFSJava1#Main.java',
 // Number of args is 1
 // Number of args is 3
 `,
-explanation: '',
+explanation: null,
 credit: 'hobovsky',
 runLink: 'https://replit.com/@EloiseRosen/WTFSJava2#Main.java',
 },
@@ -418,7 +419,7 @@ public class Main {
     }
 }
 `,
-explanation: '',
+explanation: null,
 credit: '',
 runLink: 'https://replit.com/@EloiseRosen/WTFSJava3#Main.java',
 },
@@ -547,7 +548,7 @@ const arr2 = [4, 5, 6];
 const arr3 = arr1 + arr2;
 console.log(arr3, typeof arr3); // 1,2,34,5,6 string
 `,
-explanation: '',
+explanation: null,
 credit: '',
 runLink: 'https://replit.com/@EloiseRosen/WTFSJavaScript3#index.js',
 },
@@ -580,7 +581,7 @@ try {
   console.error(error); // /ahhhhh/i
 }
 `,
-explanation: '',
+explanation: null,
 credit: '',
 runLink: 'https://replit.com/@EloiseRosen/WTFSJavaScript4#index.js',
 },
@@ -626,7 +627,7 @@ console.log(arr); // [ 'you can change', <9 empty items> ]
 arr.length = null; // no error
 console.log(arr); // []
 `,
-explanation: '',
+explanation: null,
 credit: '',
 runLink: 'https://replit.com/@EloiseRosen/WTFSJavaScript6#index.js',
 },
@@ -644,7 +645,7 @@ console.log(arr);
 //   'silently ignore stuff',
 //   'without giving a warning or error' ]
 `,
-explanation: '',
+explanation: null,
 credit: '',
 runLink: 'https://replit.com/@EloiseRosen/WTFSJavaScript7#index.js',
 },
@@ -653,7 +654,7 @@ runLink: 'https://replit.com/@EloiseRosen/WTFSJavaScript7#index.js',
 `let arr = [undefined, undefined, undefined];
 console.log(arr[10]); // undefined, no error
 `,
-explanation: '',
+explanation: null,
 credit: '',
 runLink: 'https://replit.com/@EloiseRosen/WTFSJavaScript8#index.js',
 },
@@ -681,7 +682,7 @@ demoMissingParameters();
 // la la la everything is still fine
 // undefined undefined undefined undefined
 `,
-explanation: '',
+explanation: null,
 credit: '',
 runLink: 'https://replit.com/@EloiseRosen/WTFSJavaScript9#index.js',
 },
@@ -691,7 +692,7 @@ runLink: 'https://replit.com/@EloiseRosen/WTFSJavaScript9#index.js',
 string[1] = 'X'; // no error, just silently ignored
 console.log(string); // bob
 `,
-explanation: '',
+explanation: null,
 credit: '',
 runLink: 'https://replit.com/@EloiseRosen/WTFSJavaScript10#index.js',
 },
@@ -712,7 +713,7 @@ console.log(arr[20] === arr[3]); // true
 // hee hee they are
 console.log(arr.filter(el => el === undefined).length); // 1
 `,
-explanation: '',
+explanation: null,
 credit: '',
 runLink: 'https://replit.com/@EloiseRosen/WTFSJavaScript11#index.js',
 },
@@ -724,7 +725,7 @@ runLink: 'https://replit.com/@EloiseRosen/WTFSJavaScript11#index.js',
 }
 printLetter('a'); // b
 `,
-explanation: '',
+explanation: null,
 credit: '',
 runLink: 'https://replit.com/@EloiseRosen/WTFSJavaScript12#index.js',
 },
@@ -742,7 +743,7 @@ delete obj.thisAlsoDoesNotExist; // no error, just silently ignored
 
 
 `,
-explanation: '',
+explanation: null,
 credit: '',
 runLink: 'https://replit.com/@EloiseRosen/WTFSJavaScript13#index.js',
 },
@@ -775,7 +776,7 @@ console.log(thing, typeof thing); // 'true-1' string
 thing = 'bob' + null;
 console.log(thing, typeof thing); // 'bobnull' string
 `,
-explanation: '',
+explanation: null,
 credit: '',
 runLink: 'https://replit.com/@EloiseRosen/WTFSJavaScript14#index.js',
 },
@@ -785,7 +786,7 @@ runLink: 'https://replit.com/@EloiseRosen/WTFSJavaScript14#index.js',
 console.log(date.toString()); // Sat Feb 01 2020...
 // year is 1-indexed, day is 1-indexed, month is ZERO-indexed
 `,
-explanation: '',
+explanation: null,
 credit: '',
 runLink: 'https://replit.com/@EloiseRosen/WTFSJavaScript15#index.js',
 },
@@ -800,7 +801,7 @@ test(age=12, firstName='Jimothy');
 // first name is 12
 // age is Jimothy
 `,
-explanation: '',
+explanation: null,
 credit: '',
 runLink: 'https://replit.com/@EloiseRosen/WTFSJavaScript16#index.js',
 },
@@ -818,7 +819,7 @@ function test() {
     return num0;
 }
 `,
-explanation: '',
+explanation: null,
 credit: '',
 runLink: 'https://replit.com/@EloiseRosen/WTFSJavaScript17#index.js',
 },
@@ -827,7 +828,7 @@ runLink: 'https://replit.com/@EloiseRosen/WTFSJavaScript17#index.js',
 `console.log(Array(-3)); // RangeError: Invalid array length
 console.log(Array.from({length: -3})); // []
 `,
-explanation: '',
+explanation: null,
 credit: 'Kacarott',
 runLink: 'https://replit.com/@EloiseRosen/WTFSJavaScript18#index.js',
 },
@@ -855,7 +856,7 @@ $date = new DateTime('now');
 echo $date->format(DateTime::ISO8601); // DateTime::ISO8601 doesn't follow ISO8601
 ?>
 `,
-explanation: '',
+explanation: null,
 credit: '',
 runLink: 'https://replit.com/@EloiseRosen/WTFSPHP2#main.php',
 },
@@ -867,7 +868,7 @@ var_dump(NULL < -1); // bool(true)
 var_dump(NULL < 0); // bool(false)
 ?>
 `,
-explanation: '',
+explanation: null,
 credit: '',
 runLink: 'https://replit.com/@EloiseRosen/WTFSPHP3#main.php',
 },
@@ -880,7 +881,7 @@ function extraArgs() {
 extraArgs('these', 'parameters', 'should', 'not', 'exist');
 ?>
 `,
-explanation: '',
+explanation: null,
 credit: '',
 runLink: 'https://replit.com/@EloiseRosen/WTFSPHP4#main.php',
 },
@@ -909,7 +910,7 @@ foreach ($arr as $el) {
 // item:
 ?>
 `,
-explanation: '',
+explanation: null,
 credit: '',
 runLink: 'https://replit.com/@EloiseRosen/WTFSPHP5#main.php',
 },
@@ -1005,7 +1006,7 @@ for i in range(0, len(lst)):
 print(lst)  # ['A', 'B', 'C']
 print(i)  # 2, leaks out of loop
 `,
-explanation: '',
+explanation: null,
 credit: '',
 runLink: 'https://replit.com/@EloiseRosen/WTFSPython3#main.py',
 },
@@ -1039,7 +1040,7 @@ print(T)  # "bob"
 T = FALSE
 print(T)  # FALSE
 `,
-explanation: '',
+explanation: null,
 credit: '',
 runLink: '',
 },
@@ -1048,7 +1049,7 @@ runLink: '',
 `print(all.equal(1, 1)) # returns the boolean TRUE 
 print(all.equal(1, 2)) # does not return FALSE! Instead returns a string, "Mean relative difference: 1"
 `,
-explanation: '',
+explanation: null,
 credit: '',
 runLink: '',
 },
@@ -1057,7 +1058,7 @@ runLink: '',
 `vector <- c(NA, NA, NA)
 print(vector[10])  # NA, no error`
 ,
-explanation: '',
+explanation: null,
 credit: '',
 runLink: '',
 },
@@ -1070,7 +1071,7 @@ runLink: '',
 print(func(1, 2, 3))  # 6
 # no errors or warnings about arg number
 `,
-explanation: '',
+explanation: null,
 credit: '',
 runLink: '',
 },
