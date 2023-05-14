@@ -95,7 +95,10 @@ dcbaï¿½Qï¿½hh@\`ï¿½Qï¿½hM\`ï¿½Lï¿½ï¿½Qï¿½Wï¿½Qï¿½M\`ï¿½ï¿½i    ï¿½jï¿½ï¿½Qï¿½WFï
 [Truncated]
 */
 `,
-explanation: '',
+explanation: 
+<>
+<code>str.length()</code> has type <code>std::string::size_type</code>, which is usually an unsigned integer. This means that the loop counter overflows back to a large positive value without ever going negative, looping forever and reading bytes from who-knows-where. But if you turn on compiler warnings it'll usually tell you <code>idx &gt;= 0</code> is always <code>true</code>, pointing at this issue.
+</>,
 credit: 'hobovsky',
 runLink: 'https://replit.com/@EloiseRosen/WTFScpp2#main.cpp',
 },
