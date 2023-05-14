@@ -395,7 +395,11 @@ runLink: 'https://replit.com/@EloiseRosen/WTFSJava1#Main.java',
 // Number of args is 1
 // Number of args is 3
 `,
-explanation: null,
+explanation: 
+<>
+You can call varargs methods with an array or separate arguments which will be packed into an array. Generics can only take reference types and no primitives. While this works with <code>String</code>, <code>T</code> cannot be inferred to <code>int</code> and <code>T</code> ends up being <code>int[]</code>. So the argument is an array with an array as first and only element. The fourth call instead autoboxes all <code>int</code>s to <code>Integer</code>, allowing generics.
+</>
+,
 credit: 'hobovsky',
 runLink: 'https://replit.com/@EloiseRosen/WTFSJava2#Main.java',
 },
@@ -496,6 +500,8 @@ runLink: 'https://replit.com/@EloiseRosen/WTFSJava5#Main.java',
 explanation: 
 <>
 The <code>==</code> operator compares object references rather than the values themselves.
+<br/><br/>
+In <code>"AB" + "CD" == "ABC" + "D"</code>, concatenation happens at compile time and the results are interned.
 <br/><br/>
 <code>"ABCD" == "abcd".toUpperCase()</code> gives <code>false</code> because at runtime <code>"abcd".toUpperCase()</code> will create a new <code>String</code> object, and these two strings will be different instances.
 <br/><br/>
