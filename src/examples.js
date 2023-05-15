@@ -282,6 +282,50 @@ runLink: 'https://replit.com/@EloiseRosen/WTFScsharp1#main.cs',
 ];
 
 
+const _elixir = [
+{code:
+`defmodule Compare do
+  def example() do
+    fn -> :ok end
+  end
+end
+
+# is 9917 less than the example function?
+IO.puts 9917 < Compare.example() # true! 
+`,
+explanation: 
+<>
+Elixir allows you to do comparisons across data types, and uses the following ordering:<br/>
+<code>number &lt; atom &lt; reference &lt; function &lt; port &lt; pid &lt; tuple &lt; map &lt; list &lt; bitstring</code>
+</>
+,
+credit: 'Bruno Parga',
+runLink: 'https://replit.com/@EloiseRosen/WTFSElixir#main.exs',
+},
+];
+
+
+const _erlang = [
+{code:
+`-module(main).
+-import(io,[fwrite/1]).
+-export([start/0]).
+
+start() ->
+   fwrite(99999999999999 < "0"). % true
+`,
+explanation: 
+<>
+Erlang allows you to do comparisons across data types, and uses the following ordering:<br/>
+<code>number &lt; atom &lt; reference &lt; function &lt; port &lt; pid &lt; tuple &lt; map &lt; list &lt; bitstring</code>
+</>
+,
+credit: 'Bruno Parga',
+runLink: 'https://replit.com/@EloiseRosen/WTFSErlang1#main.erl',
+},
+];
+
+
 const _fsharp = [
 {code:
 `module Example
@@ -986,13 +1030,7 @@ a = tuple()
 b = tuple()
 print(a is b)  # True
 `,
-explanation:
-<>
-An <code>is</code> comparison returns <code>True</code> if both names point to the same object in memory. <code>Tuples</code> are immutable and so two <code>tuples</code> with the same contents are the same object. In contrast, <code>lists</code> are mutable, so one empty <code>list</code> is not the same object 
-as another empty <code>list</code>.
-
-</>
-,
+explanation: null,
 credit: '',
 runLink: 'https://replit.com/@EloiseRosen/WTFSPython2#main.py',
 },
@@ -1124,7 +1162,7 @@ runLink: '',
 ];
 
 
-const examples = { 'Bash': _bash, 'C': _c, 'cpp': _cpp, 'csharp': _csharp, 'fsharp': _fsharp,
-  'Haskell': _haskell, 'Java': _java, 'JavaScript': _javaScript, 'PHP': _php, 'Prolog': _prolog, 
-   'Python': _python,'R': _r, 'Ruby': _ruby, 'SQL': _sql}
+const examples = { 'Bash': _bash, 'C': _c, 'cpp': _cpp, 'csharp': _csharp, 'Elixir': _elixir, 'Erlang': _erlang, 
+  'fsharp': _fsharp, 'Haskell': _haskell, 'Java': _java, 'JavaScript': _javaScript, 'PHP': _php, 'Prolog': _prolog, 
+  'Python': _python,'R': _r, 'Ruby': _ruby, 'SQL': _sql}
 export { examples };
