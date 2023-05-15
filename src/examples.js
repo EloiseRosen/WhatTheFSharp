@@ -1136,7 +1136,7 @@ explanation:
 Ruby reads <code>-1</code> (no space) as a negative number, not as a subtraction operation followed by a number. In Ruby you can call a function without parentheses, so the <code>-1</code> gets interpreted as an argument to <code>size</code>, hence the error message that 1 argument was given but 0 were expected.
 </>,
 credit: '',
-runLink: 'https://replit.com/@EloiseRosen/WTFSRuby2#',
+runLink: 'https://replit.com/@EloiseRosen/WTFSRuby2#main.rb',
 },
 ];
 
@@ -1157,7 +1157,7 @@ explanation:
 To include <code>NULL</code> results you'd have to do <code>SELECT * FROM person WHERE gender NOT IN ('M', 'F') OR gender IS NULL;</code> or similar.
 </>,
 credit: '',
-runLink: '',
+runLink: 'https://replit.com/@EloiseRosen/WTFSSQL1#main.sql',
 },
 ];
 
