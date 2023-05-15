@@ -291,7 +291,7 @@ const _elixir = [
 end
 
 # is 9917 less than the example function?
-IO.puts 9917 < Compare.example() # true! 
+IO.puts 9917 < Compare.example # true! 
 `,
 explanation: 
 <>
@@ -300,7 +300,7 @@ Elixir allows you to do comparisons across data types, and uses the following or
 </>
 ,
 credit: 'Bruno Parga',
-runLink: 'https://replit.com/@EloiseRosen/WTFSElixir#main.exs',
+runLink: 'https://replit.com/@EloiseRosen/WTFSElixir1#main.exs',
 },
 ];
 
