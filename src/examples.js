@@ -1133,7 +1133,7 @@ puts ['a', 'b', 'c'].size -1 # error: wrong number of arguments (given 1, expect
 `,
 explanation:
 <>
-Ruby reads <code>-1</code> (no space) as a negative number, not as a subtraction operation followed by a number. It treats the <code>-1</code> as an argument, hence the error message that 1 argument was given but 0 were expected.
+Ruby reads <code>-1</code> (no space) as a negative number, not as a subtraction operation followed by a number. In Ruby you can call a function without parentheses, so the <code>-1</code> gets interpreted as an argument to <code>size</code>, hence the error message that 1 argument was given but 0 were expected.
 </>,
 credit: '',
 runLink: 'https://replit.com/@EloiseRosen/WTFSRuby2#',
