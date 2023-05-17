@@ -292,11 +292,17 @@ end
 
 # is 9917 less than the example function?
 IO.puts 9917 < Compare.example # true! 
+
+# I heard you like symbols
+IO.puts :*<&(&1) # true
 `,
 explanation: 
 <>
-Elixir allows you to do comparisons across data types, and uses the following ordering:<br/>
+Elixir allows comparisons across data types, and uses the following ordering:<br/>
 <code>number &lt; atom &lt; reference &lt; function &lt; port &lt; pid &lt; tuple &lt; map &lt; list &lt; bitstring</code>
+<br/><br/>
+
+In the second example, <code>:*</code> is an <code>atom</code>, and <code>&(&1)</code> is the identity function expressed as a lambda. (<code>&</code> creates an anonymous function, and <code>&1</code> represents its first argument, so <code>&(&1)</code> just returns its argument.) <code>Atoms</code> are <code>&lt;</code> <code>functions</code>, so this is <code>true</code>.
 </>
 ,
 credit: 'Bruno Parga',
@@ -316,7 +322,7 @@ start() ->
 `,
 explanation: 
 <>
-Erlang allows you to do comparisons across data types, and uses the following ordering:<br/>
+Erlang allows comparisons across data types, and uses the following ordering:<br/>
 <code>number &lt; atom &lt; reference &lt; function &lt; port &lt; pid &lt; tuple &lt; map &lt; list &lt; bitstring</code>
 </>
 ,
@@ -1022,13 +1028,31 @@ runLink: 'https://replit.com/@EloiseRosen/WTFSPython1#main.py',
 },
 
 {code:
-`a = []
-b = []
-print(a is b)  # False
+`lst1 = []
+lst2 = []
+print(lst1 is lst2)  # False
 
-a = tuple()
-b = tuple()
-print(a is b)  # True
+lst1 = [1, 2]
+lst2 = [1, 2]
+print(lst1 is lst2)  # False
+
+r = range(10)
+lst1 = list(r)
+lst2 = list(r)
+print(lst1 is lst2) # False
+
+t1 = tuple()
+t2 = tuple()
+print(t1 is t2)  # True
+
+t1 = (1, 2)
+t2 = (1, 2)
+print(t1 is t2)  # True
+
+r = range(10)
+t1 = tuple(r)
+t2 = tuple(r)
+print(t1 is t2) # False
 `,
 explanation: null,
 credit: '',
