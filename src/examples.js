@@ -1109,6 +1109,16 @@ explanation:
 credit: 'Kacarott',
 runLink: 'https://replit.com/@EloiseRosen/WTFSPython5#main.py',
 },
+
+{code:
+`print(all([]))  # True
+print(all([[]]))  # False 
+print(all([[[]]]))  # True
+`,
+explanation: null,
+credit: 'Jai Dhyani',
+runLink: 'https://replit.com/@EloiseRosen/WTFSPython6#main.py',
+},
 ];
 
 
