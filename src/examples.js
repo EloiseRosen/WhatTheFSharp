@@ -1054,7 +1054,10 @@ t1 = tuple(r)
 t2 = tuple(r)
 print(t1 is t2) # False
 `,
-explanation: null,
+explanation:
+<>
+<code>Tuple literals</code> are cached when running from a file. (This isn't true in REPL.)
+</>,
 credit: '',
 runLink: 'https://replit.com/@EloiseRosen/WTFSPython2#main.py',
 },
