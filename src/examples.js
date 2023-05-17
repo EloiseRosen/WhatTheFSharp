@@ -1083,7 +1083,29 @@ The <code>lambda</code> function captures the variable <code>i</code> by referen
 </>,
 credit: 'Madjosz',
 runLink: 'https://replit.com/@EloiseRosen/WTFSPython4#main.py',
-}
+},
+
+{code:
+`>>> a = 256
+>>> b = 256
+>>> a is b
+True
+>>> a = 257
+>>> b = 257
+>>> a is b
+False
+>>> a = 257; b = 257
+>>> a is b
+True
+`,
+explanation:
+<>
+<code>Int</code> objects up to <code>256</code> are created and cached by Python. In the third example, the interpreter notices the same number being used and so creates only one object, while in the second example they are declared seperately so they are seperate objects.
+(If you were to run this in a single file and execute all at once, the second example would actually be <code>True</code>.)
+</>,
+credit: 'Kacarott',
+runLink: 'https://replit.com/@EloiseRosen/WTFSPython5#main.py',
+},
 ];
 
 
