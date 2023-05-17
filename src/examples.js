@@ -1115,7 +1115,15 @@ runLink: 'https://replit.com/@EloiseRosen/WTFSPython5#main.py',
 print(all([[]]))  # False 
 print(all([[[]]]))  # True
 `,
-explanation: null,
+explanation:
+<>
+The first statement is a vacuous truth.
+<br/><br/>
+<code>all([[]])</code> iterates over every element of the outer list, which has exactly one element, the empty list, which is falsy in Python.
+<br/><br/>
+<code>all([[[]]])</code> also iterates over every item in the outer list. The outer list is a one-element list. Since <code>[[]]</code> is not empty (it has one element), it's truthy in Python.
+</>
+,
 credit: 'Jai Dhyani',
 runLink: 'https://replit.com/@EloiseRosen/WTFSPython6#main.py',
 },
