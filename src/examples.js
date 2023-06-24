@@ -1135,7 +1135,7 @@ print(1 < (3 in [3, 4, 5]))  # False
 `,
 explanation:
 <>
-The first statement is checking <code>1 &lt; 3 and 3 in [3,4,5]</code>.
+The first statement is checking <code>1 &lt; 3 and 3 in [3, 4, 5]</code>.
 </>
 ,
 credit: 'dram',
