@@ -1127,6 +1127,20 @@ The first statement is a vacuous truth.
 credit: 'Jai Dhyani',
 runLink: 'https://replit.com/@EloiseRosen/WTFSPython6#main.py',
 },
+
+{code:
+`print(1 < 3 in [3, 4, 5])  # True
+print((1 < 3) in [3, 4, 5])  # False
+print(1 < (3 in [3, 4, 5]))  # False
+`,
+explanation:
+<>
+The first statement is checking <code>1 &lt; 3 and 3 in [3,4,5]</code>.
+</>
+,
+credit: 'dram',
+runLink: 'https://replit.com/@EloiseRosen/WTFSPython7#main.py',
+},
 ];
 
 
