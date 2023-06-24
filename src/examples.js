@@ -300,6 +300,8 @@ explanation:
 <>
 Elixir allows comparisons across data types, and uses the following ordering:<br/>
 <code>number &lt; atom &lt; reference &lt; function &lt; port &lt; pid &lt; tuple &lt; map &lt; list &lt; bitstring</code>
+<br/>
+Since <code>number</code> is less than <code>function</code>, the first example is <code>true</code>.
 <br/><br/>
 
 In the second example, <code>:*</code> is an <code>atom</code>, and <code>&(&1)</code> is the identity function expressed as a lambda. (<code>&</code> creates an anonymous function, and <code>&1</code> represents its first argument, so <code>&(&1)</code> just returns its argument.) <code>Atoms</code> are <code>&lt;</code> <code>functions</code>, so this is <code>true</code>.
