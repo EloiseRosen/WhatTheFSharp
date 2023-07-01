@@ -885,6 +885,18 @@ explanation: null,
 credit: 'Kacarott',
 runLink: 'https://replit.com/@EloiseRosen/WTFSJavaScript18#index.js',
 },
+
+{code:
+`console.log(['1', '2', '3', '4'].map(x => parseInt(x))); // [ 1, 2, 3, 4 ]
+console.log(['1', '2', '3', '4'].map(parseInt)); // [ 1, NaN, NaN, NaN ]
+`,
+explanation:
+<>
+<code>map</code>'s callback is called with three arguments: the element, the index, and the array itself. In the first example, we use only one argument, the element, so the result is as expected. However, <code>parseInt</code> can actually take two arguments, the second being radix. In the second example, the element's index gets passed to <code>parseInt</code> as radix. (And the radix of <code>0</code> gets treated as a radix of <code>10</code>.)
+</>,
+credit: 'Lawrence Kesteloot',
+runLink: 'https://replit.com/@EloiseRosen/WTFSJavaScript19#index.js',
+},
 ];
 
 
