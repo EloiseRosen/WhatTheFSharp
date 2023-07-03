@@ -1000,6 +1000,27 @@ explanation:
 credit: '',
 runLink: 'https://replit.com/@EloiseRosen/WTFSPHP6#main.php',
 },
+
+{code:
+`<?php
+$arr = [1, 2, 3];
+foreach ($arr as &$el) {
+  echo $el;
+} // 123
+
+foreach ($arr as $el) {
+  echo $el;
+} // 122
+?>
+`,
+explanation:
+<>
+The <code>&</code> symbol gives us a reference to each element (rather than a copy). When we start the second loop, <code>$el</code> is still a reference (to the last element in the array). If you do <code>print_r($arr);</code> in the second loop you'll see that each time we go through the loop the last array element gets changed along the way to the current element's value (1, then 2, until finally we print the last element, which is then 2). 
+</>
+,
+credit: 'Madjosz',
+runLink: 'https://replit.com/@EloiseRosen/WTFSPHP7#main.php',
+},
 ]
 
 
