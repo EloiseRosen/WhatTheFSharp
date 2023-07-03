@@ -1254,6 +1254,26 @@ To include <code>NULL</code> results you'd have to do <code>SELECT * FROM person
 credit: '',
 runLink: 'https://replit.com/@EloiseRosen/WTFSSQL1#main.sql',
 },
+
+{code:
+`CREATE TABLE person (
+    id INT PRIMARY KEY,
+    name VARCHAR(255),
+    email VARCHAR(255) UNIQUE -- note the UNIQUE constraint
+);
+INSERT INTO person (id, name, email) VALUES (1, 'Bob', 'bob@gmail.com');
+INSERT INTO person (id, name, email) VALUES (2, 'Lucy',  NULL);
+
+-- no error, despite UNIQUE constraint on email column
+INSERT INTO person (id, name, email) VALUES (3, 'Jimothy', NULL);
+`,
+explanation:
+<>
+Because <code>NULL</code> is "the absence of a value", <code>NULL</code>s aren't duplicates of one another.
+</>,
+credit: '',
+runLink: 'https://replit.com/@EloiseRosen/WTFSSQL2#main.sql',
+},
 ];
 
 
