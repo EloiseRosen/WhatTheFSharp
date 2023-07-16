@@ -1187,9 +1187,9 @@ print(identical(T, TRUE))  # TRUE
 print(T)  # TRUE
 
 # you can overwrite T with something else
-T = "bob"
+T <- "bob"
 print(T)  # "bob"
-T = FALSE
+T <- FALSE
 print(T)  # FALSE
 `,
 explanation: null,
@@ -1226,6 +1226,19 @@ print(func(1, 2, 3))  # 6
 explanation: null,
 credit: '',
 runLink: 'https://replit.com/@EloiseRosen/WTFSR4#main.r',
+},
+
+{code:
+`f <- function(x=1, y=x+1) { 
+  x <- 3
+  print(paste("x:", x, "y:", y))
+}
+
+f()  # x: 3 y: 4
+`,
+explanation: null,
+credit: 'Shaked Koplewitz',
+runLink: 'https://replit.com/@EloiseRosen/WTFSR5#main.r',
 },
 ];
 
