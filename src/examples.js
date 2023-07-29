@@ -897,6 +897,24 @@ explanation:
 credit: 'Lawrence Kesteloot',
 runLink: 'https://replit.com/@EloiseRosen/WTFSJavaScript19#index.js',
 },
+
+{code:
+`// array with 2 elements:
+[
+  [[[48,36,124],[201,23,247],[150,162,177]]],
+  [[[69,69,69],[157,157,157],[163,163,163]]],
+]
+
+// array with 1 element (undefined):
+[
+  [[[48,36,124],[201,23,247],[150,162,177]]]
+  [[[69,69,69],[157,157,157],[163,163,163]]]
+]
+`,
+explanation: null,
+credit: 'NunoOliveira',
+runLink: 'https://replit.com/@EloiseRosen/WTFSJavaScript20#index.js',
+},
 ];
 
 
