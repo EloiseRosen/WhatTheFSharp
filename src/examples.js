@@ -915,6 +915,21 @@ explanation: null,
 credit: 'NunoOliveira',
 runLink: 'https://replit.com/@EloiseRosen/WTFSJavaScript20#index.js',
 },
+
+{code:
+`const doSomething = 2
+["print", "string", "with its index"].forEach((s, i) => {
+  console.log(s, i)
+})
+// TypeError: Cannot read properties of undefined (reading 'forEach')
+`,
+explanation: 
+<>
+Automatic Semicolon Insertion doesn't put a semicolon between the two statements. This code is interpreted as <code>const doSomething = 2["print", "string", "with its index"].forEach((s, i) =&lt; console.log(s, i))</code>.
+</>,
+credit: 'Blind4Basics',
+runLink: 'https://replit.com/@EloiseRosen/WTFSJavaScript21#index.js',
+},
 ];
 
 
