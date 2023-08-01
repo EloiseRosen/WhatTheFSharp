@@ -925,7 +925,7 @@ runLink: 'https://replit.com/@EloiseRosen/WTFSJavaScript20#index.js',
 `,
 explanation: 
 <>
-Automatic Semicolon Insertion doesn't put a semicolon between the two statements. This code is interpreted as <code>const doSomething = 2["print", "string", "with its index"].forEach((s, i) =&gt; console.log(s, i))</code>.
+Automatic Semicolon Insertion doesn't put a semicolon at the end of the first line. This code is interpreted as <code>const doSomething = 2["print", "string", "with its index"].forEach((s, i) =&gt; console.log(s, i))</code>.
 </>,
 credit: 'Blind4Basics',
 runLink: 'https://replit.com/@EloiseRosen/WTFSJavaScript21#index.js',
