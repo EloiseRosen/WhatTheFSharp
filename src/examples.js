@@ -1209,6 +1209,20 @@ The first statement is equivalent to <code>1 &lt; 3 and 3 in [3, 4, 5]</code>.
 credit: 'dram',
 runLink: 'https://replit.com/@EloiseRosen/WTFSPython7#main.py',
 },
+
+{code:
+`xs = [0, 1, 2]
+xs[-1] += xs.pop()
+print(xs)  # [0, 4]
+`,
+explanation:
+<>
+Think of the second line as <code>xs[-1] = xs[-1] + xs.pop()</code>. <code>xs[-1] + xs.pop()</code> is <code>2 + 2</code>, and the <code>pop</code> makes the list be <code>[0, 1]</code>. So then we have <code>xs[-1] = 4</code> where <code>xs</code> is <code>[0, 1]</code>.
+</>
+,
+credit: 'Unnamed',
+runLink: 'https://replit.com/@EloiseRosen/WTFSPython8#main.py',
+},
 ];
 
 
