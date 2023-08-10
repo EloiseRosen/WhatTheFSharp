@@ -1054,6 +1054,24 @@ The <code>&</code> symbol gives us a reference to each element (rather than a co
 credit: 'Madjosz',
 runLink: 'https://replit.com/@EloiseRosen/WTFSPHP7#main.php',
 },
+
+{code:
+`<?php
+$a = '2d9';
+echo ++$a; // 2e0
+echo ++$a; // 3
+?>
+`,
+explanation:
+<>
+When a string is incremented, it is handled like a serial identifier based on letters and digits. In the first case, <code>9</code> wraps back to <code>0</code>, and it's "carried" to <code>d</code> which generates an <code>e</code>. 
+<br/>
+However, when you increment a string that contains the letter <code>e</code> bounded by numbers, it will be seen as a number expressed in scientific notation. So <code>'2e0'</code> is treated as <code>2</code>, and is incremented to <code>3</code>.
+</>
+,
+credit: 'dram',
+runLink: 'https://replit.com/@EloiseRosen/WTFSPHP8#main.php',
+},
 ]
 
 
