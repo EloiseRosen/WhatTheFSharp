@@ -391,6 +391,24 @@ When using floating point, the end point is bumped by half of the step size. The
 credit: 'dram',
 runLink: 'https://replit.com/@EloiseRosen/WTFSHaskell2#Main.hs',
 },
+
+{code:
+`module Main where
+
+data Grade = Bad | Okay | Good deriving (Show, Enum)
+
+main :: IO ()
+main = do
+  print ([Bad ..]) -- [Bad,Okay,Good]
+  print ([Bad..]) -- error: parse error on input ‘]’
+`,
+explanation:
+<>
+<code>Bad..</code> is an operator, meaning <code>.</code> from module <code>Bad</code>.
+</>,
+credit: 'dram',
+runLink: 'https://replit.com/@EloiseRosen/WTFSHaskell3#Main.hs',
+},
 ];
 
 
