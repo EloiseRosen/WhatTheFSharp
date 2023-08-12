@@ -1,12 +1,18 @@
 import React, { useState, useEffect } from 'react';
 
 
+/**
+ * The SpoilerBox component hides the explanation for the code example unless the
+ * user clicks to reveal it.
+ */
 function SpoilerBox({ explanation, slideNum, selectedLang }) {
   const [showExplanation, setShowExplanation] = useState(false);
 
-  // when we reveal the explanation on one slide, we want the state to go back to
-  // unrevealed when we change slides. So when slideNum or selectedLang changes, 
-  // showExplanation needs to go back to false.
+  /**
+   * When we reveal the explanation on one slide, we want the state to go back to
+   * unrevealed when we change slides. So when slideNum or selectedLang changes,
+   * showExplanation needs to go back to false.
+   */
   useEffect(() => {
     setShowExplanation(false);
   }, [slideNum, selectedLang]);

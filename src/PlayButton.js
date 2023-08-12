@@ -1,5 +1,10 @@
 import React from 'react';
 
+
+/**
+ * The PlayButton component allows the user to click on a link where they can try out 
+ * the displayed code for themselves.
+ */
 function PlayButton(props) {
   return (
     <>

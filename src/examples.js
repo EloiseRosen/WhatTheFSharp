@@ -1,4 +1,12 @@
-// The explanation property is JSX or null, the other properties are string
+/**
+ * This file contains the examples by language.
+ * 
+ * The code property is the code as a string.
+ * The explanation property is JSX or null.
+ * The credit property is a string.
+ * The runLink property is a string containing the link to where the user 
+ * can try out the displayed code for themselves.
+ */
 const _bash = [
 {code: 
 `#!/bin/bash

@@ -6,6 +6,9 @@ import SpoilerBox from './SpoilerBox';
 import SlideNav from './SlideNav';
 
 
+/**
+ * The Slide component displays the code example, with syntax highlighting.
+ */
 function Slide({ slideNum, setSlideNum, selectedLang }) {
   const examplesForLang = examples[selectedLang];
 

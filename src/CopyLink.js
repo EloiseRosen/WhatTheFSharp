@@ -1,6 +1,10 @@
 import React, { useState } from 'react';
 
 
+/**
+ * The CopyLink component provides functionality for copying the direct URL to the
+ * current example with a button click. A message is briefly shown upon success.
+ */
 function CopyLink() {
   const [showSuccessMsg, setShowSuccessMsg] = useState(false);
 

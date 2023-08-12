@@ -2,15 +2,21 @@ import React, { useState, useRef, useEffect } from 'react';
 import { examples } from './examples';
 import { useNavigate } from 'react-router-dom';
 
-
 const allLanguages = Object.keys(examples).sort((a, b) => a.toLowerCase() < b.toLowerCase() ? -1 : 1);
 
+
+/**
+ * The LangSelect component is the dropdown that allows the user to select a language.
+ * Its appearance varies depending on whether we're on the main page or a language-specific page.
+ */
 function LangSelect(props) {
   const [isOpen, setIsOpen] = useState(false);
   const navigate = useNavigate();
   const dropdownRef = useRef(null);
 
-  // if we click outside the dropdown, close it
+  /**
+   * If user clicks outside the dropdown, close the dropdown.
+   */
   useEffect(() => {
     const handleDocumentClick = (event) => {
       if (dropdownRef.current && !dropdownRef.current.contains(event.target)) {
@@ -62,11 +68,14 @@ function LangSelect(props) {
     left: props.lang === null ? '0' : '-15px'
   }
 
-  const handleLangSelect = (language) => {
+  /**
+   * Handle when user selects a new language.
+   */
+  function handleLangSelect(language) {
     props.onLangSelect(language);
     setIsOpen(false);
     navigate(`/${language}/1`);
-  };
+  }
 
   return (
     <div style={selectLangDivStyle} ref={dropdownRef}>

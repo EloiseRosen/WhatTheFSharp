@@ -1,10 +1,19 @@
 import React, { useState, useEffect, useCallback } from 'react';
 
 
+/**
+ * The Header component displays the title. Its appearance and behavior varies depending on
+ * application state. On the main page, the title is typed out. When we're on examples, the 
+ * title links back to start. We don't blink the cursor when on examples because it gets annoying.
+ * The subtitle is shown only on the main page.
+ */
 function Header(props) {
   const [typedTitle, setTypedTitle] = useState('');
   const [doneTyping, setDoneTyping] = useState(false);
   
+  /**
+   * On the main page, type out the title.
+   */
   const typeTitle = useCallback((text, idx=0) => {
     if (idx < text.length) {
       setTypedTitle((prev) => prev + text[idx]);

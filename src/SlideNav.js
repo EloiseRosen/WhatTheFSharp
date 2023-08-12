@@ -4,6 +4,12 @@ import PlayButton from './PlayButton';
 import CopyLink from './CopyLink';
 
 
+/**
+ * The SlideNav component provides functionality to go to the next slide or the previous slide,
+ * either through clicking the UI buttons or by using the keyboard arrows.
+ * It also allows user to visit a link to try out the displayed example for themselves, and to
+ * copy a URL to the current code example.
+ */
 function SlideNav({ slideNum, setSlideNum, totalSlides, lang, runLink }) {
   const navigate = useNavigate();
 

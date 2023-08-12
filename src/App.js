@@ -6,11 +6,22 @@ import Slide from './Slide';
 import Footer from './Footer';
 
 
+/**
+ * Some language names have problematic characters and thus are stored under a
+ * name different from their display name. The getDisplayName function fetches the 
+ * correct display name.
+ */
 function getDisplayName(lang) {
   const problematic = {'csharp': 'C#', 'cpp': 'C++', 'fsharp': 'F#'}
   return  Object.keys(problematic).includes(lang) ? problematic[lang] : lang;
 }
 
+/**
+ * The App component is the main component. It has state for which language, if any,
+ * is selected. Router is used so that the URL is updated to domain.com/chosenLanguage/slideNum,
+ * and so that if someone navigates directly to domain.com/chosenLanguage/slideNum they are shown
+ * the correct content.
+ */
 function App() {
   const [lang, setLang] = useState(null);
 
