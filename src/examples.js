@@ -956,6 +956,47 @@ Automatic Semicolon Insertion doesn't put a semicolon at the end of the first li
 credit: 'Blind4Basics',
 runLink: 'https://replit.com/@EloiseRosen/WTFSJavaScript21#index.js',
 },
+
+{code:
+`const foo = /./g;
+console.log(foo.exec('abc')); // [ 'a', index: 0, input: 'abc', groups: undefined ]
+console.log(new RegExp(foo).exec('def')); // [ 'd', index: 0, input: 'def', groups: undefined ]
+
+const bar = /./g;
+console.log(bar.exec('abc')); // [ 'a', index: 0, input: 'abc', groups: undefined ]
+console.log(RegExp(bar).exec('def')); // [ 'e', index: 1, input: 'def', groups: undefined ]
+`,
+explanation: 
+<>
+When using a regex with the global <code>g</code> flag, the <code>lastIndex</code> property is used to determine where the next search should start. 
+<br/>
+When a regular expression object is passed to the <code>RegExp</code> constructor using the <code>new</code> keyword, a new regex object is created so <code>lastIndex</code> is reset to <code>0</code>.
+<br/>
+When a regular expression object is passed to the <code>RegExp</code> constructor without the <code>new</code> keyword, the original regex object is returned with its <code>lastIndex</code> value preserved.
+</>,
+credit: 'Unnamed',
+runLink: 'https://replit.com/@EloiseRosen/WTFSJavaScript22#index.js',
+},
+
+{code:
+`const foo = /a/g;
+console.log(foo.test('a')); // true
+console.log(foo.test('a')); // false
+console.log(foo.test('a')); // true
+`,
+explanation: 
+<>
+When using a regex with the global <code>g</code> flag, the <code>lastIndex</code> property is used to determine where the next search should start.
+<br/>
+<code>lastIndex</code> starts at <code>0</code>. The first time <code>test</code> is called, <code>a</code> is found which gives <code>true</code>, and <code>lastIndex</code> is updated to <code>1</code>.
+<br/>
+The second time <code>test</code> is called, since <code>lastIndex</code> is starting at <code>1</code>, <code>a</code> is not found which gives <code>false</code>. Whenever <code>test</code> returns <code>false</code>, the calling regex's <code>lastIndex</code> property gets reset to <code>0</code>.
+<br/>
+The third time <code>test</code> is called, <code>lastIndex</code> is back to <code>0</code>, so <code>a</code> is again found which gives <code>true</code>.
+</>,
+credit: 'NunoOliveira',
+runLink: 'https://replit.com/@EloiseRosen/WTFSJavaScript23#index.js',
+},
 ];
 
 
