@@ -590,6 +590,21 @@ Using <code>a.equals(b)</code> rather than <code>a == b</code> gives the expecte
 credit: 'hobovsky',
 runLink: 'https://replit.com/@EloiseRosen/WTFSJava6#Main.java',
 },
+
+{code:
+`class Main {
+  public static void main(String[] args) {
+    System.out.println(Math.round(Math.sqrt(-1))); // 0
+  }
+}
+`,
+explanation: 
+<>
+<code>Math.round(Double.NaN)</code> gives <code>0</code>.
+</>,
+credit: 'Madjosz',
+runLink: 'https://replit.com/@EloiseRosen/WTFSJava7#Main.java',
+},
 ];
 
 
