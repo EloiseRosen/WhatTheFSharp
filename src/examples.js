@@ -600,7 +600,7 @@ runLink: 'https://replit.com/@EloiseRosen/WTFSJava6#Main.java',
 `,
 explanation: 
 <>
-This happens because <code>Math.round(Double.NaN)</code> gives <code>0</code>.
+<code>Math.round(Double.NaN)</code> gives <code>0</code>.
 </>,
 credit: 'Madjosz',
 runLink: 'https://replit.com/@EloiseRosen/WTFSJava7#Main.java',
