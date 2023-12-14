@@ -417,6 +417,22 @@ explanation:
 credit: 'dram',
 runLink: 'https://replit.com/@EloiseRosen/WTFSHaskell3#Main.hs',
 },
+
+{code:
+`module Main where
+
+main :: IO ()
+main = do
+  print (-5 \`mod\` 3) -- -2
+  print ((-5) \`mod\` 3) -- 1
+`,
+explanation:
+<>
+Unary <code>-</code> is an operator with lower precedence than <code>mod</code>. The <code>NegativeLiterals</code> GHC extension fixes this if you like: https://ghc.gitlab.haskell.org/ghc/doc/users_guide/exts/negative_literals.html
+</>,
+credit: 'dram',
+runLink: 'https://replit.com/@EloiseRosen/WTFSHaskell4#Main.hs',
+},
 ];
 
 
