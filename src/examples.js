@@ -1028,6 +1028,18 @@ The third time <code>test</code> is called, <code>lastIndex</code> is back to <c
 credit: 'NunoOliveira',
 runLink: 'https://replit.com/@EloiseRosen/WTFSJavaScript23#index.js',
 },
+
+{code:
+`console.log(018); // 18
+console.log(017); // 15
+`,
+explanation: 
+<>
+A number that starts with the digit <code>0</code> is interpreted as an octal number, unless it contains the digits <code>8</code> or <code>9</code>, in which case the number is interpreted as decimal.
+</>,
+credit: 'Twilight_Sun',
+runLink: 'https://replit.com/@EloiseRosen/WTFSJavaScript24#index.js',
+},
 ];
 
 
