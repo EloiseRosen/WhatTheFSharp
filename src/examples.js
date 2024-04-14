@@ -433,6 +433,21 @@ Unary <code>-</code> is an operator with lower precedence than <code>mod</code>.
 credit: 'dram',
 runLink: 'https://replit.com/@EloiseRosen/WTFSHaskell4#Main.hs',
 },
+
+{code:
+`module Main where
+
+main :: IO ()
+main = do
+  print (round (0/0)) -- -96546841345985910145121736599013708251444699062715983611304031680170819807090036488184653221624933739271145959211186566651840137298227914453329401869141179179624428127508653257226023513694322210869665811240855745025766026879447359920868907719574457253034494436336205824
+`,
+explanation:
+<>
+see <code>https://stackoverflow.com/a/44387322</code>
+</>,
+credit: 'NunoOliveira',
+runLink: 'https://replit.com/@EloiseRosen/WTFSHaskell5#Main.hs',
+},
 ];
 
 
