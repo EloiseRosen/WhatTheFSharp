@@ -362,6 +362,37 @@ runLink: 'https://replit.com/@EloiseRosen/WTFSfsharp1#main.fs',
 ];
 
 
+const _groovy = [
+{code:
+`def f(int item) {
+    println(item)
+    println(item.getClass())
+}
+
+def n = 0xFFF0 ** 2
+println(n)
+println(n.getClass())
+f(n)
+
+/*
+output:
+4292870400
+class java.math.BigInteger
+-2096896
+class java.lang.Integer
+*/
+`,
+explanation:
+<>
+If the result does not fit into <code>Integer</code> it is auto-converted to <code>BigInteger</code> but does not throw/warn on automatic downcasting.
+</>,
+
+credit: 'Madjosz',
+runLink: 'https://www.jdoodle.com/ia/1iVs',
+},
+];
+
+
 const _haskell = [
 {code:
 `module Main where
@@ -1502,6 +1533,6 @@ runLink: 'https://replit.com/@EloiseRosen/WTFSSQL2#main.sql',
 
 
 const examples = { 'Bash': _bash, 'C': _c, 'cpp': _cpp, 'csharp': _csharp, 'Elixir': _elixir, 'Erlang': _erlang, 
-  'fsharp': _fsharp, 'Haskell': _haskell, 'Java': _java, 'JavaScript': _javaScript, 'PHP': _php, 'Prolog': _prolog, 
-  'Python': _python,'R': _r, 'Ruby': _ruby, 'SQL': _sql}
+  'fsharp': _fsharp, 'Groovy':_groovy, 'Haskell': _haskell, 'Java': _java, 'JavaScript': _javaScript, 'PHP': _php, 
+  'Prolog': _prolog, 'Python': _python,'R': _r, 'Ruby': _ruby, 'SQL': _sql}
 export { examples };
