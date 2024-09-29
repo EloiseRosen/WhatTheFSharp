@@ -375,7 +375,7 @@ f(x)                  // class java.lang.Integer -131071
 `,
 explanation:
 <>
-If the result does not fit into <code>Integer</code> it is auto-converted to <code>BigInteger</code> but does not throw/warn on automatic downcasting..<br/>
+If the result does not fit into <code>Integer</code> it is auto-converted to <code>BigInteger</code> but does not throw/warn on automatic downcasting.<br/>
 Bonus: this example no longer works if <code>n ** 2</code> is changed to <code>n * n</code>.
 </>,
 
