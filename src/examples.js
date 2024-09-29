@@ -364,31 +364,23 @@ runLink: 'https://replit.com/@EloiseRosen/WTFSfsharp1#main.fs',
 
 const _groovy = [
 {code:
-`def f(int item) {
-    println(item)
-    println(item.getClass())
+`def f(int i) {
+    println "$i.class $i"
 }
-
-def n = 0xFFF0 ** 2
-println(n)
-println(n.getClass())
-f(n)
-
-/*
-output:
-4292870400
-class java.math.BigInteger
--2096896
-class java.lang.Integer
-*/
+def n = 0xFFFF
+println "$n.class $n" // class java.lang.Integer 65535
+def x = n ** 2
+println "$x.class $x" // class java.math.BigInteger 4294836225
+f(x)                  // class java.lang.Integer -131071
 `,
 explanation:
 <>
-If the result does not fit into <code>Integer</code> it is auto-converted to <code>BigInteger</code> but does not throw/warn on automatic downcasting.
+If the result does not fit into <code>Integer</code> it is auto-converted to <code>BigInteger</code> but does not throw/warn on automatic downcasting..<br/>
+Bonus: this example no longer works if <code>n ** 2</code> is changed to <code>n * n</code>.
 </>,
 
 credit: 'Madjosz',
-runLink: 'https://www.jdoodle.com/ia/1iVs',
+runLink: 'https://www.jdoodle.com/ia/1iVL',
 },
 ];
 
