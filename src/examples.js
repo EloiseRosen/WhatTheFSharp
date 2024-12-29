@@ -1085,7 +1085,7 @@ console.log(3 in [1, 2, 3]); // false
 `,
 explanation: 
 <>
-The <code>in</code> operator is checking for index, not value.
+The <code>in</code> operator is checking for key, not value.
 </>,
 credit: 'hobovsky',
 runLink: 'https://www.jdoodle.com/ia/1z8e',
