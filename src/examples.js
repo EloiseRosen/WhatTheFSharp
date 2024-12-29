@@ -1389,6 +1389,24 @@ Think of the second line as <code>xs[-1] = xs[-1] + xs.pop()</code>. <code>xs[-1
 credit: 'Unnamed',
 runLink: 'https://replit.com/@EloiseRosen/WTFSPython8#main.py',
 },
+
+{code:
+`>>> t = ([1, 2, 3],)
+>>> t[0] += [4, 5, 6]
+Traceback (most recent call last):
+  File "<stdin>", line 1, in <module>
+TypeError: 'tuple' object does not support item assignment
+>>> print(t)
+([1, 2, 3, 4, 5, 6],)
+`,
+explanation:
+<>
+<code>t[0] += [4, 5, 6]</code> is executed as <code>t[0] = operator.__iadd__(t[0], [4, 5, 6])</code>. First, the in-place addition (<code>__iadd__</code>) updates the list inside the tuple. Then, Python tries to reassign it back to <code>t[0]</code>, causing a <code>TypeError</code> since tuples are immutable. Despite the error, the list has already been modified.
+</>
+,
+credit: 'NunoOliveira',
+runLink: 'https://www.pythonmorsels.com/repl/',
+},
 ];
 
 
