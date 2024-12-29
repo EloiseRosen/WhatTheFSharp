@@ -1078,6 +1078,18 @@ A number that starts with the digit <code>0</code> is interpreted as an octal nu
 credit: 'Twilight_Sun',
 runLink: 'https://replit.com/@EloiseRosen/WTFSJavaScript24#index.js',
 },
+
+{code:
+`console.log(2 in [1, 2, 3]); // true
+console.log(3 in [1, 2, 3]); // false
+`,
+explanation: 
+<>
+The <code>in</code> operator is checking for index, not value.
+</>,
+credit: 'hobovsky',
+runLink: 'https://www.jdoodle.com/ia/1z8e',
+},
 ];
 
 
