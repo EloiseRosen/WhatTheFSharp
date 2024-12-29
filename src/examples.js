@@ -1498,6 +1498,17 @@ Ruby reads <code>-1</code> (no space) as a negative number, not as a subtraction
 credit: '',
 runLink: 'https://replit.com/@EloiseRosen/WTFSRuby2#main.rb',
 },
+
+{code:
+`print [(1..3).last, (1..3).max, (1...3).last, (1...3).max] # [3, 3, 3, 2]
+`,
+explanation:
+<>
+<code>last</code> for any <code>Range</code> is its <code>end</code>.
+</>,
+credit: 'Unnamed',
+runLink: 'https://www.jdoodle.com/ia/1z8d',
+},
 ];
 
 
