@@ -659,6 +659,22 @@ explanation:
 credit: 'Madjosz',
 runLink: 'https://replit.com/@EloiseRosen/WTFSJava7#Main.java',
 },
+
+{code:
+`public class Main {
+    public static void main(String[] args) {
+        Integer i = null; 
+        Integer j = false ? 1 : i; // throws NullPointerException
+    }
+}
+`,
+explanation: 
+<>
+In <code>false ? 1 : i</code>, the conditional expression's compile‑time type is <code>int</code>, because when one arm is primitive <code>int</code> and the other is <code>Integer</code>, the <code>Integer</code> arm is unboxed to match the primitive. When the <code>false</code> branch runs, it must unbox <code>i</code>, and unboxing <code>null</code> throws a <code>NullPointerException</code>.
+</>,
+credit: 'Madjosz',
+runLink: 'https://www.jdoodle.com/ia/1KCx',
+},
 ];
 
 
