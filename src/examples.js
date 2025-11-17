@@ -1435,6 +1435,41 @@ explanation:
 credit: 'NunoOliveira',
 runLink: 'https://www.pythonmorsels.com/repl/',
 },
+
+{code:
+`s = 1
+def p(): 
+    return s
+    
+def q(): 
+    return s
+    s = 1
+
+print(p())  # 1
+print(q())  # UnboundLocalError: local variable 's' referenced before assignment
+`,
+explanation:
+<>
+When compiling <code>q</code>, Python marks <code>s</code> as a local variable for the function. Then <code>return s</code> attempts to return the local <code>s</code>, which has not yet been assigned.
+</>
+,
+credit: 'JoKing via Kacarott',
+runLink: 'https://www.jdoodle.com/ia/1N8l',
+},
+
+{code:
+`def p():
+    exec("s=1;N=[s for _ in [1]]")  # NameError: name 's' is not defined
+p()
+`,
+explanation:
+<>
+<code>exec</code> puts <code>s</code> in its local dict, but the list comprehension treats <code>s</code> as a global name and does not see the local binding. See more here: <code>https://discuss.python.org/t/strange-exec-evaluation-behavior/100399</code>
+</>
+,
+credit: 'JoKing via Kacarott',
+runLink: 'https://www.jdoodle.com/ia/1N8m',
+},
 ];
 
 
