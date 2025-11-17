@@ -1106,6 +1106,31 @@ The <code>in</code> operator is checking for key, not value.
 credit: 'hobovsky',
 runLink: 'https://www.jdoodle.com/ia/1z8e',
 },
+
+{code:
+`let undefined = 42; // throws SyntaxError
+console.log(undefined); // would print undefined
+
+let null = 42; // throws SyntaxError
+console.log(null); // would print null
+
+(() => {
+    let undefined = 42; // Valid declaration + initialization
+    console.log(undefined); // prints 42
+})();
+
+(() => {
+    let null = 42; // throws SyntaxError
+    console.log(null); // would print null
+})();
+`,
+explanation: 
+<>
+<code>null</code> is a reserved word at grammar level, and reserved words cannot be used as identifiers. On the other hand, <code>undefined</code> is a global property, a runtime concept, which happens to be non-configurable, so you can't declare a variable shadowing it in global scope. The same thing happens with other "literals" that are actually non-configurable global properties like <code>NaN</code> and <code>Infinity</code>. There's also the global property <code>globalThis</code>, but because it's configurable, the same limitation is not applicable.  There is a decent reason for this behavior though, which is the same reason behind some other JS quirks: backwards compatibility.
+</>,
+credit: 'NunoOliveira',
+runLink: 'https://jsfiddle.net/',
+},
 ];
 
 
