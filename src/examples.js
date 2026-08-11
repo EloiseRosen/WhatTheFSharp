@@ -287,6 +287,21 @@ When <code>() =&gt; Console.WriteLine($"i = {"{"}i{"}"}")</code> is added to the
 credit: 'hobovsky',
 runLink: 'https://replit.com/@EloiseRosen/WTFScsharp1#main.cs',
 },
+
+{code:
+`Console.WriteLine(int.IsPositive(0));
+
+// output:
+// True
+`,
+explanation: 
+<>
+.NET’s <code>IsPositive</code> numeric API includes positive zero. For ordinary integers, that makes it equivalent to &gt;= 0.
+</>
+,
+credit: 'Unnamed',
+runLink: '',
+},
 ];
 
 
