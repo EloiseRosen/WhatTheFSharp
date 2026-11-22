@@ -248,6 +248,31 @@ This leaves the <code>main()</code> function with a completely empty body in the
 credit: 'Madjosz',
 runLink: 'https://godbolt.org/z/54ETMehT9',
 },
+
+{code:
+`#include <iostream>
+
+void send(const std::string& str) {
+    std::cout << "String " << str << std::endl;
+}
+
+void send(bool b) {
+    std::cout << "Boolean " << b << std::endl;
+}
+
+int main() {
+    send("Hello");
+}
+
+// output: Boolean 1
+`,
+explanation:
+<>
+<code>"hello"</code> is an array of char, which converts to a char pointer. In <code>send(bool)</code>, the char pointer converts to bool. This is a standard conversion sequence. In <code>send(const std::string&)</code>, the char pointer is passed to a string constructor. This is a user-defined conversion sequence. In function overload resolution, a standard conversion sequence is preferred over a user-defined conversion sequence. 
+</>,
+credit: 'Madjosz',
+runLink: 'https://godbolt.org/z/sxbWfefaj',
+},
 ];
 
 
